@@ -1,0 +1,100 @@
+.locator-search {
+  position: relative;
+  overflow: hidden;
+  padding: calc(var(--space-l) + 6px) var(--space-m) var(--space-m);
+  border-radius: var(--radius-l);
+  background-color: var(--white);
+  color: var(--text-color);
+  box-shadow: var(--shadow-l);
+}
+
+/* accent bar */
+.locator-search::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 6px;
+  background-color: var(--theme-accent);
+}
+
+.locator-search .locator-search-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xs) var(--space-m);
+}
+
+.locator-search .locator-search-top h2,
+.locator-search .locator-search-top h3 {
+  display: flex;
+  align-items: center;
+  gap: var(--space-s);
+  margin: 0;
+  font-size: var(--heading-font-size-m);
+}
+
+.locator-search .locator-search-top .icon {
+  color: var(--blue-dark);
+  font-size: 1.2em;
+}
+
+.locator-search .locator-search-top .eyebrow {
+  margin: 0;
+  color: var(--text-color);
+  font-size: 13px;
+}
+
+.locator-search .locator-search-intro > p {
+  margin: var(--space-s) 0 var(--space-m);
+  font-size: var(--body-font-size-s);
+}
+
+.locator-search .form-required-note { margin-bottom: var(--space-s); }
+
+.locator-search .form-actions { margin-top: var(--space-m); }
+
+.locator-search .locator-search-results:not(.is-visible) { display: none; }
+
+.locator-search .locator-search-results {
+  margin-top: var(--space-m);
+  padding: var(--space-m);
+  border-left: 4px solid var(--blue-dark);
+  border-radius: var(--radius-s);
+  background-color: var(--gray-surface);
+  font-size: var(--body-font-size-s);
+}
+
+.locator-search .locator-search-results h3 {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin: 0 0 var(--space-xs);
+  font-size: var(--heading-font-size-xs);
+}
+
+.locator-search .locator-search-results p { margin: 0 0 var(--space-xs); }
+
+.locator-search .locator-search-results p:last-child { margin-bottom: 0; }
+
+.locator-search .locator-search-footnote {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xs) var(--space-m);
+  margin-top: var(--space-m);
+  padding-top: var(--space-s);
+  border-top: 1px solid var(--border-color);
+  font-size: var(--body-font-size-xs);
+}
+
+.locator-search .locator-search-footnote > * { margin: 0; }
+
+.locator-search .locator-search-footnote > :last-child { margin-left: auto; }
+
+.locator-search .locator-search-footnote a { font-weight: 700; }
+
+@media (width >= 600px) {
+  .locator-search { padding: calc(var(--space-l) + 6px) var(--space-l) var(--space-l); }
+}

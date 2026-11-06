@@ -1,1680 +1,735 @@
-/*
-* * * * * ==============================
-* * * * * ==============================
-* * * * * ==============================
-* * * * * ==============================
-========================================
-========================================
-========================================
-----------------------------------------
-GENERAL SETTINGS
-----------------------------------------
-Read more about settings and
-USWDS style tokens in the documentation:
-https://designsystem.digital.gov/design-tokens
-----------------------------------------
-*/
-/*
-----------------------------------------
-Image path
-----------------------------------------
-Relative image file path
-----------------------------------------
-*/
-/*
-----------------------------------------
-Show compile warnings
-----------------------------------------
-Show Sass warnings when functions and
-mixins use non-standard tokens.
-AND
-Show updates and notifications.
-----------------------------------------
-*/
-/*
-----------------------------------------
-Namespace
-----------------------------------------
-*/
-/*
-----------------------------------------
-Prefix separator
-----------------------------------------
-Set the character the separates
-responsive and state prefixes from the
-main class name.
-The default (":") needs to be preceded
-by two backslashes to be properly
-escaped.
-----------------------------------------
-*/
-/*
-----------------------------------------
-Layout grid
-----------------------------------------
-Should the layout grid classes output
-with !important
-----------------------------------------
-*/
-/*
-----------------------------------------
-Border box sizing
-----------------------------------------
-When set to true, sets the box-sizing
-property of all site elements to
-`border-box`.
-----------------------------------------
-*/
-/*
-----------------------------------------
-Focus styles
-----------------------------------------
-*/
-/*
-----------------------------------------
-Icons
-----------------------------------------
-*/
-/*
-* * * * * ==============================
-* * * * * ==============================
-* * * * * ==============================
-* * * * * ==============================
-========================================
-========================================
-========================================
-----------------------------------------
-TYPOGRAPHY SETTINGS
-----------------------------------------
-Read more about settings and
-USWDS typography tokens in the documentation:
-https://designsystem.digital.gov/design-tokens/typesetting/overview/
-----------------------------------------
-*/
-/*
-----------------------------------------
-Root font size
-----------------------------------------
-Setting $theme-respect-user-font-size to
-true sets the root font size to 100% and
-uses ems for media queries
-----------------------------------------
-$theme-root-font-size only applies when
-$theme-respect-user-font-size is set to
-false.
-
-This will set the root font size
-as a specific px value and use px values
-for media queries.
-
-Accepts true or false
-----------------------------------------
-*/
-/*
-----------------------------------------
-Global styles
-----------------------------------------
-Adds basic styling for the following
-unclassed elements:
-
-- paragraph: paragraph text
-- link: links
-- content: paragraph text, links,
-  headings, lists, and tables
-----------------------------------------
-*/
-/*
-----------------------------------------
-Browser compatibility mode
-----------------------------------------
-When true, outputs woff and ttf font 
-formats in addition to woff2
-----------------------------------------
-*/
-/*
-----------------------------------------
-Font path
-----------------------------------------
-Relative font file path
-----------------------------------------
-*/
-/*
-----------------------------------------
-Custom typeface tokens
-----------------------------------------
-Add a new custom typeface token if
-your project uses a typeface not already
-defined by USWDS.
-----------------------------------------
-USWDS defines the following tokens
-by default:
-----------------------------------------
-'georgia'
-'helvetica'
-'merriweather'
-'open-sans'
-'public-sans'
-'roboto-mono'
-'source-sans-pro'
-'system'
-'tahoma'
-'verdana'
-----------------------------------------
-Add as many new tokens as you have
-custom typefaces. Reference your new
-token(s) in the type-based font settings
-using the quoted name of the token.
-
-For example:
-
-$theme-font-type-cond: 'example-font-token';
-
-display-name:
-The display name of your font
-
-cap-height:
-The height of a 500px `N` in Sketch
-----------------------------------------
-You should change `example-[style]-token`
-names to something more descriptive.
-----------------------------------------
-*/
-/*
-----------------------------------------
-Type-based font settings
-----------------------------------------
-Set the type-based tokens for your
-project from the following tokens,
-or from any new font tokens you added in
-$theme-typeface-tokens.
-----------------------------------------
-'georgia'
-'helvetica'
-'merriweather'
-'open-sans'
-'public-sans'
-'roboto-mono'
-'source-sans-pro'
-'system'
-'tahoma'
-'verdana'
-----------------------------------------
-*/
-/*
-----------------------------------------
-Custom font stacks
-----------------------------------------
-Add custom font stacks to any of the
-type-based fonts. Any USWDS typeface
-token already has a default stack.
-
-Custom stacks don't need to include the
-font's display name. It will
-automatically appear at the start of
-the stack.
-----------------------------------------
-Example:
-$theme-font-type-sans: 'source-sans-pro';
-$theme-font-sans-custom-stack: "Helvetica Neue", Helvetica, Arial, sans;
-
-Output:
-font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans;
-----------------------------------------
-*/
-/*
-----------------------------------------
-Add any custom font source files
-----------------------------------------
-If you want USWDS to generate additional
-@font-face declarations, add your font
-data below, following the example that
-follows.
-----------------------------------------
-USWDS automatically generates @font-face
-declarations for the following
-
-'merriweather'
-'public-sans'
-'roboto-mono'
-'source-sans-pro'
-
-These typefaces not require custom
-source files.
-----------------------------------------
-EXAMPLE
-
-- dir:
-  Directory relative to $theme-font-path
-- This directory should include fonts saved as
-  .woff2
-  ExampleSerif-Normal.woff2
-
-$theme-font-serif-custom-src: (
-  dir: 'custom/example-serif',
-  roman: (
-    100: false,
-    200: false,
-    300: 'ExampleSerif-Light',
-    400: 'ExampleSerif-Normal',
-    500: false,
-    600: false,
-    700: 'ExampleSerif-Bold',
-    800: false,
-    900: false,
-  ),
-  italic: (
-    100: false,
-    200: false,
-    300: 'ExampleSerif-LightItalic',
-    400: 'ExampleSerif-Italic',
-    500: false,
-    600: false,
-    700: 'ExampleSerif-BoldItalic',
-    800: false,
-    900: false,
-  ),
-);
-----------------------------------------
-*/
-/*
-----------------------------------------
-Role-based font settings
-----------------------------------------
-Set the role-based tokens for your
-project from the following font-type
-tokens.
-----------------------------------------
-'cond'
-'icon'
-'lang'
-'mono'
-'sans'
-'serif'
-----------------------------------------
-*/
-/*
-----------------------------------------
-Type scale
-----------------------------------------
-Define your project's type scale using
-values from the USWDS system type scale
-
-1-20
-----------------------------------------
-*/
-/*
-----------------------------------------
-Font weights
-----------------------------------------
-Assign weights 100-900
-Or use `false` for unneeded weights.
-----------------------------------------
-*/
-/*
-----------------------------------------
-General typography settings
-----------------------------------------
-Type scale tokens
-----------------------------------------
-micro:      10px
-1:          12px
-2:          13px
-3:          14px
-4:          15px
-5:          16px
-6:          17px
-7:          18px
-8:          20px
-9:          22px
-10:         24px
-11:         28px
-12:         32px
-13:         36px
-14:         40px
-15:         48px
-16:         56px
-17:         64px
-18:         80px
-19:         120px
-20:         140px
-----------------------------------------
-Line height tokens
-----------------------------------------
-1:    1
-2:    1.15
-3:    1.35
-4:    1.5
-5:    1.62
-6:    1.75
-----------------------------------------
-Font role tokens
-----------------------------------------
-'ui'
-'heading'
-'body'
-'code'
-'alt'
-----------------------------------------
-Measure (max-width) tokens
-----------------------------------------
-1:       44ex
-2:       60ex
-3:       64ex
-4:       68ex
-5:       74ex
-6:       88ex
-none:    none
-----------------------------------------
-*/
-/*
-* * * * * ==============================
-* * * * * ==============================
-* * * * * ==============================
-* * * * * ==============================
-========================================
-========================================
-========================================
-----------------------------------------
-COLOR SETTINGS
-----------------------------------------
-Read more about settings and
-USWDS color tokens in the documentation:
-https://designsystem.digital.gov/design-tokens/color
-----------------------------------------
-*/
-/*
-----------------------------------------
-Theme palette colors
-----------------------------------------
-*/
-/*
-----------------------------------------
-State palette colors
-----------------------------------------
-*/
-/*
-----------------------------------------
-General colors
-----------------------------------------
-*/
-/*
-* * * * * ==============================
-* * * * * ==============================
-* * * * * ==============================
-* * * * * ==============================
-========================================
-========================================
-========================================
-----------------------------------------
-COMPONENT SETTINGS
-----------------------------------------
-Read more about settings and
-USWDS style tokens in the documentation:
-https://designsystem.digital.gov/design-tokens
-----------------------------------------
-*/
-/*
-* * * * * ==============================
-* * * * * ==============================
-* * * * * ==============================
-* * * * * ==============================
-========================================
-========================================
-========================================
-----------------------------------------
-SPACING SETTINGS
-----------------------------------------
-Read more about settings and
-USWDS spacing units tokens in the
-documentation:
-https://designsystem.digital.gov/design-tokens/spacing-units
-----------------------------------------
-*/
-/*
-----------------------------------------
-Border radius
-----------------------------------------
-2px           2px
-0.5           4px
-1             8px
-1.5           12px
-2             16px
-2.5           20px
-3             24px
-4             32px
-5             40px
-6             48px
-7             56px
-8             64px
-9             72px
-----------------------------------------
-*/
-/*
-----------------------------------------
-Column gap
-----------------------------------------
-2px         2px
-0.5         4px
-1           8px
-2           16px
-3           24px
-4           32px
-5           40px
-6           48px
-----------------------------------------
-*/
-/*
-----------------------------------------
-Grid container max-width
-----------------------------------------
-mobile
-mobile-lg
-tablet
-tablet-lg
-desktop
-desktop-lg
-widescreen
-----------------------------------------
-*/
-/*
-----------------------------------------
-Site
-----------------------------------------
-*/
-/*
-* * * * * ==============================
-* * * * * ==============================
-* * * * * ==============================
-* * * * * ==============================
-========================================
-========================================
-========================================
-----------------------------------------
-UTILITIES SETTINGS
-----------------------------------------
-Read more about settings and
-USWDS utilities in the documentation:
-https://designsystem.digital.gov/utilities
-----------------------------------------
-*/
-/*
-----------------------------------------
-map-collect()
-----------------------------------------
-Collect multiple maps into a single
-large map
-source: https://gist.github.com/bigglesrocks/d75091700f8f2be5abfe
-----------------------------------------
-*/
-/*
-----------------------------------------
-Utility breakpoints
-----------------------------------------
-Which breakpoints does your project
-need? Select as `true` any breakpoint
-used by utilities or layout grid
-----------------------------------------
-*/
-/*
-----------------------------------------
-Global colors
-----------------------------------------
-The following palettes will be added to
-- background-color
-- border-color
-- color
-- text-decoration-color
-----------------------------------------
-*/
-/*
-----------------------------------------
-Settings
-----------------------------------------
-*/
-/*
-----------------------------------------
-Values
-----------------------------------------
-*/
-/*
-----------------------------------------
-color()
-----------------------------------------
-Derive a color from a color shortcode
-----------------------------------------
-*/
-/*
-----------------------------------------
-append-important()
-----------------------------------------
-Append `!important` to a list
-----------------------------------------
-*/
-/*
-----------------------------------------
-get-last()
-----------------------------------------
-Return the last item of a list,
-Return null if the value is null
-----------------------------------------
-*/
-/*
-----------------------------------------
-de-list()
-----------------------------------------
-Transform a one-element list or arglist
-into that single element.
-----------------------------------------
-(1) => 1
-((1)) => (1)
-----------------------------------------
-*/
-/*
-----------------------------------------
-error-not-token()
-----------------------------------------
-Returns a common not-a-token error.
-----------------------------------------
-*/
-/*
-----------------------------------------
-uswds-error()
-----------------------------------------
-Allow the system to pass an error as text
-to test error states in unit testing
-----------------------------------------
-*/
-/*
-----------------------------------------
-get-default()
-----------------------------------------
-Returns the default value from a map
-of project defaults
-get-default("bg-color")
-> $theme-body-background-color
-----------------------------------------
-*/
-/*
-----------------------------------------
-has-important()
-----------------------------------------
-Check to see if `!important` is
-being passed in a mixin's props
-----------------------------------------
-*/
-/*
-----------------------------------------
-map-deep-get()
-----------------------------------------
-@author Hugo Giraudel
-@access public
-@param {Map} $map - Map
-@param {Arglist} $keys - Key chain
-@return {*} - Desired value
-----------------------------------------
-*/
-/*
-----------------------------------------
-multi-cat()
-----------------------------------------
-Concatenate two lists
-----------------------------------------
-*/
-/*
-----------------------------------------
-remove()
-----------------------------------------
-Remove a value from a list
-----------------------------------------
-*/
-/*
-----------------------------------------
-smart-quote()
-----------------------------------------
-Quotes strings
-Inspects `px`, `xs`, and `xl` numbers
-Leaves bools as is
-----------------------------------------
-*/
-/*
-----------------------------------------
-str-replace()
-----------------------------------------
-Replace any substring with another
-string
-----------------------------------------
-*/
-/*
-----------------------------------------
-str-split()
-----------------------------------------
-Split a string at a given separator
-and convert into a list of substrings
-----------------------------------------
-*/
-/*
-----------------------------------------
-strip-unit()
-----------------------------------------
-Remove the unit of a length
-@author Hugo Giraudel
-@param {Number} $number - Number to remove unit from
-@return {Number} - Unitless number
-----------------------------------------
-*/
-/*
-----------------------------------------
-base-to-map()
-@TODO: Deprecate and delete
-----------------------------------------
-Convert a single base to a USWDS
-value map.
-
-Candidate for deprecation if we remove
-isReadable
-----------------------------------------
-*/
-/*
-----------------------------------------
-to-number()
-----------------------------------------
-Casts a string into a number
-----------------------------------------
-@param {String | Number} $value - Value to be parsed
-@return {Number}
-----------------------------------------
-*/
-/*
-----------------------------------------
-unpack()
-----------------------------------------
-Create lists of single items from lists
-of lists.
-----------------------------------------
-(1, (2.1, 2.2), 3) -->
-(1, 2.1, 2.2, 3)
-----------------------------------------
-*/
-/*
-----------------------------------------
-color()
-----------------------------------------
-Derive a color from a color shortcode
-----------------------------------------
-*/
-/*
-----------------------------------------
-color()
-----------------------------------------
-Derive a color from a color shortcode
-----------------------------------------
-*/
-/*
-----------------------------------------
-get-system-color()
-----------------------------------------
-Derive a system color from its
-family, value, and vivid or a passed
-variable that is, itself, a list
-----------------------------------------
-*/
-/*
-----------------------------------------
-color()
-----------------------------------------
-Derive a color from a color shortcode
-----------------------------------------
-*/
-/*
-----------------------------------------
-color()
-----------------------------------------
-Derive a color from a color shortcode
-----------------------------------------
-*/
-/*
-----------------------------------------
-color()
-----------------------------------------
-Derive a color from a color shortcode
-----------------------------------------
-*/
-/*
-----------------------------------------
-set-theme-color()
-----------------------------------------
-Derive a color from a system color token
-or a hex value
-----------------------------------------
-*/
-/*
-----------------------------------------
-px-to-rem()
-----------------------------------------
-Converts a value in px to a value in rem
-----------------------------------------
-*/
-/*
-----------------------------------------
-rem-to-user-em()
-----------------------------------------
-Converts a value in rem to a value in
-[user-settings] em for use in media
-queries
-----------------------------------------
-*/
-/*
-----------------------------------------
-px-to-user-em()
-----------------------------------------
-Converts a value in px to a value in em
-----------------------------------------
-*/
-/*
-----------------------------------------
-rem-to-px()
-----------------------------------------
-Converts a value in rem to a value in px
-----------------------------------------
-*/
-/*
-----------------------------------------
-spacing-multiple()
-----------------------------------------
-Converts a spacing unit multiple into
-the desired final units (currently rem)
-----------------------------------------
-*/
-/*
-----------------------------------------
-units()
-----------------------------------------
-Converts a spacing unit into
-the desired final units (currently rem)
-----------------------------------------
-*/
-/*
-----------------------------------------
-number-to-token()
-----------------------------------------
-Converts an integer or numeric value
-into a system value
-
-Ex: 0.5   --> '05'
-    -1px  --> 'neg-1px'
-----------------------------------------
-*/
-/*
-----------------------------------------
-Project fonts
-----------------------------------------
-Collects font settings in a map for
-looping.
-----------------------------------------
-*/
-/*
-----------------------------------------
-Luminance ranges
-----------------------------------------
-*/
-/*
-----------------------------------------
-ns()
-----------------------------------------
-Add a namesspace of $type if that
-namespace is set to output
-----------------------------------------
-*/
-/*
-----------------------------------------
-Line height
-----------------------------------------
-*/
-/*
-----------------------------------------
-Measure
-----------------------------------------
-*/
-/*
-----------------------------------------
-cap-height()
-----------------------------------------
-Get the cap height of a valid typeface
-----------------------------------------
-*/
-/*
-----------------------------------------
-validate-typeface-token()
-----------------------------------------
-Check to see if a typeface-token exists.
-Throw an error if a passed token does
-not exist in the typeface-token map.
-----------------------------------------
-*/
-/*
-----------------------------------------
-convert-to-font-type()
-----------------------------------------
-Converts a font-role token into a
-font-type token. Leaves font-type tokens
-unchanged.
-----------------------------------------
-*/
-/*
-----------------------------------------
-font-sources()
-----------------------------------------
-Outputs a list of font sources used in
-a @font-face declaration.
-
-$theme-font-browser-compatibility: true - output woff2, woff, ttf
-$theme-font-browser-compatibility: false - output woff2
-
-@param stem: string - [font path]/[custom-src.dir]/[custom-src.[style].[weight]]
-@output: string
-
-filetypes must be one of the filetypes set in variables/$project-font-face-filetypes (woff, woff2, ttf)
-----------------------------------------
-*/
-/*
-----------------------------------------
-get-font-stack()
-----------------------------------------
-Get a font stack from a style- or
-role-based font token.
-----------------------------------------
-*/
-/*
-----------------------------------------
-get-typeface-token()
-----------------------------------------
-Get a typeface token from a font-type or
-font-role token.
-----------------------------------------
-*/
-/*
-----------------------------------------
-normalize-type-scale()
-----------------------------------------
-Normalizes a specific face's optical size
-to a set target
-----------------------------------------
-*/
-/*
-----------------------------------------
-system-type-scale()
-----------------------------------------
-Get a value from the system type scale
-----------------------------------------
-*/
-/*
-----------------------------------------
-Easing
-----------------------------------------
-*/
-/*  deprecated.scss
-    ---
-    Occasionally the design system will deprecate
-    old variables or functionality. If we replace
-    the old functionality with something new, this is a
-    place to connect the old functionality to the
-    new functionality, in the service of better
-    continuity and backwards compatibility within a
-    major release cycle.
-
-    Note the USWDS version where we deprecated the
-    old functionality in a comment.
-
-    Be sure to update notifications.scss.
-
-    This file should started fresh at each
-    major version.
-*/
-/*
-----------------------------------------
-advanced-color()
-----------------------------------------
-Derive a color from a color triplet:
-[family], [grade], [variant]
-----------------------------------------
-*/
-/*
-----------------------------------------
-calculate-grade()
-----------------------------------------
-Derive the grade equivalent any color,
-even non-token colors
-----------------------------------------
-*/
-/*
-----------------------------------------
-color-token-assignment()
-----------------------------------------
-Get the system token equivalent of any
-theme color token
-----------------------------------------
-*/
-/*
-----------------------------------------
-is-system-color-token()
-----------------------------------------
-Return whether a token is a system
-color token
-----------------------------------------
-*/
-/*
-----------------------------------------
-is-theme-color-token()
-----------------------------------------
-Return whether a token is a theme
-color token
-----------------------------------------
-*/
-/*
-----------------------------------------
-color-token-family()
-----------------------------------------
-Returns the family of a color token.
-Returns: color-family
-color-token-family("accent-warm-vivid")
-> "accent-warm"
-color-token-family("red-50v")
-> "red"
-color-token-variant(("red", 50, "vivid"))
-> "red"
-----------------------------------------
-*/
-/*
-----------------------------------------
-decompose()
-----------------------------------------
-Convert a color token into into a list
-of form [family], [grade], [variant]
-Vivid variants return "vivid" as the
-variant.
-If neither grade nor variant exists,
-returns 'null'
-----------------------------------------
-*/
-/*
-----------------------------------------
-color-token-family()
-----------------------------------------
-Returns the family of a color token.
-Returns: color-family
-color-token-family("accent-warm-vivid")
-> "accent-warm"
-color-token-family("red-50v")
-> "red"
-color-token-variant(("red", 50, "vivid"))
-> "red"
-----------------------------------------
-*/
-/*
-----------------------------------------
-color-token-grade()
-----------------------------------------
-Returns the grade of a USWDS color token.
-Returns: color-grade
-color-token-grade("accent-warm")
-> "root"
-color-token-grade("accent-warm-vivid")
-> "root"
-color-token-grade("accent-warm-darker")
-> "darker"
-color-token-grade("red-50v")
-> 50
-color-token-variant(("red", 50, "vivid"))
-> 50
-----------------------------------------
-*/
-/*
-----------------------------------------
-color-token-family()
-----------------------------------------
-Returns the family of a color token.
-Returns: color-family
-color-token-family("accent-warm-vivid")
-> "accent-warm"
-color-token-family("red-50v")
-> "red"
-color-token-variant(("red", 50, "vivid"))
-> "red"
-----------------------------------------
-*/
-/*
-----------------------------------------
-is-color-token()
-----------------------------------------
-Returns whether a given string is a
-USWDS color token.
-----------------------------------------
-*/
-/*
-----------------------------------------
-pow()
-----------------------------------------
-Raises a unitless number to the power
-of another unitless number
-Includes helper functions
-----------------------------------------
-*/
-/*
-----------------------------------------
-Helper functions
-----------------------------------------
-*/
-/* factorial()
-----------------------------------------
-*/
-/* summation()
-----------------------------------------
-*/
-/* exp-maclaurin()
-----------------------------------------
-*/
-/* ln()
-----------------------------------------
-*/
-/*
-----------------------------------------
-color-token-type()
-----------------------------------------
-Returns the type of a color token.
-Returns: "system" | "theme"
-----------------------------------------
-*/
-/*
-----------------------------------------
-color-token-variant()
-----------------------------------------
-Returns the variant of color token.
-Returns: "vivid" | false
-color-token-variant("accent-warm")
-> false
-color-token-variant("accent-warm-vivid")
-> "vivid"
-color-token-variant("red-50v")
-> "vivid"
-color-token-variant(("red", 50, "vivid"))
-> "vivid"
-----------------------------------------
-*/
-/*
-----------------------------------------
-magic-number()
-----------------------------------------
-Returns the magic number of two color
-grades. Takes numbers or color tokens.
-magic-number(50, 10)
-return: 40
-magic-number("red-50", "red-10")
-return: 40
-----------------------------------------
-*/
-/*
-----------------------------------------
-is-accessible-magic-number()
-----------------------------------------
-Returns whether two grades achieve
-specified target color contrast
-Returns: true | false
-is-accessible-magic-number(10, 50, "AA")
-> false
-is-accessible-magic-number(10, 60, "AA")
-> true
-----------------------------------------
-*/
-/*
-----------------------------------------
-wcag-magic-number()
-----------------------------------------
-Returns the magic number of a specific
-wcag grade:
-"AA"
-"AA-Large"
-"AAA"
-wcag-magic-number("AA")
-> 50
-----------------------------------------
-*/
-/*
-----------------------------------------
-get-link-tokens-from-bg()
-----------------------------------------
-Get accessible link colors for a given
-background color
-returns: link-token, hover-token
-get-link-tokens-from-bg(
-  "black",
-  "red-60",
-  "red-10",
-  "AA")
-> "red-10", "red-5"
-get-link-tokens-from-bg(
-  "black",
-  "red-60v",
-  "red-10v",
-  "AA-large")
-> "red-60v", "red-50v"
-get-link-tokens-from-bg(
-  "black",
-  "red-5v",
-  "red-60v",
-  "AA")
-> "red-5v", "white"
-get-link-tokens-from-bg(
-  "black",
-  "white",
-  "red-60v",
-  "AA")
-> "white", "white"
-----------------------------------------
-*/
-/*
-----------------------------------------
-next-token()
-----------------------------------------
-Returns next "darker" or "lighter" color
-token of the same token type and variant.
-Returns: color-token | false
-next-token("accent-warm", "lighter")
-> "accent-warm-light"
-next-token("gray-10", "lighter")
-> "gray-5"
-next-token("gray-5", "lighter")
-> "white"
-next-token("white", "lighter")
-> false
-next-token("red-50v", "darker")
-> "red-60v"
-next-token("red-50", "darker")
-> "red-60"
-next-token("red-80v", "darker")
-> "red-90"
-next-token("red-90", "darker")
-> "black"
-next-token("white", "darker")
-> "gray-5"
-next-token("black", "lighter")
-> "gray-90"
-----------------------------------------
-*/
-/*
-----------------------------------------
-test-colors()
-----------------------------------------
-Check to see if all system colors
-fall between the proper relative
-luminance range for their grade.
-Has a couple quirks, as the luminance()
-function returns slightly different
-results than expected.
-----------------------------------------
-*/
-/*
-----------------------------------------
-columns()
-----------------------------------------
-outputs a grid-col number based on
-the number of desired columns in the
-12-column grid
-
-Ex: columns(2) --> 6
-    grid-col(columns(2))
-----------------------------------------
-*/
-/*
-----------------------------------------
-USWDS Properties
-----------------------------------------
-*/
-/*
-----------------------------------------
-get-uswds-value()
-----------------------------------------
-Finds and outputs a value from the
-USWDS standard values.
-
-Used to build other standard utility
-functions and mixins.
-----------------------------------------
-*/
-/*
-----------------------------------------
-get-standard-values()
-----------------------------------------
-Gets a map of USWDS standard values
-for a property
-----------------------------------------
-*/
-/*
-----------------------------------------
-border-radius()
-----------------------------------------
-Get a border-radius from the system
-border-radii
-----------------------------------------
-*/
-/*
-----------------------------------------
-font-weight()
-fw()
-----------------------------------------
-Get a font-weight value from the
-system font-weight
-----------------------------------------
-*/
-/*
-----------------------------------------
-feature()
-----------------------------------------
-Gets a valid USWDS font feature setting
-----------------------------------------
-*/
-/*
-----------------------------------------
-flex()
-----------------------------------------
-Gets a valid USWDS flex value
-----------------------------------------
-*/
-/*
-----------------------------------------
-font-family()
-family()
-----------------------------------------
-Get a font-family stack from a
-role-based or type-based font family
-----------------------------------------
-*/
-/*
-----------------------------------------
-letter-spacing()
-ls()
-----------------------------------------
-Get a letter-spacing value from the
-system letter-spacing
-----------------------------------------
-*/
-/*
-----------------------------------------
-measure()
-----------------------------------------
-Gets a valid USWDS reading line length
-----------------------------------------
-*/
-/*
-----------------------------------------
-opacity()
-----------------------------------------
-Get an opacity from the system
-opacities
-----------------------------------------
-*/
-/*
-----------------------------------------
-order()
-----------------------------------------
-Get an order value from the
-system orders
-----------------------------------------
-*/
-/*
-----------------------------------------
-radius()
-----------------------------------------
-Get a border-radius value from the
-system letter-spacing
-----------------------------------------
-*/
-/*
-----------------------------------------
-font-size()
-----------------------------------------
-Get type scale value from a [family] and
-[scale]
-----------------------------------------
-*/
-/*
-----------------------------------------
-z-index()
-z()
-----------------------------------------
-Get a z-index value from the
-system z-index
-----------------------------------------
-*/
-/*
-----------------------------------------
-utility-font()
-----------------------------------------
-Get a normalized font-size in rem from
-a family and a type size in either
-system scale or project scale
-----------------------------------------
-Not the public-facing function.
-Used for building the utilities and
-withholds certain errors.
-----------------------------------------
-*/
-/*
-----------------------------------------
-family()
-----------------------------------------
-Get a font-family stack
-----------------------------------------
-*/
-/*
-----------------------------------------
-size()
-----------------------------------------
-Get a normalized font-size in rem from
-a family and a type size in either
-system scale or project scale
-----------------------------------------
-*/
-/*
-----------------------------------------
-font()
-----------------------------------------
-Get a font-family stack
-AND
-Get a normalized font-size in rem from
-a family and a type size in either
-system scale or project scale
-----------------------------------------
-*/
-/*
-----------------------------------------
-typeset()
-----------------------------------------
-Sets:
-- family
-- size
-- line-height
-----------------------------------------
-*/
-/* stylelint-disable max-nesting-depth */
-/*
-----------------------------------------
-@render-pseudoclass
-----------------------------------------
-Build a pseucoclass utiliy from values
-calculated in the @render-utilities-in
-loop
-----------------------------------------
-*/
-/*
-----------------------------------------
-@render-utility
-----------------------------------------
-Build a utility from values calculated
-in the @render-utilities-in loop
-----------------------------------------
-TODO: Determine the proper use of
-unquote() in the following. Changed to
-account for a 'interpolation near
-operators will be simplified in a
-future version of Sass' warning.
-----------------------------------------
-*/
-/*
-----------------------------------------
-@render-utilities-in
-----------------------------------------
-The master loop that sets the building
-blocks of utilities from the values
-in individual rule settings and loops
-through all possible variants
-----------------------------------------
-*/
-/* stylelint-enable */
-/*  notifications.scss
-    ---
-    Adds a notification at the top of each USWDS
-    compile. Use this file for important notifications
-    and updates to the design system.
-
-    This file should started fresh at each
-    major version.
-
-*/
-/* prettier-ignore */
-/* prettier-ignore */
-/* stylelint-disable */
-@font-face {
-  font-family: "Roboto Mono Web";
-  font-style: normal;
-  font-weight: 300;
-  font-display: fallback;
-  src: url("/fonts/roboto-mono/roboto-mono-v5-latin-300.woff2") format("woff2");
+/* ---------- form block card (e.g. BLRJ contact, inside a gray split section) ---------- */
+.form {
+  padding: var(--space-l);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-m);
+  background: var(--white);
+  box-shadow: var(--shadow-s);
 }
-@font-face {
-  font-family: "Roboto Mono Web";
-  font-style: normal;
-  font-weight: 400;
-  font-display: fallback;
-  src: url("/fonts/roboto-mono/roboto-mono-v5-latin-regular.woff2") format("woff2");
+
+.form .form-title { margin-top: 0; }
+
+.form .form-unavailable { margin: 0; }
+
+@media (width >= 600px) {
+  .form { padding: var(--space-xl); }
 }
-@font-face {
-  font-family: "Roboto Mono Web";
-  font-style: normal;
+
+/* ---------- form body (shared with locator-search via createForm) ---------- */
+.form-body {
+  container-type: inline-size;
+  font-size: var(--body-font-size-m);
+}
+
+.form-body[hidden] { display: none; }
+
+.form-required-note {
+  margin: 0 0 var(--space-m);
+  font-size: var(--body-font-size-xs);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-m) var(--space-l);
+}
+
+.form-grid > * {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+
+@container (width >= 360px) {
+  .form-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .form-grid > .form-half { grid-column: auto; }
+}
+
+.form-field { margin: 0; }
+
+.form-field > h3 {
+  margin: var(--space-s) 0 0;
+  font-size: var(--heading-font-size-s);
+}
+
+/* labels, hints, required marker */
+.form-label {
+  display: block;
+  margin-bottom: var(--space-xs);
+  color: var(--navy-deep);
+  font-size: var(--body-font-size-s);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.form-required {
+  color: var(--error-color);
   font-weight: 700;
-  font-display: fallback;
-  src: url("/fonts/roboto-mono/roboto-mono-v5-latin-700.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Roboto Mono Web";
-  font-style: italic;
-  font-weight: 300;
-  font-display: fallback;
-  src: url("/fonts/roboto-mono/roboto-mono-v5-latin-300italic.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Roboto Mono Web";
-  font-style: italic;
-  font-weight: 400;
-  font-display: fallback;
-  src: url("/fonts/roboto-mono/roboto-mono-v5-latin-italic.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Roboto Mono Web";
-  font-style: italic;
-  font-weight: 700;
-  font-display: fallback;
-  src: url("/fonts/roboto-mono/roboto-mono-v5-latin-700italic.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Source Sans Pro Web";
-  font-style: normal;
-  font-weight: 300;
-  font-display: fallback;
-  src: url("/fonts/source-sans-pro/sourcesanspro-light-webfont.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Source Sans Pro Web";
-  font-style: normal;
-  font-weight: 400;
-  font-display: fallback;
-  src: url("/fonts/source-sans-pro/sourcesanspro-regular-webfont.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Source Sans Pro Web";
-  font-style: normal;
-  font-weight: 700;
-  font-display: fallback;
-  src: url("/fonts/source-sans-pro/sourcesanspro-bold-webfont.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Source Sans Pro Web";
-  font-style: italic;
-  font-weight: 300;
-  font-display: fallback;
-  src: url("/fonts/source-sans-pro/sourcesanspro-lightitalic-webfont.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Source Sans Pro Web";
-  font-style: italic;
-  font-weight: 400;
-  font-display: fallback;
-  src: url("/fonts/source-sans-pro/sourcesanspro-italic-webfont.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Source Sans Pro Web";
-  font-style: italic;
-  font-weight: 700;
-  font-display: fallback;
-  src: url("/fonts/source-sans-pro/sourcesanspro-bolditalic-webfont.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Merriweather Web";
-  font-style: normal;
-  font-weight: 300;
-  font-display: fallback;
-  src: url("/fonts/merriweather/Latin-Merriweather-Light.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Merriweather Web";
-  font-style: normal;
-  font-weight: 400;
-  font-display: fallback;
-  src: url("/fonts/merriweather/Latin-Merriweather-Regular.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Merriweather Web";
-  font-style: normal;
-  font-weight: 700;
-  font-display: fallback;
-  src: url("/fonts/merriweather/Latin-Merriweather-Bold.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Merriweather Web";
-  font-style: italic;
-  font-weight: 300;
-  font-display: fallback;
-  src: url("/fonts/merriweather/Latin-Merriweather-LightItalic.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Merriweather Web";
-  font-style: italic;
-  font-weight: 400;
-  font-display: fallback;
-  src: url("/fonts/merriweather/Latin-Merriweather-Italic.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Merriweather Web";
-  font-style: italic;
-  font-weight: 700;
-  font-display: fallback;
-  src: url("/fonts/merriweather/Latin-Merriweather-BoldItalic.woff2") format("woff2");
-}
-/* stylelint-enable */
-.usa-form {
-  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.3;
-}
-@media all and (min-width: 30em) {
-  .usa-form {
-    max-width: 20rem;
-  }
-}
-.usa-form abbr[title=required] {
-  text-decoration: none;
-}
-.usa-form :where(.usa-input, .usa-textarea, .usa-select, .usa-range) {
-  max-width: none;
-}
-.usa-form .usa-button {
-  margin-top: 0.5rem;
-}
-@media all and (min-width: 30em) {
-  .usa-form .usa-button {
-    margin-top: 1.5rem;
-  }
-}
-.usa-form a:where(:not(.usa-button)) {
-  color: #005ea2;
-  text-decoration: underline;
-}
-.usa-form a:where(:not(.usa-button)):visited {
-  color: #54278f;
-}
-.usa-form a:where(:not(.usa-button)):hover {
-  color: #1a4480;
-}
-.usa-form a:where(:not(.usa-button)):active {
-  color: #162e51;
-}
-.usa-form a:where(:not(.usa-button)):focus {
-  outline: 0.25rem solid #2491ff;
-  outline-offset: 0rem;
 }
 
-@media all and (min-width: 30em) {
-  .usa-form--large {
-    max-width: 30rem;
-  }
+.form-hint,
+.form-legend-hint {
+  margin: 0 0 var(--space-xs);
+  color: var(--text-color);
+  font-size: var(--body-font-size-xs);
+  line-height: 1.4;
 }
 
-.usa-show-password {
-  color: #005ea2;
-  text-decoration: underline;
+.form-valid-icon {
+  display: none;
+  margin-left: var(--space-xs);
+  color: var(--success-color);
 }
-.usa-show-password:visited {
-  color: #54278f;
+
+.form-field.is-valid .form-valid-icon { display: inline-block; }
+
+/* controls */
+.form-control {
+  display: block;
+  width: 100%;
+  min-height: var(--touch-target);
+  padding: 8px 12px;
+  border: 1px solid var(--control-border);
+  border-radius: var(--radius-s);
+  background-color: var(--white);
+  color: var(--text-color);
+  font-size: var(--body-font-size-m);
+  line-height: 1.4;
 }
-.usa-show-password:hover {
-  color: #1a4480;
+
+.form-control::placeholder {
+  color: color-mix(in srgb, var(--text) 75%, var(--white));
+  opacity: 1;
 }
-.usa-show-password:active {
-  color: #162e51;
+
+textarea.form-control {
+  min-height: 140px;
+  resize: vertical;
 }
-.usa-show-password:focus {
-  outline: 0.25rem solid #2491ff;
-  outline-offset: 0rem;
+
+.form-control[readonly] {
+  border-style: dashed;
+  background-color: var(--gray-surface);
+  cursor: default;
 }
-.usa-show-password {
-  background-color: transparent;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  font-weight: normal;
-  justify-content: normal;
-  text-align: left;
+
+.form-control[aria-invalid="true"],
+.line-items-control[aria-invalid="true"] {
+  border: 2px solid var(--error-color);
+  padding: 7px 11px;
+}
+
+/* invalid fields: text + icon + bar, never colour alone */
+.form-field.has-error {
+  padding-left: var(--space-m);
+  border-left: 4px solid var(--error-color);
+}
+
+.form-error {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-xs);
+  margin: 0 0 var(--space-xs);
+  color: var(--error-color);
+  font-size: var(--body-font-size-xs);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.form-error[hidden] { display: none; }
+
+.form-error .icon { margin-top: 1px; }
+
+/* fieldsets */
+.form-fieldset,
+.radio-wrapper {
+  min-width: 0;
   margin: 0;
   padding: 0;
-  width: auto;
+  border: 0;
 }
-.usa-show-password:hover, .usa-show-password.usa-button--hover, .usa-show-password:disabled:hover, .usa-show-password[aria-disabled=true]:hover, .usa-show-password:disabled.usa-button--hover, .usa-show-password[aria-disabled=true].usa-button--hover, .usa-show-password:active, .usa-show-password.usa-button--active, .usa-show-password:disabled:active, .usa-show-password[aria-disabled=true]:active, .usa-show-password:disabled.usa-button--active, .usa-show-password[aria-disabled=true].usa-button--active, .usa-show-password:disabled:focus, .usa-show-password[aria-disabled=true]:focus, .usa-show-password:disabled.usa-focus, .usa-show-password[aria-disabled=true].usa-focus, .usa-show-password:disabled, .usa-show-password[aria-disabled=true], .usa-show-password.usa-button--disabled {
-  background-color: transparent;
-  box-shadow: none;
-  text-decoration: underline;
+
+.form-legend {
+  display: flex;
+  float: left;
+  align-items: center;
+  gap: var(--space-s);
+  width: 100%;
+  margin: 0 0 var(--space-xs);
+  padding: 0;
+  color: var(--heading-color);
+  font-size: var(--heading-font-size-m);
+  font-weight: 700;
+  line-height: 1.25;
 }
-.usa-show-password.usa-button--hover {
-  color: #1a4480;
+
+.form-legend .icon { color: var(--blue-dark); }
+
+.form-legend ~ * { clear: both; }
+
+.form-legend-hint { margin-bottom: var(--space-m); }
+
+.form-fieldset > .form-grid { padding-top: var(--space-s); }
+
+.radio-wrapper > legend {
+  float: left;
+  width: 100%;
+  padding: 0;
 }
-.usa-show-password.usa-button--active {
-  color: #162e51;
+
+.radio-wrapper > legend ~ * { clear: both; }
+
+/* checkbox / radio */
+.form-check {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-s);
 }
-.usa-show-password:disabled, .usa-show-password[aria-disabled=true], .usa-show-password:disabled:hover, .usa-show-password[aria-disabled=true]:hover, .usa-show-password[aria-disabled=true]:focus {
-  color: #757575;
-}
-@media (forced-colors: active) {
-  .usa-show-password:disabled, .usa-show-password[aria-disabled=true], .usa-show-password:disabled:hover, .usa-show-password[aria-disabled=true]:hover, .usa-show-password[aria-disabled=true]:focus {
-    color: GrayText;
-  }
-}
-.usa-show-password {
+
+.form-check-input {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  margin: 2px 0 0;
+  accent-color: var(--navy);
   cursor: pointer;
 }
 
-.usa-form__note,
-.usa-show-password {
-  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-  font-size: 0.93rem;
-  line-height: 1.3;
-  float: right;
-  margin: 0.25rem 0 1rem;
+.form-check label { cursor: pointer; }
+
+.checkbox-wrapper .form-check {
+  padding: var(--space-m);
+  border-radius: var(--radius-s);
+  background-color: var(--gray-surface);
 }
+
+.checkbox-wrapper .form-label {
+  margin: 0;
+  color: var(--text-color);
+  font-size: var(--body-font-size-xs);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.checkbox-wrapper.has-error .form-check { outline: 2px solid var(--error-color); }
+
+.form-radios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s) var(--space-l);
+}
+
+.form-radios .form-check {
+  align-items: center;
+  min-height: var(--touch-target);
+}
+
+.form-radios .form-check-input { margin: 0; }
+
+/* plaintext: alert + OR divider */
+.form-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-s);
+  padding: var(--space-m);
+  border-left: 4px solid var(--accent-orange);
+  border-radius: var(--radius-s);
+  background-color: var(--gray-surface);
+  color: var(--navy-deep);
+  font-size: var(--body-font-size-s);
+}
+
+.form-alert .icon {
+  margin-top: 2px;
+  font-size: 1.1em;
+}
+
+.form-alert p { margin: 0; }
+
+.form-divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-m);
+  color: var(--text-color);
+  font-size: var(--body-font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.form-divider::before,
+.form-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: var(--border-color);
+}
+
+/* file upload */
+.form-dropzone {
+  padding: var(--space-l) var(--space-m);
+  border: 2px dashed var(--control-border);
+  border-radius: var(--radius-m);
+  background-color: var(--white);
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+
+.form-dropzone:hover { background-color: var(--gray-surface); }
+
+.form-dropzone.is-dragover {
+  border-style: solid;
+  border-color: var(--blue-dark);
+  background-color: var(--theme-tint);
+}
+
+.file-wrapper.has-error .form-dropzone { border-color: var(--error-color); }
+
+.form-dropzone-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--space-s);
+  border-radius: 50%;
+  background-color: var(--blue-tint);
+  color: var(--blue-dark);
+  font-size: 24px;
+}
+
+.form-dropzone-prompt {
+  margin: 0 0 var(--space-xs);
+  color: var(--navy-deep);
+  font-size: var(--body-font-size-l);
+  font-weight: 600;
+}
+
+.form-browse {
+  min-height: 32px;
+  padding: 2px 4px;
+  border: 0;
+  background: none;
+  color: var(--link-color);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  cursor: pointer;
+}
+
+.form-browse:hover {
+  color: var(--link-hover-color);
+  text-decoration-thickness: 2px;
+}
+
+.form-dropzone .form-hint { margin: 0; }
+
+.form-file-status {
+  margin: var(--space-s) 0 0;
+  font-size: var(--body-font-size-xs);
+}
+
+.form-file-status:empty { display: none; }
+
+.form-file-status.has-error {
+  color: var(--error-color);
+  font-weight: 700;
+}
+
+.form-file-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+  margin: var(--space-s) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.form-file-list[hidden] { display: none; }
+
+.form-file-list li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-s);
+  max-width: 100%;
+  padding-left: var(--space-s);
+  border-radius: var(--radius-s);
+  background-color: var(--gray-surface);
+  font-size: var(--body-font-size-xs);
+}
+
+.form-file-list li > .icon { color: var(--blue-dark); }
+
+.form-file-name {
+  overflow-wrap: anywhere;
+  color: var(--navy-deep);
+  font-weight: 700;
+}
+
+.form-file-size { white-space: nowrap; }
+
+.form-file-remove,
+.form-captcha-refresh {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  width: var(--touch-target);
+  height: var(--touch-target);
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-s);
+  background: none;
+  color: var(--navy-deep);
+  cursor: pointer;
+}
+
+.form-file-remove:hover { background-color: var(--border-color); }
+
+/* demo CAPTCHA */
+.form-captcha {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-m);
+  padding: var(--space-m);
+  border-radius: var(--radius-m);
+  background-color: var(--gray-surface);
+}
+
+.form-captcha-box {
+  padding: var(--space-s) var(--space-m);
+  border-radius: var(--radius-s);
+  background-color: var(--white);
+  box-shadow: var(--shadow-s);
+}
+
+.form-captcha-code {
+  color: var(--navy);
+  font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+  font-size: var(--heading-font-size-l);
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-decoration: line-through var(--blue) 2px;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.form-captcha-refresh {
+  border: 1px solid var(--control-border);
+  border-radius: 50%;
+  background-color: var(--white);
+  font-size: 20px;
+}
+
+.form-captcha-refresh:hover { background-color: var(--blue-tint); }
+
+.form-captcha-entry { flex: 1 1 180px; }
+
+.form-captcha-entry .form-control {
+  max-width: 220px;
+  font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.captcha-wrapper > .form-error { margin-top: var(--space-s); }
+
+.captcha-wrapper > .form-hint { margin-top: var(--space-s); }
+
+/* actions */
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-m);
+  margin-top: var(--space-l);
+}
+
+.form-body .form-full { width: 100%; }
+
+.form-link-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  min-height: var(--touch-target);
+  padding: var(--space-xs) 0;
+  border: 0;
+  background: none;
+  color: var(--link-color);
+  font-size: var(--body-font-size-xs);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  cursor: pointer;
+}
+
+.form-link-button:hover { color: var(--link-hover-color); }
+
+.form-status {
+  margin: 0;
+  font-size: var(--body-font-size-xs);
+}
+
+.form-status:empty { display: none; }
+
+button.button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* error summary + submission states */
+.form-error-summary,
+.form-submit-error {
+  margin-bottom: var(--space-l);
+  padding: var(--space-m) var(--space-l);
+  border: 3px solid var(--error-color);
+  border-radius: var(--radius-s);
+  background-color: var(--white);
+}
+
+.form-error-summary[hidden] { display: none; }
+
+.form-error-summary h3 {
+  display: flex;
+  align-items: center;
+  gap: var(--space-s);
+  margin: 0 0 var(--space-s);
+  color: var(--error-color);
+  font-size: var(--heading-font-size-s);
+}
+
+.form-error-summary ul {
+  margin: 0;
+  padding-left: var(--space-l);
+}
+
+.form-error-summary li + li { margin-top: var(--space-xs); }
+
+.form-error-summary a:any-link {
+  color: var(--error-color);
+  font-weight: 600;
+}
+
+.form-submit-error {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-s);
+  color: var(--error-color);
+  font-weight: 600;
+}
+
+.form-success {
+  padding: var(--space-l);
+  border: 1px solid var(--border-color);
+  border-left: 6px solid var(--success-color);
+  border-radius: var(--radius-m);
+  background-color: var(--white);
+}
+
+.form-success h3 {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-s);
+  margin: 0 0 var(--space-s);
+  color: var(--success-color);
+  font-size: var(--heading-font-size-m);
+}
+
+.form-success h3 .icon { margin-top: 2px; }
+
+.form-success p { margin: 0 0 var(--space-m); }
+
+/* ---------- submission summary panel ---------- */
+.form-summary {
+  margin-top: var(--space-l);
+  padding: var(--space-l);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-m);
+  background-color: var(--white);
+  box-shadow: var(--shadow-m);
+}
+
+.form-summary-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-s);
+}
+
+.form-summary-head h2 {
+  margin: 0;
+  font-size: var(--heading-font-size-m);
+}
+
+.form-summary-status {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: var(--space-xs);
+  max-width: 50%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.form-summary-status.is-ready {
+  background-color: color-mix(in srgb, var(--success-color) 14%, var(--white));
+  color: var(--success-color);
+}
+
+.form-summary dl { margin: var(--space-m) 0; }
+
+.form-summary-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-m);
+  padding: var(--space-s) 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.form-summary-row dt { font-size: var(--body-font-size-xs); }
+
+.form-summary-row dd {
+  margin: 0;
+  color: var(--navy-deep);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.form-summary-total {
+  margin-top: var(--space-s);
+  padding: var(--space-m);
+  border: 0;
+  border-radius: var(--radius-s);
+  background-color: var(--gray-surface);
+}
+
+.form-summary-total dt {
+  color: var(--navy-deep);
+  font-weight: 700;
+}
+
+.form-summary-total dd { font-size: var(--heading-font-size-m); }
+
+.form-summary-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.form-summary-actions .button { width: 100%; }
+
+/* ---------- release request layout: main column + sticky summary aside ---------- */
+main .section.form-layout {
+  margin: 0;
+  padding: var(--space-xl) 0;
+  background-color: var(--surface-color);
+}
+
+main .section.form-layout > .form-layout-main,
+main .section.form-layout > .form-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+  max-width: var(--content-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+main .section.form-layout > .form-sidebar { margin-top: var(--space-l); }
+
+main .section.form-layout .form {
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+}
+
+main .section.form-layout .form-body > .form-grid { gap: var(--space-l); }
+
+main .section.form-layout .form-fieldset {
+  padding: var(--space-l) var(--space-m);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-m);
+  background-color: var(--white);
+  box-shadow: var(--shadow-s);
+}
+
+main .section.form-layout .form-sidebar .form-summary { margin-top: 0; }
+
+main .section.form-layout .form-sidebar > div { margin: 0; }
+
+main .section.form-layout .form-sidebar > .default-content-wrapper {
+  padding: var(--space-m) var(--space-l);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-m);
+  background-color: var(--white);
+  font-size: var(--body-font-size-xs);
+}
+
+main .section.form-layout .form-sidebar > .default-content-wrapper > p:first-child {
+  margin-top: 0;
+  color: var(--navy-deep);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+main .section.form-layout .form-sidebar > .default-content-wrapper ul {
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+}
+
+main .section.form-layout .form-sidebar > .default-content-wrapper li {
+  position: relative;
+  padding-left: 26px;
+}
+
+main .section.form-layout .form-sidebar > .default-content-wrapper li + li { margin-top: var(--space-xs); }
+
+main .section.form-layout .form-sidebar > .default-content-wrapper li::before {
+  content: '';
+  position: absolute;
+  top: 0.2em;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  background-color: var(--success-color);
+  mask: url('../../icons/check-circle.svg') center / contain no-repeat;
+}
+
+main .section.form-layout.is-submitted .line-items-wrapper { display: none; }
+
+@media (width >= 600px) {
+  main .section.form-layout .form-fieldset { padding: var(--space-l); }
+}
+
+@media (width >= 900px) {
+  main .section.form-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 340px);
+    gap: var(--space-l);
+    align-items: start;
+    padding-inline: max(var(--gutter), calc((100% - var(--content-width)) / 2 + var(--gutter)));
+  }
+
+  main .section.form-layout > .form-layout-main,
+  main .section.form-layout > .form-sidebar {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  main .section.form-layout > .form-sidebar.is-sticky {
+    position: sticky;
+    top: var(--space-l);
+  }
+}
+
+.form-error-summary,
+.form-success,
+.form-submit-error { scroll-margin-top: calc(var(--header-height, 0px) + var(--space-m)); }

@@ -7,3 +7,12 @@ helix-importer-ui
 .DS_Store
 *.bak
 .idea
+
+# import run artifacts and local workspace (content lives in Document Authoring)
+tools/importer/*.bundle.js
+tools/importer/reports/
+tools/importer/urls-*.txt
+content/
+migration-work/
+.migration/
+.agents/settings.json

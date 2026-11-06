@@ -1,58 +1,48 @@
-.tabs .tabs-list {
+/* tabs: WAI-ARIA tabs with an underline indicator (also used by buildTabs consumers) */
+
+.tabs-component .tabs-list {
   display: flex;
-  gap: 0.5ch;
-  max-width: 100%;
-  font-size: var(--body-font-size-xs);
+  gap: var(--space-s);
   overflow-x: auto;
+  border-bottom: 1px solid var(--gray-border);
+  scrollbar-width: thin;
 }
 
-@media (width >= 600px) {
-  .tabs .tabs-list {
-    font-size: var(--body-font-size-s);
-  }
+.tabs-component .tabs-tab {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: var(--space-xs);
+  min-height: var(--touch-target);
+  margin-bottom: -1px;
+  padding: var(--space-s) var(--space-m);
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: none;
+  color: var(--text-color);
+  font-size: var(--body-font-size-s);
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
 }
 
-@media (width >= 900px) {
-  .tabs .tabs-list {
-    font-size: var(--body-font-size-m);
-  }
+.tabs-component .tabs-tab:hover {
+  border-bottom-color: var(--gray-border);
+  color: var(--navy-deep);
 }
 
-.tabs .tabs-list button {
-  flex: 0 0 max-content;
-  margin: 0;
-  border: 1px solid #dadada;
-  border-radius: 0;
-  padding: 0.5em;
-  background-color: var(--light-color);
-  color: initial;
-  font-weight: bold;
-  line-height: unset;
-  text-align: initial;
-  text-overflow: unset;
-  overflow: unset;
-  white-space: unset;
-  transition: background-color 0.2s;
+.tabs-component .tabs-tab[aria-selected="true"] {
+  border-bottom-color: var(--navy);
+  color: var(--navy);
+  font-weight: 700;
 }
 
-.tabs .tabs-list button p {
-  margin: 0;
-}
+.tabs-component .tabs-tab:focus-visible { outline-offset: -3px; }
 
+.tabs-component .tabs-panel { padding-top: var(--space-l); }
 
-.tabs .tabs-list button[aria-selected='true'] {
-  border-bottom: 1px solid var(--background-color);
-  background-color: var(--background-color);
-  cursor: initial;
-}
+.tabs-component .tabs-panel:focus-visible { outline-offset: 4px; }
 
-.tabs .tabs-panel {
-  margin-top: -1px;
-  padding: 24px;
-  border: 1px solid #dadada;
-  overflow: auto;
-}
+.tabs-component .tabs-panel[hidden] { display: none; }
 
-.tabs .tabs-panel[aria-hidden='true'] {
-  display: none;
-}
+.tabs-component .tabs-panel > :first-child { margin-top: 0; }

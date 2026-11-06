@@ -2,8 +2,6 @@ import {
   buildBlock,
   loadHeader,
   loadFooter,
-  decorateButtons,
-  decorateIcons,
   decorateBlocks,
   decorateTemplateAndTheme,
   getMetadata,
@@ -16,6 +14,107 @@ import {
   toClassName,
   toCamelCase,
 } from './aem.js';
+import { getSite, localizeLinks } from './sites.js';
+
+/**
+ * Buttons follow the standard EDS authoring convention:
+ * a standalone link that is **bold** = primary button, *italic* = secondary (outline) button,
+ * ***bold italic*** = accent (theme CTA colour) button. Plain standalone links stay links.
+ * @param {Element} element container element
+ */
+export function decorateButtons(element) {
+  element.querySelectorAll('a').forEach((a) => {
+    a.title = a.title || a.textContent;
+    if (a.href === a.textContent || a.querySelector('img') || a.closest('.button-container')) return;
+    const up = a.parentElement;
+    const twoup = up?.parentElement;
+    const only = (el) => el && el.childNodes.length === 1;
+    const block = (el) => only(el) && ['P', 'DIV', 'LI'].includes(el.tagName);
+    const isStrong = (el) => el?.tagName === 'STRONG' || el?.tagName === 'B';
+    const isEm = (el) => el?.tagName === 'EM' || el?.tagName === 'I';
+    const nested = (isStrong(up) && isEm(twoup)) || (isEm(up) && isStrong(twoup));
+    if (nested && only(up) && only(twoup) && block(twoup.parentElement)) {
+      a.className = 'button accent';
+      twoup.parentElement.classList.add('button-container');
+    } else if (isStrong(up) && only(up) && block(twoup)) {
+      a.className = 'button primary';
+      twoup.classList.add('button-container');
+    } else if (isEm(up) && only(up) && block(twoup)) {
+      a.className = 'button secondary';
+      twoup.classList.add('button-container');
+    }
+  });
+}
+
+/**
+ * Consecutive buttons sit side by side in a .button-group. Runs after blocks are identified
+ * (decorateBlocks treats section-level divs as blocks, so grouping must come later).
+ * @param {Element} element container element
+ */
+export function groupButtons(element) {
+  element.querySelectorAll('.button-container + .button-container').forEach((second) => {
+    const first = second.previousElementSibling;
+    if (first.parentElement.classList.contains('button-group')) return;
+    const group = document.createElement('div');
+    group.className = 'button-group';
+    first.before(group);
+    let n = first;
+    while (n && n.classList?.contains('button-container')) {
+      const next = n.nextElementSibling;
+      group.append(n);
+      n = next;
+    }
+  });
+}
+
+/**
+ * Icons (:name: in documents) render as CSS masks so they inherit the text colour.
+ * Icons are decorative; meaning is always carried by adjacent text.
+ * @param {Element} element container element
+ */
+export function decorateIcons(element) {
+  // :icon-name: notation the delivery pipeline has not converted yet (local preview)
+  const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, {
+    acceptNode: (n) => (/:[a-z][a-z0-9-]*:/.test(n.textContent) && !n.parentElement.closest('pre, code, script')
+      ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT),
+  });
+  const textNodes = [];
+  while (walker.nextNode()) textNodes.push(walker.currentNode);
+  textNodes.forEach((node) => {
+    const frag = document.createDocumentFragment();
+    node.textContent.split(/(:[a-z][a-z0-9-]*:)/).forEach((part) => {
+      const m = part.match(/^:([a-z][a-z0-9-]*):$/);
+      if (m) {
+        const span = document.createElement('span');
+        span.className = `icon icon-${m[1]}`;
+        frag.append(span);
+      } else if (part) frag.append(part);
+    });
+    node.replaceWith(frag);
+  });
+  element.querySelectorAll('span.icon').forEach((span) => {
+    if (span.dataset.iconName) return;
+    const name = [...span.classList].find((c) => c.startsWith('icon-'))?.substring(5);
+    if (!name) return;
+    span.dataset.iconName = name;
+    span.style.setProperty('--icon', `url('${window.hlx.codeBasePath}/icons/${name}.svg')`);
+    span.setAttribute('aria-hidden', 'true');
+  });
+}
+
+/**
+ * Creates an icon element for use in block decoration.
+ * @param {string} name icon file name in /icons
+ * @returns {HTMLSpanElement}
+ */
+export function createIcon(name) {
+  const span = document.createElement('span');
+  span.className = `icon icon-${name}`;
+  span.dataset.iconName = name;
+  span.style.setProperty('--icon', `url('${window.hlx.codeBasePath}/icons/${name}.svg')`);
+  span.setAttribute('aria-hidden', 'true');
+  return span;
+}
 
 /**
  * Auto-generates a side nav from page headings and prepends it as the first section.
@@ -88,7 +187,6 @@ function buildSideNavLeft(main) {
     headings.forEach((h) => observer.observe(h));
   });
 }
-
 
 /**
  * Sa11y Accessibility Checker - Sidekick Toggle Plugin
@@ -236,7 +334,6 @@ function initSa11ySidekick() {
 
 initSa11ySidekick();
 
-
 /**
  * Builds hero block and prepends to main in a new section.
  * @param {Element} main The container element
@@ -347,21 +444,55 @@ function decorateSections(main) {
  */
 // eslint-disable-next-line import/prefer-default-export
 export function decorateMain(main) {
-  // hopefully forward compatible button decoration
+  localizeLinks(main);
   decorateButtons(main);
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+  groupButtons(main);
 }
 
 /**
  * Loads everything needed to get to LCP.
  * @param {Element} doc The container element
  */
+/**
+ * Multi-site setup: theme class (page metadata "theme", else the site the folder belongs to),
+ * skip link and main landmark target.
+ * @param {Document} doc
+ */
+function decorateSite(doc) {
+  const site = getSite();
+  const theme = toClassName(getMetadata('theme')) || site.theme;
+  doc.body.classList.add(`theme-${theme}`);
+  doc.body.dataset.site = site.id;
+  // commerce pages: start the catalog request while blocks load (mock provider only)
+  const provider = getMetadata('commerce-provider') || 'mock';
+  if (provider === 'mock' && doc.querySelector('main .product-detail, main .product-grid')) {
+    const preload = doc.createElement('link');
+    preload.rel = 'preload';
+    preload.as = 'fetch';
+    preload.crossOrigin = 'anonymous';
+    preload.href = `${window.hlx.codeBasePath}/scripts/commerce/mock-catalog.json`;
+    doc.head.append(preload);
+  }
+  const main = doc.querySelector('main');
+  if (main) {
+    main.id = main.id || 'main';
+    main.tabIndex = -1;
+    const skip = doc.createElement('a');
+    skip.className = 'skip-link';
+    skip.href = `#${main.id}`;
+    skip.textContent = 'Skip to main content';
+    doc.body.prepend(skip);
+  }
+}
+
 async function loadEager(doc) {
   doc.documentElement.lang = 'en';
   decorateTemplateAndTheme();
+  decorateSite(doc);
 
   // Load template CSS early (before body is revealed) to avoid layout shift
   const templateName = toClassName(getMetadata('template'));
@@ -378,7 +509,10 @@ async function loadEager(doc) {
   if (main) {
     decorateMain(main);
     doc.body.classList.add('appear');
-    await loadSection(main.querySelector('.section'), waitForFirstImage);
+    // the LCP image may sit in the second section when the page opens with an alert bar
+    const [first, second] = main.querySelectorAll('.section');
+    await loadSection(first, waitForFirstImage);
+    if (second && !first.querySelector('img')) await loadSection(second, waitForFirstImage);
   }
 
   sampleRUM.enhance();

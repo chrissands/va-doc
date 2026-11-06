@@ -23,3 +23,17 @@ blocks/hero/hero.css
 blocks/banner/banner.css
 blocks/footer/footer.css
 blocks/summary-box/summary-box.css
+# Agency design system (multi-site demo): these blocks were rewritten with lean,
+# token-based CSS and must not be regenerated from USWDS Sass.
+blocks/accordion/accordion.css
+blocks/breadcrumb/breadcrumb.css
+blocks/cards/cards.css
+blocks/form/form.css
+blocks/table/table.css
+blocks/accordion/README.md
+blocks/alert/README.md
+blocks/breadcrumb/README.md
+blocks/cards/README.md
+blocks/form/README.md
+blocks/hero/README.md
+blocks/table/README.md

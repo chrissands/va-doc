@@ -1,113 +1,119 @@
-/**
- * Alert block - USWDS Alert component
- * Transforms simple authored content into USWDS alert structure
- *
- * @see https://designsystem.digital.gov/components/alert/
- */
+import { createIcon } from '../../scripts/scripts.js';
+
+const STORAGE_PREFIX = 'alert-dismissed:';
 
 /**
- * Decorates an alert block
- * @param {HTMLElement} block - The alert block element
+ * Small stable hash so a dismissal is remembered per alert text (a new alert shows again).
+ * @param {string} str
+ * @returns {string}
+ */
+function hash(str) {
+  let h = 0;
+  for (let i = 0; i < str.length; i += 1) h = (Math.imul(31, h) + str.charCodeAt(i)) % 2147483647;
+  return Math.abs(h).toString(36);
+}
+
+/**
+ * Bolds the "Label:" part of a paragraph (lead) or the value after it (detail lines),
+ * matching the design when authors did not format it.
+ * @param {HTMLParagraphElement} p
+ * @param {boolean} lead true to bold the label, false to bold the value
+ */
+function emphasise(p, lead) {
+  if (p.querySelector('strong, a') || p.childNodes.length !== 1) return;
+  const text = p.textContent;
+  const i = text.indexOf(': ');
+  if (i < 1 || i > 80) return;
+  const strong = document.createElement('strong');
+  if (lead) {
+    strong.textContent = text.slice(0, i + 1);
+    p.replaceChildren(strong, text.slice(i + 1));
+  } else {
+    strong.textContent = text.slice(i + 2);
+    p.replaceChildren(text.slice(0, i + 2), strong);
+  }
+}
+
+/**
+ * Hides a dismissed alert (its whole section when the alert is the only content).
+ * @param {Element} block
+ */
+function hide(block) {
+  const section = block.closest('.section');
+  const wrapper = block.parentElement;
+  const onlyChild = section && section.children.length === 1 && wrapper.parentElement === section;
+  if (onlyChild) section.hidden = true;
+  else wrapper.hidden = true;
+}
+
+/**
+ * Alert: a full-width notice bar (variants: warning, info).
+ * One cell: lead paragraph (bold lead-in), optional extra lines, optional link.
+ * @param {Element} block
  */
 export default function decorate(block) {
-  // Get the content wrapper (EDS nested structure)
-  const contentWrapper = block.querySelector(':scope > div > div');
-  if (!contentWrapper) return;
+  const info = block.classList.contains('info');
+  if (!info) block.classList.add('warning');
+  const cell = block.querySelector(':scope > div > div') || block;
 
-  // Extract all content from the block
-  const children = Array.from(contentWrapper.children);
+  const authoredIcon = cell.querySelector('span.icon');
+  const paragraphs = [...cell.querySelectorAll(':scope > p')].filter((p) => p.textContent.trim());
+  const isLinkOnly = (p) => p.querySelector('a') && p.textContent.trim() === p.querySelector('a').textContent.trim();
+  const linkParas = paragraphs.filter(isLinkOnly);
+  const textParas = paragraphs.filter((p) => !linkParas.includes(p));
+  if (authoredIcon) authoredIcon.closest('p')?.remove();
 
-  // Determine alert type from block classes
-  // Default to 'info' if no type specified
-  let alertType = 'info';
-  const validTypes = ['info', 'warning', 'success', 'error', 'emergency'];
-  Array.from(block.classList).forEach((className) => {
-    if (validTypes.includes(className)) {
-      alertType = className;
-    }
-  });
+  const lead = textParas[0];
+  if (lead) emphasise(lead, true);
+  textParas.slice(1).forEach((p) => emphasise(p, false));
 
-  // Check for variant classes
-  const isSlim = block.classList.contains('slim');
-  const isNoIcon = block.classList.contains('no-icon');
+  const labelText = (lead?.querySelector('strong')?.textContent || '').replace(/[:\s]+$/, '');
+  const aside = document.createElement('aside');
+  aside.className = 'alert-inner';
+  const fallbackLabel = info ? 'Notice' : 'Alert';
+  aside.setAttribute('aria-label', labelText.length > 2 && labelText.length < 40 ? labelText : fallbackLabel);
 
-  // Create USWDS alert structure
-  const alert = document.createElement('div');
-  alert.className = `usa-alert usa-alert--${alertType}`;
+  let iconName = authoredIcon?.dataset.iconName || 'warning';
+  if (info && !authoredIcon) iconName = /(§|code of virginia|statut)/i.test(cell.textContent) ? 'gavel' : 'info';
+  const icon = createIcon(iconName);
+  icon.classList.add('alert-icon');
 
-  if (isSlim) {
-    alert.classList.add('usa-alert--slim');
-  }
-  if (isNoIcon) {
-    alert.classList.add('usa-alert--no-icon');
-  }
-
-  // Add appropriate ARIA role based on alert type for accessibility
-  // Error and emergency alerts need immediate attention
-  if (alertType === 'error' || alertType === 'emergency') {
-    alert.setAttribute('role', 'alert');
-  } else if (alertType === 'success') {
-    alert.setAttribute('role', 'status');
-  } else if (alertType === 'info' || alertType === 'warning') {
-    // Info and warning use role="region" with aria-labelledby
-    alert.setAttribute('role', 'region');
-    // Will add aria-labelledby if heading exists (see below)
-  }
-
-  // Create alert body
   const body = document.createElement('div');
-  body.className = 'usa-alert__body';
-
-  // Process content
-  // First heading (if any) becomes the alert heading
-  let headingFound = false;
-  let headingId = null;
-  children.forEach((child) => {
-    if (child.matches('h1, h2, h3, h4, h5, h6') && !headingFound) {
-      // First heading becomes usa-alert__heading
-      const heading = child.cloneNode(true);
-      heading.className = 'usa-alert__heading';
-
-      // Generate ID for aria-labelledby (for info and warning alerts)
-      if (alertType === 'info' || alertType === 'warning') {
-        headingId = `alert-heading-${Math.random().toString(36).substring(2, 9)}`;
-        heading.id = headingId;
-      }
-
-      body.appendChild(heading);
-      headingFound = true;
-    } else if (child.matches('p, ul, ol')) {
-      // Paragraphs and lists become usa-alert__text
-      const text = child.cloneNode(true);
-      text.classList.add('usa-alert__text');
-      body.appendChild(text);
-    } else {
-      // For any other content (divs, etc.), wrap in usa-alert__text if it has content
-      const textContent = child.textContent.trim();
-      if (textContent) {
-        const text = document.createElement('p');
-        text.className = 'usa-alert__text';
-        // Clone all children to preserve links, formatting, etc.
-        Array.from(child.childNodes).forEach((node) => {
-          text.appendChild(node.cloneNode(true));
-        });
-        body.appendChild(text);
-      }
-    }
+  body.className = 'alert-body';
+  textParas.forEach((p, i) => {
+    p.className = i ? 'alert-detail' : 'alert-lead';
+    body.append(p);
   });
 
-  // Assemble the alert
-  alert.appendChild(body);
+  const actions = document.createElement('div');
+  actions.className = 'alert-actions';
+  linkParas.forEach((p) => {
+    const a = p.querySelector('a');
+    a.className = 'alert-link';
+    a.append(createIcon('arrow-forward'));
+    actions.append(a);
+  });
 
-  // Add aria-labelledby for info and warning alerts with headings
-  if ((alertType === 'info' || alertType === 'warning') && headingId) {
-    alert.setAttribute('aria-labelledby', headingId);
+  const key = STORAGE_PREFIX + hash(body.textContent);
+  if (!info) {
+    const dismiss = document.createElement('button');
+    dismiss.type = 'button';
+    dismiss.className = 'alert-dismiss';
+    dismiss.setAttribute('aria-label', 'Dismiss alert');
+    dismiss.append(createIcon('close'));
+    dismiss.addEventListener('click', () => {
+      try { sessionStorage.setItem(key, '1'); } catch (e) { /* storage unavailable */ }
+      hide(block);
+      document.querySelector('main')?.focus({ preventScroll: true });
+    });
+    actions.append(dismiss);
   }
 
-  // Replace block content with USWDS structure
-  block.textContent = '';
-  block.appendChild(alert);
+  aside.append(icon, body);
+  if (actions.children.length) aside.append(actions);
+  block.replaceChildren(aside);
 
-  // Add usa-alert class to the block itself for any additional styling hooks
-  block.classList.add('usa-alert-block');
+  let dismissed = false;
+  try { dismissed = !info && sessionStorage.getItem(key) === '1'; } catch (e) { /* ignore */ }
+  if (dismissed) hide(block);
 }

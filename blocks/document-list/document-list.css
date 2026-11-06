@@ -1,0 +1,182 @@
+/* document-list: grouped downloads (tabs per group); default list rows, variant tiles */
+
+.document-list .document-list-items,
+.document-list .document-list-tiles {
+  display: grid;
+  gap: var(--space-s);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.document-list h3.document-list-title {
+  margin: var(--space-xs) 0 2px;
+  color: var(--navy-deep);
+  font-size: var(--heading-font-size-s);
+  font-weight: 600;
+}
+
+.document-list .document-list-desc {
+  margin: 0;
+  color: var(--text-color);
+  font-size: var(--body-font-size-xs);
+}
+
+.document-list a.button.document-list-download {
+  flex: none;
+  font-size: var(--body-font-size-xs);
+}
+
+.document-list a.button.document-list-download .icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* ---------- default: list rows ---------- */
+.document-list .document-list-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-m);
+  padding: var(--space-m);
+  border-radius: var(--radius-m);
+  background-color: var(--white);
+  box-shadow: var(--shadow-s);
+  transition: box-shadow 0.2s;
+}
+
+.document-list .document-list-item:hover { box-shadow: var(--shadow-m); }
+
+.document-list .document-list-icon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  align-self: flex-start;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-m);
+  background-color: var(--gray-surface);
+  color: var(--navy);
+}
+
+.document-list .document-list-icon .icon {
+  width: 26px;
+  height: 26px;
+}
+
+.document-list .document-list-info {
+  flex: 1 1 260px;
+  min-width: 0;
+}
+
+.document-list .document-list-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs) var(--space-s);
+  margin: 0;
+  color: var(--text-color);
+  font-size: 13px;
+}
+
+.document-list .document-list-meta .tag {
+  background-color: var(--navy);
+  color: var(--white);
+  font-size: 12px;
+}
+
+.document-list .document-list-meta .tag.document-list-badge {
+  background-color: var(--theme-tint);
+  color: var(--navy-deep);
+}
+
+.document-list .document-list-meta-item + .document-list-meta-item::before {
+  content: '•';
+  margin-right: var(--space-s);
+}
+
+@media (width < 600px) {
+  .document-list .document-list-item a.button.document-list-download { width: 100%; }
+}
+
+/* ---------- tiles: card grid ---------- */
+.document-list .document-list-tiles { gap: var(--space-m); }
+
+.document-list .document-list-tile {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-m);
+  border-radius: var(--radius-m);
+  background-color: color-mix(in srgb, var(--gray-surface) 70%, var(--white));
+  box-shadow: var(--shadow-s);
+}
+
+.document-list .document-list-tile-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-s);
+  margin-bottom: var(--space-xs);
+}
+
+.document-list .document-list-tile h3.document-list-title {
+  margin: 0;
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.document-list .document-list-tile .tag {
+  flex: none;
+  background-color: var(--gray-border);
+  color: var(--navy-deep);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.document-list .document-list-tile .tag.tag-strong {
+  background-color: var(--blue-dark);
+  color: var(--white);
+}
+
+.document-list .document-list-tile .document-list-desc { margin-bottom: var(--space-s); }
+
+.document-list .document-list-tile .document-list-meta {
+  margin: 0 0 var(--space-m);
+  padding: 0;
+  list-style: none;
+}
+
+.document-list .document-list-tile .document-list-meta li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.document-list .document-list-tile .document-list-meta .icon {
+  width: 16px;
+  height: 16px;
+  color: var(--blue-dark);
+}
+
+.document-list .document-list-tile a.button.document-list-download {
+  width: 100%;
+  margin-top: auto;
+  background-color: var(--blue-dark);
+}
+
+.document-list .document-list-tile a.button.document-list-download:hover { background-color: var(--navy); }
+
+.document-list .document-list-tile.featured {
+  background-color: var(--blue-tint);
+  color: var(--navy-deep);
+}
+
+.document-list .document-list-tile.featured a.button.document-list-download { background-color: var(--navy); }
+
+@media (width >= 600px) {
+  .document-list .document-list-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (width >= 900px) {
+  .document-list .document-list-tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
