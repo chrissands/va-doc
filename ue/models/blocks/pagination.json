@@ -1,0 +1,54 @@
+{
+  "definitions": [
+    {
+      "title": "Pagination",
+      "id": "pagination",
+      "plugins": {
+        "da": {
+          "name": "pagination",
+          "rows": 1,
+          "columns": 3
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "pagination",
+      "fields": [
+        {
+          "component": "text",
+          "name": "div:nth-child(1)>div:nth-child(1)",
+          "label": "Total Pages",
+          "valueType": "string",
+          "value": "10",
+          "description": "Total number of pages"
+        },
+        {
+          "component": "text",
+          "name": "div:nth-child(1)>div:nth-child(2)",
+          "label": "Current Page",
+          "valueType": "string",
+          "value": "1",
+          "description": "Current page number"
+        },
+        {
+          "component": "text",
+          "name": "div:nth-child(1)>div:nth-child(3)",
+          "label": "Base URL",
+          "valueType": "string",
+          "value": "",
+          "description": "Base URL for pagination links"
+        },
+        {
+          "component": "boolean",
+          "name": "classes",
+          "label": "Unbounded (no page count)",
+          "valueType": "string",
+          "value": "unbounded"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

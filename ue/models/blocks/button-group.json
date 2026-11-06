@@ -1,0 +1,38 @@
+{
+  "definitions": [
+    {
+      "title": "Button Group",
+      "id": "button-group",
+      "plugins": {
+        "da": {
+          "name": "button-group",
+          "rows": 1,
+          "columns": 0
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "button-group",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "div:nth-child(1)",
+          "label": "Buttons",
+          "valueType": "string",
+          "value": "<p><a href=\"#\">Button 1</a></p><p><a href=\"#\">Button 2</a></p>",
+          "description": "Add multiple links (with formatting for button variants)"
+        },
+        {
+          "component": "boolean",
+          "name": "classes",
+          "label": "Segmented",
+          "valueType": "string",
+          "value": "segmented"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

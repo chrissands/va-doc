@@ -1,0 +1,71 @@
+{
+  "definitions": [
+    {
+      "title": "Icon",
+      "id": "icon",
+      "plugins": {
+        "da": {
+          "name": "icon",
+          "rows": 1,
+          "columns": 0
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "icon",
+      "fields": [
+        {
+          "component": "text",
+          "name": "div:nth-child(1)>div:nth-child(1)",
+          "label": "Icon Name",
+          "valueType": "string",
+          "value": "check",
+          "description": "USWDS icon name (e.g., check, close, menu)"
+        },
+        {
+          "component": "select",
+          "name": "classes",
+          "label": "Size",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "Default (3)",
+              "value": ""
+            },
+            {
+              "name": "Size 3",
+              "value": "size-3"
+            },
+            {
+              "name": "Size 4",
+              "value": "size-4"
+            },
+            {
+              "name": "Size 5",
+              "value": "size-5"
+            },
+            {
+              "name": "Size 6",
+              "value": "size-6"
+            },
+            {
+              "name": "Size 7",
+              "value": "size-7"
+            },
+            {
+              "name": "Size 8",
+              "value": "size-8"
+            },
+            {
+              "name": "Size 9",
+              "value": "size-9"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

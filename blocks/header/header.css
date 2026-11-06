@@ -1,0 +1,3747 @@
+/**
+ * EDS Override styles for USWDS Header
+ * These styles override default EDS header behavior to work with USWDS
+ */
+
+/* Remove EDS fixed height from header element */
+header.usa-header {
+  height: auto;
+  min-height: unset;
+}
+
+/* Hide the inner .header block wrapper since USWDS manages structure */
+header.usa-header .header.block {
+  display: contents;
+}
+
+/* Logo with image and text */
+.usa-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.usa-logo__img {
+  max-width: 3rem;
+  height: auto;
+}
+
+/* Ensure both logo image and text link to home */
+.usa-logo a {
+  text-decoration: none;
+}
+
+.usa-logo a:hover {
+  text-decoration: underline;
+}
+
+/* Desktop responsive styles */
+@media (min-width: 64em) {
+  .usa-logo__img {
+    max-width: 5.5rem;
+  }
+
+  /* Align dropdown buttons with plain links in the primary nav */
+  .usa-nav__primary > .usa-nav__primary-item > button {
+    display: flex;
+    align-items: center;
+  }
+}
+
+/*
+* * * * * ==============================
+* * * * * ==============================
+* * * * * ==============================
+* * * * * ==============================
+========================================
+========================================
+========================================
+----------------------------------------
+GENERAL SETTINGS
+----------------------------------------
+Read more about settings and
+USWDS style tokens in the documentation:
+https://designsystem.digital.gov/design-tokens
+----------------------------------------
+*/
+/*
+----------------------------------------
+Image path
+----------------------------------------
+Relative image file path
+----------------------------------------
+*/
+/*
+----------------------------------------
+Show compile warnings
+----------------------------------------
+Show Sass warnings when functions and
+mixins use non-standard tokens.
+AND
+Show updates and notifications.
+----------------------------------------
+*/
+/*
+----------------------------------------
+Namespace
+----------------------------------------
+*/
+/*
+----------------------------------------
+Prefix separator
+----------------------------------------
+Set the character the separates
+responsive and state prefixes from the
+main class name.
+The default (":") needs to be preceded
+by two backslashes to be properly
+escaped.
+----------------------------------------
+*/
+/*
+----------------------------------------
+Layout grid
+----------------------------------------
+Should the layout grid classes output
+with !important
+----------------------------------------
+*/
+/*
+----------------------------------------
+Border box sizing
+----------------------------------------
+When set to true, sets the box-sizing
+property of all site elements to
+`border-box`.
+----------------------------------------
+*/
+/*
+----------------------------------------
+Focus styles
+----------------------------------------
+*/
+/*
+----------------------------------------
+Icons
+----------------------------------------
+*/
+/*
+* * * * * ==============================
+* * * * * ==============================
+* * * * * ==============================
+* * * * * ==============================
+========================================
+========================================
+========================================
+----------------------------------------
+TYPOGRAPHY SETTINGS
+----------------------------------------
+Read more about settings and
+USWDS typography tokens in the documentation:
+https://designsystem.digital.gov/design-tokens/typesetting/overview/
+----------------------------------------
+*/
+/*
+----------------------------------------
+Root font size
+----------------------------------------
+Setting $theme-respect-user-font-size to
+true sets the root font size to 100% and
+uses ems for media queries
+----------------------------------------
+$theme-root-font-size only applies when
+$theme-respect-user-font-size is set to
+false.
+
+This will set the root font size
+as a specific px value and use px values
+for media queries.
+
+Accepts true or false
+----------------------------------------
+*/
+/*
+----------------------------------------
+Global styles
+----------------------------------------
+Adds basic styling for the following
+unclassed elements:
+
+- paragraph: paragraph text
+- link: links
+- content: paragraph text, links,
+  headings, lists, and tables
+----------------------------------------
+*/
+/*
+----------------------------------------
+Browser compatibility mode
+----------------------------------------
+When true, outputs woff and ttf font 
+formats in addition to woff2
+----------------------------------------
+*/
+/*
+----------------------------------------
+Font path
+----------------------------------------
+Relative font file path
+----------------------------------------
+*/
+/*
+----------------------------------------
+Custom typeface tokens
+----------------------------------------
+Add a new custom typeface token if
+your project uses a typeface not already
+defined by USWDS.
+----------------------------------------
+USWDS defines the following tokens
+by default:
+----------------------------------------
+'georgia'
+'helvetica'
+'merriweather'
+'open-sans'
+'public-sans'
+'roboto-mono'
+'source-sans-pro'
+'system'
+'tahoma'
+'verdana'
+----------------------------------------
+Add as many new tokens as you have
+custom typefaces. Reference your new
+token(s) in the type-based font settings
+using the quoted name of the token.
+
+For example:
+
+$theme-font-type-cond: 'example-font-token';
+
+display-name:
+The display name of your font
+
+cap-height:
+The height of a 500px `N` in Sketch
+----------------------------------------
+You should change `example-[style]-token`
+names to something more descriptive.
+----------------------------------------
+*/
+/*
+----------------------------------------
+Type-based font settings
+----------------------------------------
+Set the type-based tokens for your
+project from the following tokens,
+or from any new font tokens you added in
+$theme-typeface-tokens.
+----------------------------------------
+'georgia'
+'helvetica'
+'merriweather'
+'open-sans'
+'public-sans'
+'roboto-mono'
+'source-sans-pro'
+'system'
+'tahoma'
+'verdana'
+----------------------------------------
+*/
+/*
+----------------------------------------
+Custom font stacks
+----------------------------------------
+Add custom font stacks to any of the
+type-based fonts. Any USWDS typeface
+token already has a default stack.
+
+Custom stacks don't need to include the
+font's display name. It will
+automatically appear at the start of
+the stack.
+----------------------------------------
+Example:
+$theme-font-type-sans: 'source-sans-pro';
+$theme-font-sans-custom-stack: "Helvetica Neue", Helvetica, Arial, sans;
+
+Output:
+font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans;
+----------------------------------------
+*/
+/*
+----------------------------------------
+Add any custom font source files
+----------------------------------------
+If you want USWDS to generate additional
+@font-face declarations, add your font
+data below, following the example that
+follows.
+----------------------------------------
+USWDS automatically generates @font-face
+declarations for the following
+
+'merriweather'
+'public-sans'
+'roboto-mono'
+'source-sans-pro'
+
+These typefaces not require custom
+source files.
+----------------------------------------
+EXAMPLE
+
+- dir:
+  Directory relative to $theme-font-path
+- This directory should include fonts saved as
+  .woff2
+  ExampleSerif-Normal.woff2
+
+$theme-font-serif-custom-src: (
+  dir: 'custom/example-serif',
+  roman: (
+    100: false,
+    200: false,
+    300: 'ExampleSerif-Light',
+    400: 'ExampleSerif-Normal',
+    500: false,
+    600: false,
+    700: 'ExampleSerif-Bold',
+    800: false,
+    900: false,
+  ),
+  italic: (
+    100: false,
+    200: false,
+    300: 'ExampleSerif-LightItalic',
+    400: 'ExampleSerif-Italic',
+    500: false,
+    600: false,
+    700: 'ExampleSerif-BoldItalic',
+    800: false,
+    900: false,
+  ),
+);
+----------------------------------------
+*/
+/*
+----------------------------------------
+Role-based font settings
+----------------------------------------
+Set the role-based tokens for your
+project from the following font-type
+tokens.
+----------------------------------------
+'cond'
+'icon'
+'lang'
+'mono'
+'sans'
+'serif'
+----------------------------------------
+*/
+/*
+----------------------------------------
+Type scale
+----------------------------------------
+Define your project's type scale using
+values from the USWDS system type scale
+
+1-20
+----------------------------------------
+*/
+/*
+----------------------------------------
+Font weights
+----------------------------------------
+Assign weights 100-900
+Or use `false` for unneeded weights.
+----------------------------------------
+*/
+/*
+----------------------------------------
+General typography settings
+----------------------------------------
+Type scale tokens
+----------------------------------------
+micro:      10px
+1:          12px
+2:          13px
+3:          14px
+4:          15px
+5:          16px
+6:          17px
+7:          18px
+8:          20px
+9:          22px
+10:         24px
+11:         28px
+12:         32px
+13:         36px
+14:         40px
+15:         48px
+16:         56px
+17:         64px
+18:         80px
+19:         120px
+20:         140px
+----------------------------------------
+Line height tokens
+----------------------------------------
+1:    1
+2:    1.15
+3:    1.35
+4:    1.5
+5:    1.62
+6:    1.75
+----------------------------------------
+Font role tokens
+----------------------------------------
+'ui'
+'heading'
+'body'
+'code'
+'alt'
+----------------------------------------
+Measure (max-width) tokens
+----------------------------------------
+1:       44ex
+2:       60ex
+3:       64ex
+4:       68ex
+5:       74ex
+6:       88ex
+none:    none
+----------------------------------------
+*/
+/*
+* * * * * ==============================
+* * * * * ==============================
+* * * * * ==============================
+* * * * * ==============================
+========================================
+========================================
+========================================
+----------------------------------------
+COLOR SETTINGS
+----------------------------------------
+Read more about settings and
+USWDS color tokens in the documentation:
+https://designsystem.digital.gov/design-tokens/color
+----------------------------------------
+*/
+/*
+----------------------------------------
+Theme palette colors
+----------------------------------------
+*/
+/*
+----------------------------------------
+State palette colors
+----------------------------------------
+*/
+/*
+----------------------------------------
+General colors
+----------------------------------------
+*/
+/*
+* * * * * ==============================
+* * * * * ==============================
+* * * * * ==============================
+* * * * * ==============================
+========================================
+========================================
+========================================
+----------------------------------------
+COMPONENT SETTINGS
+----------------------------------------
+Read more about settings and
+USWDS style tokens in the documentation:
+https://designsystem.digital.gov/design-tokens
+----------------------------------------
+*/
+/*
+* * * * * ==============================
+* * * * * ==============================
+* * * * * ==============================
+* * * * * ==============================
+========================================
+========================================
+========================================
+----------------------------------------
+SPACING SETTINGS
+----------------------------------------
+Read more about settings and
+USWDS spacing units tokens in the
+documentation:
+https://designsystem.digital.gov/design-tokens/spacing-units
+----------------------------------------
+*/
+/*
+----------------------------------------
+Border radius
+----------------------------------------
+2px           2px
+0.5           4px
+1             8px
+1.5           12px
+2             16px
+2.5           20px
+3             24px
+4             32px
+5             40px
+6             48px
+7             56px
+8             64px
+9             72px
+----------------------------------------
+*/
+/*
+----------------------------------------
+Column gap
+----------------------------------------
+2px         2px
+0.5         4px
+1           8px
+2           16px
+3           24px
+4           32px
+5           40px
+6           48px
+----------------------------------------
+*/
+/*
+----------------------------------------
+Grid container max-width
+----------------------------------------
+mobile
+mobile-lg
+tablet
+tablet-lg
+desktop
+desktop-lg
+widescreen
+----------------------------------------
+*/
+/*
+----------------------------------------
+Site
+----------------------------------------
+*/
+/*
+* * * * * ==============================
+* * * * * ==============================
+* * * * * ==============================
+* * * * * ==============================
+========================================
+========================================
+========================================
+----------------------------------------
+UTILITIES SETTINGS
+----------------------------------------
+Read more about settings and
+USWDS utilities in the documentation:
+https://designsystem.digital.gov/utilities
+----------------------------------------
+*/
+/*
+----------------------------------------
+map-collect()
+----------------------------------------
+Collect multiple maps into a single
+large map
+source: https://gist.github.com/bigglesrocks/d75091700f8f2be5abfe
+----------------------------------------
+*/
+/*
+----------------------------------------
+Utility breakpoints
+----------------------------------------
+Which breakpoints does your project
+need? Select as `true` any breakpoint
+used by utilities or layout grid
+----------------------------------------
+*/
+/*
+----------------------------------------
+Global colors
+----------------------------------------
+The following palettes will be added to
+- background-color
+- border-color
+- color
+- text-decoration-color
+----------------------------------------
+*/
+/*
+----------------------------------------
+Settings
+----------------------------------------
+*/
+/*
+----------------------------------------
+Values
+----------------------------------------
+*/
+/*
+----------------------------------------
+color()
+----------------------------------------
+Derive a color from a color shortcode
+----------------------------------------
+*/
+/*
+----------------------------------------
+append-important()
+----------------------------------------
+Append `!important` to a list
+----------------------------------------
+*/
+/*
+----------------------------------------
+get-last()
+----------------------------------------
+Return the last item of a list,
+Return null if the value is null
+----------------------------------------
+*/
+/*
+----------------------------------------
+de-list()
+----------------------------------------
+Transform a one-element list or arglist
+into that single element.
+----------------------------------------
+(1) => 1
+((1)) => (1)
+----------------------------------------
+*/
+/*
+----------------------------------------
+error-not-token()
+----------------------------------------
+Returns a common not-a-token error.
+----------------------------------------
+*/
+/*
+----------------------------------------
+uswds-error()
+----------------------------------------
+Allow the system to pass an error as text
+to test error states in unit testing
+----------------------------------------
+*/
+/*
+----------------------------------------
+get-default()
+----------------------------------------
+Returns the default value from a map
+of project defaults
+get-default("bg-color")
+> $theme-body-background-color
+----------------------------------------
+*/
+/*
+----------------------------------------
+has-important()
+----------------------------------------
+Check to see if `!important` is
+being passed in a mixin's props
+----------------------------------------
+*/
+/*
+----------------------------------------
+map-deep-get()
+----------------------------------------
+@author Hugo Giraudel
+@access public
+@param {Map} $map - Map
+@param {Arglist} $keys - Key chain
+@return {*} - Desired value
+----------------------------------------
+*/
+/*
+----------------------------------------
+multi-cat()
+----------------------------------------
+Concatenate two lists
+----------------------------------------
+*/
+/*
+----------------------------------------
+remove()
+----------------------------------------
+Remove a value from a list
+----------------------------------------
+*/
+/*
+----------------------------------------
+smart-quote()
+----------------------------------------
+Quotes strings
+Inspects `px`, `xs`, and `xl` numbers
+Leaves bools as is
+----------------------------------------
+*/
+/*
+----------------------------------------
+str-replace()
+----------------------------------------
+Replace any substring with another
+string
+----------------------------------------
+*/
+/*
+----------------------------------------
+str-split()
+----------------------------------------
+Split a string at a given separator
+and convert into a list of substrings
+----------------------------------------
+*/
+/*
+----------------------------------------
+strip-unit()
+----------------------------------------
+Remove the unit of a length
+@author Hugo Giraudel
+@param {Number} $number - Number to remove unit from
+@return {Number} - Unitless number
+----------------------------------------
+*/
+/*
+----------------------------------------
+base-to-map()
+@TODO: Deprecate and delete
+----------------------------------------
+Convert a single base to a USWDS
+value map.
+
+Candidate for deprecation if we remove
+isReadable
+----------------------------------------
+*/
+/*
+----------------------------------------
+to-number()
+----------------------------------------
+Casts a string into a number
+----------------------------------------
+@param {String | Number} $value - Value to be parsed
+@return {Number}
+----------------------------------------
+*/
+/*
+----------------------------------------
+unpack()
+----------------------------------------
+Create lists of single items from lists
+of lists.
+----------------------------------------
+(1, (2.1, 2.2), 3) -->
+(1, 2.1, 2.2, 3)
+----------------------------------------
+*/
+/*
+----------------------------------------
+color()
+----------------------------------------
+Derive a color from a color shortcode
+----------------------------------------
+*/
+/*
+----------------------------------------
+color()
+----------------------------------------
+Derive a color from a color shortcode
+----------------------------------------
+*/
+/*
+----------------------------------------
+get-system-color()
+----------------------------------------
+Derive a system color from its
+family, value, and vivid or a passed
+variable that is, itself, a list
+----------------------------------------
+*/
+/*
+----------------------------------------
+color()
+----------------------------------------
+Derive a color from a color shortcode
+----------------------------------------
+*/
+/*
+----------------------------------------
+color()
+----------------------------------------
+Derive a color from a color shortcode
+----------------------------------------
+*/
+/*
+----------------------------------------
+color()
+----------------------------------------
+Derive a color from a color shortcode
+----------------------------------------
+*/
+/*
+----------------------------------------
+set-theme-color()
+----------------------------------------
+Derive a color from a system color token
+or a hex value
+----------------------------------------
+*/
+/*
+----------------------------------------
+px-to-rem()
+----------------------------------------
+Converts a value in px to a value in rem
+----------------------------------------
+*/
+/*
+----------------------------------------
+rem-to-user-em()
+----------------------------------------
+Converts a value in rem to a value in
+[user-settings] em for use in media
+queries
+----------------------------------------
+*/
+/*
+----------------------------------------
+px-to-user-em()
+----------------------------------------
+Converts a value in px to a value in em
+----------------------------------------
+*/
+/*
+----------------------------------------
+rem-to-px()
+----------------------------------------
+Converts a value in rem to a value in px
+----------------------------------------
+*/
+/*
+----------------------------------------
+spacing-multiple()
+----------------------------------------
+Converts a spacing unit multiple into
+the desired final units (currently rem)
+----------------------------------------
+*/
+/*
+----------------------------------------
+units()
+----------------------------------------
+Converts a spacing unit into
+the desired final units (currently rem)
+----------------------------------------
+*/
+/*
+----------------------------------------
+number-to-token()
+----------------------------------------
+Converts an integer or numeric value
+into a system value
+
+Ex: 0.5   --> '05'
+    -1px  --> 'neg-1px'
+----------------------------------------
+*/
+/*
+----------------------------------------
+Project fonts
+----------------------------------------
+Collects font settings in a map for
+looping.
+----------------------------------------
+*/
+/*
+----------------------------------------
+Luminance ranges
+----------------------------------------
+*/
+/*
+----------------------------------------
+ns()
+----------------------------------------
+Add a namesspace of $type if that
+namespace is set to output
+----------------------------------------
+*/
+/*
+----------------------------------------
+Line height
+----------------------------------------
+*/
+/*
+----------------------------------------
+Measure
+----------------------------------------
+*/
+/*
+----------------------------------------
+cap-height()
+----------------------------------------
+Get the cap height of a valid typeface
+----------------------------------------
+*/
+/*
+----------------------------------------
+validate-typeface-token()
+----------------------------------------
+Check to see if a typeface-token exists.
+Throw an error if a passed token does
+not exist in the typeface-token map.
+----------------------------------------
+*/
+/*
+----------------------------------------
+convert-to-font-type()
+----------------------------------------
+Converts a font-role token into a
+font-type token. Leaves font-type tokens
+unchanged.
+----------------------------------------
+*/
+/*
+----------------------------------------
+font-sources()
+----------------------------------------
+Outputs a list of font sources used in
+a @font-face declaration.
+
+$theme-font-browser-compatibility: true - output woff2, woff, ttf
+$theme-font-browser-compatibility: false - output woff2
+
+@param stem: string - [font path]/[custom-src.dir]/[custom-src.[style].[weight]]
+@output: string
+
+filetypes must be one of the filetypes set in variables/$project-font-face-filetypes (woff, woff2, ttf)
+----------------------------------------
+*/
+/*
+----------------------------------------
+get-font-stack()
+----------------------------------------
+Get a font stack from a style- or
+role-based font token.
+----------------------------------------
+*/
+/*
+----------------------------------------
+get-typeface-token()
+----------------------------------------
+Get a typeface token from a font-type or
+font-role token.
+----------------------------------------
+*/
+/*
+----------------------------------------
+normalize-type-scale()
+----------------------------------------
+Normalizes a specific face's optical size
+to a set target
+----------------------------------------
+*/
+/*
+----------------------------------------
+system-type-scale()
+----------------------------------------
+Get a value from the system type scale
+----------------------------------------
+*/
+/*
+----------------------------------------
+Easing
+----------------------------------------
+*/
+/*  deprecated.scss
+    ---
+    Occasionally the design system will deprecate
+    old variables or functionality. If we replace
+    the old functionality with something new, this is a
+    place to connect the old functionality to the
+    new functionality, in the service of better
+    continuity and backwards compatibility within a
+    major release cycle.
+
+    Note the USWDS version where we deprecated the
+    old functionality in a comment.
+
+    Be sure to update notifications.scss.
+
+    This file should started fresh at each
+    major version.
+*/
+/*
+----------------------------------------
+advanced-color()
+----------------------------------------
+Derive a color from a color triplet:
+[family], [grade], [variant]
+----------------------------------------
+*/
+/*
+----------------------------------------
+calculate-grade()
+----------------------------------------
+Derive the grade equivalent any color,
+even non-token colors
+----------------------------------------
+*/
+/*
+----------------------------------------
+color-token-assignment()
+----------------------------------------
+Get the system token equivalent of any
+theme color token
+----------------------------------------
+*/
+/*
+----------------------------------------
+is-system-color-token()
+----------------------------------------
+Return whether a token is a system
+color token
+----------------------------------------
+*/
+/*
+----------------------------------------
+is-theme-color-token()
+----------------------------------------
+Return whether a token is a theme
+color token
+----------------------------------------
+*/
+/*
+----------------------------------------
+color-token-family()
+----------------------------------------
+Returns the family of a color token.
+Returns: color-family
+color-token-family("accent-warm-vivid")
+> "accent-warm"
+color-token-family("red-50v")
+> "red"
+color-token-variant(("red", 50, "vivid"))
+> "red"
+----------------------------------------
+*/
+/*
+----------------------------------------
+decompose()
+----------------------------------------
+Convert a color token into into a list
+of form [family], [grade], [variant]
+Vivid variants return "vivid" as the
+variant.
+If neither grade nor variant exists,
+returns 'null'
+----------------------------------------
+*/
+/*
+----------------------------------------
+color-token-family()
+----------------------------------------
+Returns the family of a color token.
+Returns: color-family
+color-token-family("accent-warm-vivid")
+> "accent-warm"
+color-token-family("red-50v")
+> "red"
+color-token-variant(("red", 50, "vivid"))
+> "red"
+----------------------------------------
+*/
+/*
+----------------------------------------
+color-token-grade()
+----------------------------------------
+Returns the grade of a USWDS color token.
+Returns: color-grade
+color-token-grade("accent-warm")
+> "root"
+color-token-grade("accent-warm-vivid")
+> "root"
+color-token-grade("accent-warm-darker")
+> "darker"
+color-token-grade("red-50v")
+> 50
+color-token-variant(("red", 50, "vivid"))
+> 50
+----------------------------------------
+*/
+/*
+----------------------------------------
+color-token-family()
+----------------------------------------
+Returns the family of a color token.
+Returns: color-family
+color-token-family("accent-warm-vivid")
+> "accent-warm"
+color-token-family("red-50v")
+> "red"
+color-token-variant(("red", 50, "vivid"))
+> "red"
+----------------------------------------
+*/
+/*
+----------------------------------------
+is-color-token()
+----------------------------------------
+Returns whether a given string is a
+USWDS color token.
+----------------------------------------
+*/
+/*
+----------------------------------------
+pow()
+----------------------------------------
+Raises a unitless number to the power
+of another unitless number
+Includes helper functions
+----------------------------------------
+*/
+/*
+----------------------------------------
+Helper functions
+----------------------------------------
+*/
+/* factorial()
+----------------------------------------
+*/
+/* summation()
+----------------------------------------
+*/
+/* exp-maclaurin()
+----------------------------------------
+*/
+/* ln()
+----------------------------------------
+*/
+/*
+----------------------------------------
+color-token-type()
+----------------------------------------
+Returns the type of a color token.
+Returns: "system" | "theme"
+----------------------------------------
+*/
+/*
+----------------------------------------
+color-token-variant()
+----------------------------------------
+Returns the variant of color token.
+Returns: "vivid" | false
+color-token-variant("accent-warm")
+> false
+color-token-variant("accent-warm-vivid")
+> "vivid"
+color-token-variant("red-50v")
+> "vivid"
+color-token-variant(("red", 50, "vivid"))
+> "vivid"
+----------------------------------------
+*/
+/*
+----------------------------------------
+magic-number()
+----------------------------------------
+Returns the magic number of two color
+grades. Takes numbers or color tokens.
+magic-number(50, 10)
+return: 40
+magic-number("red-50", "red-10")
+return: 40
+----------------------------------------
+*/
+/*
+----------------------------------------
+is-accessible-magic-number()
+----------------------------------------
+Returns whether two grades achieve
+specified target color contrast
+Returns: true | false
+is-accessible-magic-number(10, 50, "AA")
+> false
+is-accessible-magic-number(10, 60, "AA")
+> true
+----------------------------------------
+*/
+/*
+----------------------------------------
+wcag-magic-number()
+----------------------------------------
+Returns the magic number of a specific
+wcag grade:
+"AA"
+"AA-Large"
+"AAA"
+wcag-magic-number("AA")
+> 50
+----------------------------------------
+*/
+/*
+----------------------------------------
+get-link-tokens-from-bg()
+----------------------------------------
+Get accessible link colors for a given
+background color
+returns: link-token, hover-token
+get-link-tokens-from-bg(
+  "black",
+  "red-60",
+  "red-10",
+  "AA")
+> "red-10", "red-5"
+get-link-tokens-from-bg(
+  "black",
+  "red-60v",
+  "red-10v",
+  "AA-large")
+> "red-60v", "red-50v"
+get-link-tokens-from-bg(
+  "black",
+  "red-5v",
+  "red-60v",
+  "AA")
+> "red-5v", "white"
+get-link-tokens-from-bg(
+  "black",
+  "white",
+  "red-60v",
+  "AA")
+> "white", "white"
+----------------------------------------
+*/
+/*
+----------------------------------------
+next-token()
+----------------------------------------
+Returns next "darker" or "lighter" color
+token of the same token type and variant.
+Returns: color-token | false
+next-token("accent-warm", "lighter")
+> "accent-warm-light"
+next-token("gray-10", "lighter")
+> "gray-5"
+next-token("gray-5", "lighter")
+> "white"
+next-token("white", "lighter")
+> false
+next-token("red-50v", "darker")
+> "red-60v"
+next-token("red-50", "darker")
+> "red-60"
+next-token("red-80v", "darker")
+> "red-90"
+next-token("red-90", "darker")
+> "black"
+next-token("white", "darker")
+> "gray-5"
+next-token("black", "lighter")
+> "gray-90"
+----------------------------------------
+*/
+/*
+----------------------------------------
+test-colors()
+----------------------------------------
+Check to see if all system colors
+fall between the proper relative
+luminance range for their grade.
+Has a couple quirks, as the luminance()
+function returns slightly different
+results than expected.
+----------------------------------------
+*/
+/*
+----------------------------------------
+columns()
+----------------------------------------
+outputs a grid-col number based on
+the number of desired columns in the
+12-column grid
+
+Ex: columns(2) --> 6
+    grid-col(columns(2))
+----------------------------------------
+*/
+/*
+----------------------------------------
+USWDS Properties
+----------------------------------------
+*/
+/*
+----------------------------------------
+get-uswds-value()
+----------------------------------------
+Finds and outputs a value from the
+USWDS standard values.
+
+Used to build other standard utility
+functions and mixins.
+----------------------------------------
+*/
+/*
+----------------------------------------
+get-standard-values()
+----------------------------------------
+Gets a map of USWDS standard values
+for a property
+----------------------------------------
+*/
+/*
+----------------------------------------
+border-radius()
+----------------------------------------
+Get a border-radius from the system
+border-radii
+----------------------------------------
+*/
+/*
+----------------------------------------
+font-weight()
+fw()
+----------------------------------------
+Get a font-weight value from the
+system font-weight
+----------------------------------------
+*/
+/*
+----------------------------------------
+feature()
+----------------------------------------
+Gets a valid USWDS font feature setting
+----------------------------------------
+*/
+/*
+----------------------------------------
+flex()
+----------------------------------------
+Gets a valid USWDS flex value
+----------------------------------------
+*/
+/*
+----------------------------------------
+font-family()
+family()
+----------------------------------------
+Get a font-family stack from a
+role-based or type-based font family
+----------------------------------------
+*/
+/*
+----------------------------------------
+letter-spacing()
+ls()
+----------------------------------------
+Get a letter-spacing value from the
+system letter-spacing
+----------------------------------------
+*/
+/*
+----------------------------------------
+measure()
+----------------------------------------
+Gets a valid USWDS reading line length
+----------------------------------------
+*/
+/*
+----------------------------------------
+opacity()
+----------------------------------------
+Get an opacity from the system
+opacities
+----------------------------------------
+*/
+/*
+----------------------------------------
+order()
+----------------------------------------
+Get an order value from the
+system orders
+----------------------------------------
+*/
+/*
+----------------------------------------
+radius()
+----------------------------------------
+Get a border-radius value from the
+system letter-spacing
+----------------------------------------
+*/
+/*
+----------------------------------------
+font-size()
+----------------------------------------
+Get type scale value from a [family] and
+[scale]
+----------------------------------------
+*/
+/*
+----------------------------------------
+z-index()
+z()
+----------------------------------------
+Get a z-index value from the
+system z-index
+----------------------------------------
+*/
+/*
+----------------------------------------
+utility-font()
+----------------------------------------
+Get a normalized font-size in rem from
+a family and a type size in either
+system scale or project scale
+----------------------------------------
+Not the public-facing function.
+Used for building the utilities and
+withholds certain errors.
+----------------------------------------
+*/
+/*
+----------------------------------------
+family()
+----------------------------------------
+Get a font-family stack
+----------------------------------------
+*/
+/*
+----------------------------------------
+size()
+----------------------------------------
+Get a normalized font-size in rem from
+a family and a type size in either
+system scale or project scale
+----------------------------------------
+*/
+/*
+----------------------------------------
+font()
+----------------------------------------
+Get a font-family stack
+AND
+Get a normalized font-size in rem from
+a family and a type size in either
+system scale or project scale
+----------------------------------------
+*/
+/*
+----------------------------------------
+typeset()
+----------------------------------------
+Sets:
+- family
+- size
+- line-height
+----------------------------------------
+*/
+/* stylelint-disable max-nesting-depth */
+/*
+----------------------------------------
+@render-pseudoclass
+----------------------------------------
+Build a pseucoclass utiliy from values
+calculated in the @render-utilities-in
+loop
+----------------------------------------
+*/
+/*
+----------------------------------------
+@render-utility
+----------------------------------------
+Build a utility from values calculated
+in the @render-utilities-in loop
+----------------------------------------
+TODO: Determine the proper use of
+unquote() in the following. Changed to
+account for a 'interpolation near
+operators will be simplified in a
+future version of Sass' warning.
+----------------------------------------
+*/
+/*
+----------------------------------------
+@render-utilities-in
+----------------------------------------
+The master loop that sets the building
+blocks of utilities from the values
+in individual rule settings and loops
+through all possible variants
+----------------------------------------
+*/
+/* stylelint-enable */
+/*  notifications.scss
+    ---
+    Adds a notification at the top of each USWDS
+    compile. Use this file for important notifications
+    and updates to the design system.
+
+    This file should started fresh at each
+    major version.
+
+*/
+/* prettier-ignore */
+/* prettier-ignore */
+.usa-input {
+  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.3;
+}
+
+.usa-input {
+  border-width: 1px;
+  border-color: #565c65;
+  border-style: solid;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 0;
+  color: #1b1b1b;
+  display: block;
+  height: 2.5rem;
+  margin-top: 0.5rem;
+  max-width: 30rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+/* stylelint-disable */
+@font-face {
+  font-family: "Roboto Mono Web";
+  font-style: normal;
+  font-weight: 300;
+  font-display: fallback;
+  src: url("/fonts/roboto-mono/roboto-mono-v5-latin-300.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Roboto Mono Web";
+  font-style: normal;
+  font-weight: 400;
+  font-display: fallback;
+  src: url("/fonts/roboto-mono/roboto-mono-v5-latin-regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Roboto Mono Web";
+  font-style: normal;
+  font-weight: 700;
+  font-display: fallback;
+  src: url("/fonts/roboto-mono/roboto-mono-v5-latin-700.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Roboto Mono Web";
+  font-style: italic;
+  font-weight: 300;
+  font-display: fallback;
+  src: url("/fonts/roboto-mono/roboto-mono-v5-latin-300italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Roboto Mono Web";
+  font-style: italic;
+  font-weight: 400;
+  font-display: fallback;
+  src: url("/fonts/roboto-mono/roboto-mono-v5-latin-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Roboto Mono Web";
+  font-style: italic;
+  font-weight: 700;
+  font-display: fallback;
+  src: url("/fonts/roboto-mono/roboto-mono-v5-latin-700italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Source Sans Pro Web";
+  font-style: normal;
+  font-weight: 300;
+  font-display: fallback;
+  src: url("/fonts/source-sans-pro/sourcesanspro-light-webfont.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Source Sans Pro Web";
+  font-style: normal;
+  font-weight: 400;
+  font-display: fallback;
+  src: url("/fonts/source-sans-pro/sourcesanspro-regular-webfont.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Source Sans Pro Web";
+  font-style: normal;
+  font-weight: 700;
+  font-display: fallback;
+  src: url("/fonts/source-sans-pro/sourcesanspro-bold-webfont.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Source Sans Pro Web";
+  font-style: italic;
+  font-weight: 300;
+  font-display: fallback;
+  src: url("/fonts/source-sans-pro/sourcesanspro-lightitalic-webfont.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Source Sans Pro Web";
+  font-style: italic;
+  font-weight: 400;
+  font-display: fallback;
+  src: url("/fonts/source-sans-pro/sourcesanspro-italic-webfont.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Source Sans Pro Web";
+  font-style: italic;
+  font-weight: 700;
+  font-display: fallback;
+  src: url("/fonts/source-sans-pro/sourcesanspro-bolditalic-webfont.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Merriweather Web";
+  font-style: normal;
+  font-weight: 300;
+  font-display: fallback;
+  src: url("/fonts/merriweather/Latin-Merriweather-Light.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Merriweather Web";
+  font-style: normal;
+  font-weight: 400;
+  font-display: fallback;
+  src: url("/fonts/merriweather/Latin-Merriweather-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Merriweather Web";
+  font-style: normal;
+  font-weight: 700;
+  font-display: fallback;
+  src: url("/fonts/merriweather/Latin-Merriweather-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Merriweather Web";
+  font-style: italic;
+  font-weight: 300;
+  font-display: fallback;
+  src: url("/fonts/merriweather/Latin-Merriweather-LightItalic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Merriweather Web";
+  font-style: italic;
+  font-weight: 400;
+  font-display: fallback;
+  src: url("/fonts/merriweather/Latin-Merriweather-Italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Merriweather Web";
+  font-style: italic;
+  font-weight: 700;
+  font-display: fallback;
+  src: url("/fonts/merriweather/Latin-Merriweather-BoldItalic.woff2") format("woff2");
+}
+/* stylelint-enable */
+.usa-focus {
+  outline: 0.25rem solid #2491ff;
+  outline-offset: 0rem;
+}
+
+.usa-sr-only {
+  position: absolute;
+  left: -999em;
+  right: auto;
+}
+
+.usa-skipnav {
+  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.5;
+  color: #005ea2;
+  text-decoration: underline;
+}
+.usa-skipnav:visited {
+  color: #54278f;
+}
+.usa-skipnav:hover {
+  color: #1a4480;
+}
+.usa-skipnav:active {
+  color: #162e51;
+}
+.usa-skipnav:focus {
+  outline: 0.25rem solid #2491ff;
+  outline-offset: 0rem;
+}
+.usa-skipnav {
+  transition: top 0.15s ease-in-out;
+}
+@media (prefers-reduced-motion) {
+  .usa-skipnav {
+    transition: none;
+  }
+}
+.usa-skipnav {
+  background: transparent;
+  left: 0;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  top: -3.8rem;
+  z-index: 100;
+}
+.usa-skipnav:focus, .usa-skipnav.usa-focus {
+  background: white;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.usa-skipnav__container {
+  position: relative;
+}
+
+.usa-button {
+  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 0.9;
+  color: white;
+  background-color: #005ea2;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  align-items: center;
+  border: 0;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+  display: inline-flex;
+  font-weight: 700;
+  justify-content: center;
+  margin-right: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+@media all and (min-width: 30em) {
+  .usa-button {
+    width: auto;
+  }
+}
+.usa-button:visited {
+  color: white;
+}
+.usa-button:hover, .usa-button.usa-button--hover {
+  color: white;
+  background-color: #1a4480;
+  border-bottom: 0;
+  text-decoration: none;
+}
+.usa-button:active, .usa-button.usa-button--active {
+  color: white;
+  background-color: #162e51;
+}
+.usa-button:not([disabled]):focus, .usa-button:not([disabled]).usa-focus {
+  outline-offset: 0.25rem;
+}
+.usa-button:disabled, .usa-button[aria-disabled=true] {
+  color: #454545;
+  background-color: #c9c9c9;
+  cursor: not-allowed;
+  opacity: 1;
+}
+.usa-button:disabled:hover, .usa-button:disabled:active, .usa-button:disabled:focus, .usa-button:disabled.usa-focus, .usa-button[aria-disabled=true]:hover, .usa-button[aria-disabled=true]:active, .usa-button[aria-disabled=true]:focus, .usa-button[aria-disabled=true].usa-focus {
+  color: #454545;
+  background-color: #c9c9c9;
+}
+@media (forced-colors: active) {
+  .usa-button:disabled, .usa-button[aria-disabled=true] {
+    border: 0;
+    color: GrayText;
+  }
+  .usa-button:disabled:hover, .usa-button:disabled:active, .usa-button:disabled:focus, .usa-button:disabled.usa-focus, .usa-button[aria-disabled=true]:hover, .usa-button[aria-disabled=true]:active, .usa-button[aria-disabled=true]:focus, .usa-button[aria-disabled=true].usa-focus {
+    color: GrayText;
+  }
+}
+.usa-button:disabled.usa-button--hover, .usa-button:disabled.usa-button--active, .usa-button[aria-disabled=true].usa-button--hover, .usa-button[aria-disabled=true].usa-button--active {
+  color: #454545;
+  background-color: #c9c9c9;
+  cursor: not-allowed;
+  opacity: 1;
+}
+.usa-button:disabled.usa-button--hover:hover, .usa-button:disabled.usa-button--hover:active, .usa-button:disabled.usa-button--hover:focus, .usa-button:disabled.usa-button--hover.usa-focus, .usa-button:disabled.usa-button--active:hover, .usa-button:disabled.usa-button--active:active, .usa-button:disabled.usa-button--active:focus, .usa-button:disabled.usa-button--active.usa-focus, .usa-button[aria-disabled=true].usa-button--hover:hover, .usa-button[aria-disabled=true].usa-button--hover:active, .usa-button[aria-disabled=true].usa-button--hover:focus, .usa-button[aria-disabled=true].usa-button--hover.usa-focus, .usa-button[aria-disabled=true].usa-button--active:hover, .usa-button[aria-disabled=true].usa-button--active:active, .usa-button[aria-disabled=true].usa-button--active:focus, .usa-button[aria-disabled=true].usa-button--active.usa-focus {
+  color: #454545;
+  background-color: #c9c9c9;
+}
+@media (forced-colors: active) {
+  .usa-button:disabled.usa-button--hover, .usa-button:disabled.usa-button--active, .usa-button[aria-disabled=true].usa-button--hover, .usa-button[aria-disabled=true].usa-button--active {
+    border: 0;
+    color: GrayText;
+  }
+  .usa-button:disabled.usa-button--hover:hover, .usa-button:disabled.usa-button--hover:active, .usa-button:disabled.usa-button--hover:focus, .usa-button:disabled.usa-button--hover.usa-focus, .usa-button:disabled.usa-button--active:hover, .usa-button:disabled.usa-button--active:active, .usa-button:disabled.usa-button--active:focus, .usa-button:disabled.usa-button--active.usa-focus, .usa-button[aria-disabled=true].usa-button--hover:hover, .usa-button[aria-disabled=true].usa-button--hover:active, .usa-button[aria-disabled=true].usa-button--hover:focus, .usa-button[aria-disabled=true].usa-button--hover.usa-focus, .usa-button[aria-disabled=true].usa-button--active:hover, .usa-button[aria-disabled=true].usa-button--active:active, .usa-button[aria-disabled=true].usa-button--active:focus, .usa-button[aria-disabled=true].usa-button--active.usa-focus {
+    color: GrayText;
+  }
+}
+@media (forced-colors: active) {
+  .usa-button:disabled:not(.usa-button--unstyled), .usa-button[aria-disabled=true]:not(.usa-button--unstyled) {
+    border: 2px solid GrayText;
+  }
+}
+.usa-button .usa-icon {
+  flex-shrink: 0;
+}
+@media (forced-colors: active) {
+  .usa-button:not(.usa-button--unstyled) {
+    border: 2px solid transparent;
+  }
+}
+
+.usa-button--accent-cool {
+  color: #1b1b1b;
+  background-color: #00bde3;
+}
+.usa-button--accent-cool:visited {
+  color: #1b1b1b;
+  background-color: #00bde3;
+}
+.usa-button--accent-cool:hover, .usa-button--accent-cool.usa-button--hover {
+  color: #1b1b1b;
+  background-color: #28a0cb;
+}
+.usa-button--accent-cool:active, .usa-button--accent-cool.usa-button--active {
+  color: white;
+  background-color: #07648d;
+}
+
+.usa-button--accent-warm {
+  color: #1b1b1b;
+  background-color: #fa9441;
+}
+.usa-button--accent-warm:visited {
+  color: #1b1b1b;
+  background-color: #fa9441;
+}
+.usa-button--accent-warm:hover, .usa-button--accent-warm.usa-button--hover {
+  color: white;
+  background-color: #c05600;
+}
+.usa-button--accent-warm:active, .usa-button--accent-warm.usa-button--active {
+  color: white;
+  background-color: #775540;
+}
+
+.usa-button--outline {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px #005ea2;
+  color: #005ea2;
+}
+.usa-button--outline:visited {
+  color: #005ea2;
+}
+.usa-button--outline:hover, .usa-button--outline.usa-button--hover {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px #1a4480;
+  color: #1a4480;
+}
+.usa-button--outline:active, .usa-button--outline.usa-button--active {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px #162e51;
+  color: #162e51;
+}
+.usa-button--outline.usa-button--inverse {
+  box-shadow: inset 0 0 0 2px #dfe1e2;
+  color: #dfe1e2;
+}
+.usa-button--outline.usa-button--inverse:visited {
+  color: #dfe1e2;
+}
+.usa-button--outline.usa-button--inverse:hover, .usa-button--outline.usa-button--inverse.usa-button--hover {
+  box-shadow: inset 0 0 0 2px #f0f0f0;
+  color: #f0f0f0;
+}
+.usa-button--outline.usa-button--inverse:active, .usa-button--outline.usa-button--inverse.usa-button--active {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px white;
+  color: white;
+}
+.usa-button--outline.usa-button--inverse.usa-button--unstyled {
+  color: #005ea2;
+  text-decoration: underline;
+}
+.usa-button--outline.usa-button--inverse.usa-button--unstyled:visited {
+  color: #54278f;
+}
+.usa-button--outline.usa-button--inverse.usa-button--unstyled:hover {
+  color: #1a4480;
+}
+.usa-button--outline.usa-button--inverse.usa-button--unstyled:active {
+  color: #162e51;
+}
+.usa-button--outline.usa-button--inverse.usa-button--unstyled:focus {
+  outline: 0.25rem solid #2491ff;
+  outline-offset: 0rem;
+}
+.usa-button--outline.usa-button--inverse.usa-button--unstyled {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  font-weight: normal;
+  justify-content: normal;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+.usa-button--outline.usa-button--inverse.usa-button--unstyled:hover, .usa-button--outline.usa-button--inverse.usa-button--unstyled.usa-button--hover, .usa-button--outline.usa-button--inverse.usa-button--unstyled:disabled:hover, .usa-button--outline.usa-button--inverse.usa-button--unstyled[aria-disabled=true]:hover, .usa-button--outline.usa-button--inverse.usa-button--unstyled:disabled.usa-button--hover, .usa-button--outline.usa-button--inverse.usa-button--unstyled[aria-disabled=true].usa-button--hover, .usa-button--outline.usa-button--inverse.usa-button--unstyled:active, .usa-button--outline.usa-button--inverse.usa-button--unstyled.usa-button--active, .usa-button--outline.usa-button--inverse.usa-button--unstyled:disabled:active, .usa-button--outline.usa-button--inverse.usa-button--unstyled[aria-disabled=true]:active, .usa-button--outline.usa-button--inverse.usa-button--unstyled:disabled.usa-button--active, .usa-button--outline.usa-button--inverse.usa-button--unstyled[aria-disabled=true].usa-button--active, .usa-button--outline.usa-button--inverse.usa-button--unstyled:disabled:focus, .usa-button--outline.usa-button--inverse.usa-button--unstyled[aria-disabled=true]:focus, .usa-button--outline.usa-button--inverse.usa-button--unstyled:disabled.usa-focus, .usa-button--outline.usa-button--inverse.usa-button--unstyled[aria-disabled=true].usa-focus, .usa-button--outline.usa-button--inverse.usa-button--unstyled:disabled, .usa-button--outline.usa-button--inverse.usa-button--unstyled[aria-disabled=true], .usa-button--outline.usa-button--inverse.usa-button--unstyled.usa-button--disabled {
+  background-color: transparent;
+  box-shadow: none;
+  text-decoration: underline;
+}
+.usa-button--outline.usa-button--inverse.usa-button--unstyled.usa-button--hover {
+  color: #1a4480;
+}
+.usa-button--outline.usa-button--inverse.usa-button--unstyled.usa-button--active {
+  color: #162e51;
+}
+.usa-button--outline.usa-button--inverse.usa-button--unstyled:disabled, .usa-button--outline.usa-button--inverse.usa-button--unstyled[aria-disabled=true], .usa-button--outline.usa-button--inverse.usa-button--unstyled:disabled:hover, .usa-button--outline.usa-button--inverse.usa-button--unstyled[aria-disabled=true]:hover, .usa-button--outline.usa-button--inverse.usa-button--unstyled[aria-disabled=true]:focus {
+  color: #757575;
+}
+@media (forced-colors: active) {
+  .usa-button--outline.usa-button--inverse.usa-button--unstyled:disabled, .usa-button--outline.usa-button--inverse.usa-button--unstyled[aria-disabled=true], .usa-button--outline.usa-button--inverse.usa-button--unstyled:disabled:hover, .usa-button--outline.usa-button--inverse.usa-button--unstyled[aria-disabled=true]:hover, .usa-button--outline.usa-button--inverse.usa-button--unstyled[aria-disabled=true]:focus {
+    color: GrayText;
+  }
+}
+.usa-button--outline.usa-button--inverse.usa-button--unstyled {
+  color: #dfe1e2;
+}
+.usa-button--outline.usa-button--inverse.usa-button--unstyled:visited {
+  color: #dfe1e2;
+}
+.usa-button--outline.usa-button--inverse.usa-button--unstyled:hover, .usa-button--outline.usa-button--inverse.usa-button--unstyled.usa-button--hover {
+  color: #f0f0f0;
+}
+.usa-button--outline.usa-button--inverse.usa-button--unstyled:active, .usa-button--outline.usa-button--inverse.usa-button--unstyled.usa-button--active {
+  color: white;
+}
+
+.usa-button--base {
+  color: white;
+  background-color: #71767a;
+}
+.usa-button--base:hover, .usa-button--base.usa-button--hover {
+  color: white;
+  background-color: #565c65;
+}
+.usa-button--base:active, .usa-button--base.usa-button--active {
+  color: white;
+  background-color: #3d4551;
+}
+
+.usa-button--secondary {
+  color: white;
+  background-color: #d83933;
+}
+.usa-button--secondary:hover, .usa-button--secondary.usa-button--hover {
+  color: white;
+  background-color: #b50909;
+}
+.usa-button--secondary:active, .usa-button--secondary.usa-button--active {
+  color: white;
+  background-color: #8b0a03;
+}
+
+.usa-button--big {
+  border-radius: 0.25rem;
+  font-size: 1.46rem;
+  padding: 1rem 1.5rem;
+}
+
+.usa-button--outline:disabled, .usa-button--outline:disabled:hover, .usa-button--outline:disabled:active, .usa-button--outline:disabled:focus,
+.usa-button--outline[aria-disabled=true],
+.usa-button--outline[aria-disabled=true]:hover,
+.usa-button--outline[aria-disabled=true]:active,
+.usa-button--outline[aria-disabled=true]:focus,
+.usa-button--outline-inverse:disabled,
+.usa-button--outline-inverse:disabled:hover,
+.usa-button--outline-inverse:disabled:active,
+.usa-button--outline-inverse:disabled:focus,
+.usa-button--outline-inverse[aria-disabled=true],
+.usa-button--outline-inverse[aria-disabled=true]:hover,
+.usa-button--outline-inverse[aria-disabled=true]:active,
+.usa-button--outline-inverse[aria-disabled=true]:focus {
+  background-color: transparent;
+  color: #757575;
+}
+
+.usa-button--outline:disabled,
+.usa-button--outline[aria-disabled=true] {
+  box-shadow: inset 0 0 0 2px #c9c9c9;
+}
+.usa-button--outline:disabled.usa-button--inverse,
+.usa-button--outline[aria-disabled=true].usa-button--inverse {
+  box-shadow: inset 0 0 0 2px #919191;
+  color: #919191;
+}
+@media (forced-colors: active) {
+  .usa-button--outline:disabled.usa-button--inverse,
+  .usa-button--outline[aria-disabled=true].usa-button--inverse {
+    color: GrayText;
+  }
+}
+
+.usa-button--unstyled {
+  color: #005ea2;
+  text-decoration: underline;
+}
+.usa-button--unstyled:visited {
+  color: #54278f;
+}
+.usa-button--unstyled:hover {
+  color: #1a4480;
+}
+.usa-button--unstyled:active {
+  color: #162e51;
+}
+.usa-button--unstyled:focus {
+  outline: 0.25rem solid #2491ff;
+  outline-offset: 0rem;
+}
+.usa-button--unstyled {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  font-weight: normal;
+  justify-content: normal;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+.usa-button--unstyled:hover, .usa-button--unstyled.usa-button--hover, .usa-button--unstyled:disabled:hover, .usa-button--unstyled[aria-disabled=true]:hover, .usa-button--unstyled:disabled.usa-button--hover, .usa-button--unstyled[aria-disabled=true].usa-button--hover, .usa-button--unstyled:active, .usa-button--unstyled.usa-button--active, .usa-button--unstyled:disabled:active, .usa-button--unstyled[aria-disabled=true]:active, .usa-button--unstyled:disabled.usa-button--active, .usa-button--unstyled[aria-disabled=true].usa-button--active, .usa-button--unstyled:disabled:focus, .usa-button--unstyled[aria-disabled=true]:focus, .usa-button--unstyled:disabled.usa-focus, .usa-button--unstyled[aria-disabled=true].usa-focus, .usa-button--unstyled:disabled, .usa-button--unstyled[aria-disabled=true], .usa-button--unstyled.usa-button--disabled {
+  background-color: transparent;
+  box-shadow: none;
+  text-decoration: underline;
+}
+.usa-button--unstyled.usa-button--hover {
+  color: #1a4480;
+}
+.usa-button--unstyled.usa-button--active {
+  color: #162e51;
+}
+.usa-button--unstyled:disabled, .usa-button--unstyled[aria-disabled=true], .usa-button--unstyled:disabled:hover, .usa-button--unstyled[aria-disabled=true]:hover, .usa-button--unstyled[aria-disabled=true]:focus {
+  color: #757575;
+}
+@media (forced-colors: active) {
+  .usa-button--unstyled:disabled, .usa-button--unstyled[aria-disabled=true], .usa-button--unstyled:disabled:hover, .usa-button--unstyled[aria-disabled=true]:hover, .usa-button--unstyled[aria-disabled=true]:focus {
+    color: GrayText;
+  }
+}
+
+.usa-icon {
+  display: inline-block;
+  fill: currentColor;
+  height: 1em;
+  position: relative;
+  width: 1em;
+}
+
+.usa-icon--size-3 {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.usa-icon--size-4 {
+  height: 2rem;
+  width: 2rem;
+}
+
+.usa-icon--size-5 {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.usa-icon--size-6 {
+  height: 3rem;
+  width: 3rem;
+}
+
+.usa-icon--size-7 {
+  height: 3.5rem;
+  width: 3.5rem;
+}
+
+.usa-icon--size-8 {
+  height: 4rem;
+  width: 4rem;
+}
+
+.usa-icon--size-9 {
+  height: 4.5rem;
+  width: 4.5rem;
+}
+
+.usa-input:disabled, .usa-input[aria-disabled=true] {
+  color: #454545;
+  background-color: #c9c9c9;
+  cursor: not-allowed;
+  opacity: 1;
+}
+.usa-input:disabled:hover, .usa-input:disabled:active, .usa-input:disabled:focus, .usa-input:disabled.usa-focus, .usa-input[aria-disabled=true]:hover, .usa-input[aria-disabled=true]:active, .usa-input[aria-disabled=true]:focus, .usa-input[aria-disabled=true].usa-focus {
+  color: #454545;
+  background-color: #c9c9c9;
+}
+@media (forced-colors: active) {
+  .usa-input:disabled, .usa-input[aria-disabled=true] {
+    border: 0;
+    color: GrayText;
+  }
+  .usa-input:disabled:hover, .usa-input:disabled:active, .usa-input:disabled:focus, .usa-input:disabled.usa-focus, .usa-input[aria-disabled=true]:hover, .usa-input[aria-disabled=true]:active, .usa-input[aria-disabled=true]:focus, .usa-input[aria-disabled=true].usa-focus {
+    color: GrayText;
+  }
+}
+@media (forced-colors: active) {
+  .usa-input:disabled, .usa-input[aria-disabled=true] {
+    border: 2px solid GrayText;
+  }
+}
+.usa-input:disabled, .usa-input[aria-disabled=true] {
+  -webkit-text-fill-color: #454545;
+}
+
+.usa-input--2xs,
+.usa-form .usa-input--2xs {
+  max-width: 5ex;
+}
+
+.usa-input--xs,
+.usa-form .usa-input--xs {
+  max-width: 9ex;
+}
+
+.usa-input--sm,
+.usa-form .usa-input--sm {
+  max-width: 13ex;
+}
+
+.usa-input--small,
+.usa-form .usa-input--small {
+  max-width: 13ex;
+}
+
+.usa-input--md,
+.usa-form .usa-input--md {
+  max-width: 20ex;
+}
+
+.usa-input--medium,
+.usa-form .usa-input--medium {
+  max-width: 20ex;
+}
+
+.usa-input--lg,
+.usa-form .usa-input--lg {
+  max-width: 30ex;
+}
+
+.usa-input--xl,
+.usa-form .usa-input--xl {
+  max-width: 40ex;
+}
+
+.usa-input--2xl,
+.usa-form .usa-input--2xl {
+  max-width: 50ex;
+}
+
+.usa-input--error {
+  border-width: 0.25rem;
+  border-color: #b50909;
+  border-style: solid;
+  padding-top: calc(0.5rem - 0.25rem);
+  padding-bottom: calc(0.5rem - 0.25rem);
+}
+
+.usa-input--success {
+  border-width: 0.25rem;
+  border-color: #00a91c;
+  border-style: solid;
+  padding-top: calc(0.5rem - 0.25rem);
+  padding-bottom: calc(0.5rem - 0.25rem);
+}
+
+.usa-search::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.usa-search {
+  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.5;
+  position: relative;
+}
+.usa-search[role=search], .usa-search[role=search] > div,
+.usa-search [role=search] {
+  display: flex;
+}
+.usa-search [type=submit] {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  height: 2rem;
+  margin: 0;
+  padding: 0;
+  width: 3rem;
+}
+@media all and (min-width: 30em) {
+  .usa-search [type=submit] {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: auto;
+  }
+}
+@media (forced-colors: active) {
+  .usa-search [type=submit]::before {
+    background-image: url("/icons/usa-icons/search.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 1.5rem 1.5rem;
+    display: inline-block;
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  @supports ((-webkit-mask: url("")) or (mask: url(""))) {
+    .usa-search [type=submit]::before {
+      background: none;
+      background-color: ButtonText;
+      -webkit-mask-image: url("/icons/usa-icons/search.svg"), linear-gradient(transparent, transparent);
+              mask-image: url("/icons/usa-icons/search.svg"), linear-gradient(transparent, transparent);
+      -webkit-mask-position: center center;
+              mask-position: center center;
+      -webkit-mask-repeat: no-repeat;
+              mask-repeat: no-repeat;
+      -webkit-mask-size: 1.5rem 1.5rem;
+              mask-size: 1.5rem 1.5rem;
+    }
+  }
+  .usa-search [type=submit]::before {
+    content: "";
+    vertical-align: middle;
+    margin-right: auto;
+  }
+  .usa-search [type=submit]:focus {
+    outline-offset: 0;
+  }
+}
+@media (forced-colors: active) and (min-width: 30em) {
+  .usa-search [type=submit]::before {
+    content: none;
+  }
+}
+@media all and (min-width: 30em) {
+  .usa-search__submit-icon {
+    display: none;
+  }
+}
+@media (forced-colors: active) {
+  .usa-search__submit-icon {
+    display: none;
+  }
+}
+
+@media all and (min-width: 30em) {
+  .usa-search--big [type=search],
+  .usa-search--big .usa-search__input {
+    font-size: 1.06rem;
+    height: 3rem;
+  }
+}
+@media all and (min-width: 30em) {
+  .usa-search--big [type=submit],
+  .usa-search--big .usa-search__submit {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: 1.46rem;
+    height: 3rem;
+    width: auto;
+  }
+}
+
+.usa-search--small [type=submit],
+.usa-search--small .usa-search__submit {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  min-width: 3rem;
+}
+@media (forced-colors: active) and (min-width: 30em) {
+  .usa-search--small [type=submit]::before {
+    content: "";
+  }
+}
+.usa-search--small .usa-search__submit-icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  display: block;
+}
+@media (forced-colors: active) {
+  .usa-search--small .usa-search__submit-icon {
+    display: none;
+  }
+}
+
+input[type=search] {
+  /* stylelint-disable-line selector-no-qualifying-type */
+  box-sizing: border-box;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+[type=search],
+.usa-search__input {
+  padding-bottom: 0;
+  padding-top: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+  border-top-right-radius: 0;
+  box-sizing: border-box;
+  float: left;
+  font-size: 1rem;
+  height: 2rem;
+  margin: 0;
+}
+
+.usa-search__submit-text {
+  display: none;
+}
+@media all and (min-width: 30em) {
+  .usa-search__submit-text {
+    display: block;
+  }
+}
+
+.usa-accordion {
+  margin-bottom: 0;
+  margin-top: 0;
+  list-style-type: none;
+  padding-left: 0;
+}
+.usa-accordion > li {
+  margin-bottom: 0;
+  max-width: unset;
+}
+.usa-accordion {
+  color: #1b1b1b;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.usa-accordion > ul li ul {
+  list-style: disc;
+}
+.usa-accordion > ul li ul > li > ul {
+  list-style: circle;
+}
+.usa-accordion > ul li ul > li > ul > li > ul {
+  list-style: square;
+}
+.usa-accordion {
+  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.5;
+}
+.usa-accordion + .usa-accordion,
+.usa-accordion + .usa-accordion--bordered {
+  margin-top: 0.5rem;
+}
+
+.usa-accordion--bordered .usa-accordion__content {
+  border-bottom: 0.25rem solid #f0f0f0;
+  border-left: 0.25rem solid #f0f0f0;
+  border-right: 0.25rem solid #f0f0f0;
+  padding-bottom: 1rem;
+}
+.usa-accordion--bordered .usa-accordion__heading {
+  margin-bottom: 0;
+}
+
+.usa-accordion__heading,
+.usa-prose .usa-accordion__heading {
+  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 0.9;
+  margin: 0;
+}
+.usa-accordion__heading:not(:first-child),
+.usa-prose .usa-accordion__heading:not(:first-child) {
+  margin-top: 0.5rem;
+}
+
+.usa-accordion__content {
+  color: #1b1b1b;
+  background-color: white;
+  margin-top: 0;
+  overflow: auto;
+  padding: 1rem 1.25rem calc(1rem - 0.25rem) 1.25rem;
+}
+.usa-accordion__content > *:first-child {
+  margin-top: 0;
+}
+.usa-accordion__content > *:last-child {
+  margin-bottom: 0;
+}
+
+.usa-accordion__button {
+  color: #005ea2;
+  text-decoration: underline;
+}
+.usa-accordion__button:visited {
+  color: #54278f;
+}
+.usa-accordion__button:hover {
+  color: #1a4480;
+}
+.usa-accordion__button:active {
+  color: #162e51;
+}
+.usa-accordion__button:focus {
+  outline: 0.25rem solid #2491ff;
+  outline-offset: 0rem;
+}
+.usa-accordion__button {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  font-weight: normal;
+  justify-content: normal;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+.usa-accordion__button:hover, .usa-accordion__button.usa-button--hover, .usa-accordion__button:disabled:hover, .usa-accordion__button[aria-disabled=true]:hover, .usa-accordion__button:disabled.usa-button--hover, .usa-accordion__button[aria-disabled=true].usa-button--hover, .usa-accordion__button:active, .usa-accordion__button.usa-button--active, .usa-accordion__button:disabled:active, .usa-accordion__button[aria-disabled=true]:active, .usa-accordion__button:disabled.usa-button--active, .usa-accordion__button[aria-disabled=true].usa-button--active, .usa-accordion__button:disabled:focus, .usa-accordion__button[aria-disabled=true]:focus, .usa-accordion__button:disabled.usa-focus, .usa-accordion__button[aria-disabled=true].usa-focus, .usa-accordion__button:disabled, .usa-accordion__button[aria-disabled=true], .usa-accordion__button.usa-button--disabled {
+  background-color: transparent;
+  box-shadow: none;
+  text-decoration: underline;
+}
+.usa-accordion__button.usa-button--hover {
+  color: #1a4480;
+}
+.usa-accordion__button.usa-button--active {
+  color: #162e51;
+}
+.usa-accordion__button:disabled, .usa-accordion__button[aria-disabled=true], .usa-accordion__button:disabled:hover, .usa-accordion__button[aria-disabled=true]:hover, .usa-accordion__button[aria-disabled=true]:focus {
+  color: #757575;
+}
+@media (forced-colors: active) {
+  .usa-accordion__button:disabled, .usa-accordion__button[aria-disabled=true], .usa-accordion__button:disabled:hover, .usa-accordion__button[aria-disabled=true]:hover, .usa-accordion__button[aria-disabled=true]:focus {
+    color: GrayText;
+  }
+}
+.usa-accordion__button {
+  color: #1b1b1b;
+  background-color: #f0f0f0;
+  background-image: url("/icons/usa-icons/remove.svg"), linear-gradient(transparent, transparent);
+  background-repeat: no-repeat;
+  background-position: right 1.25rem center;
+  background-size: 1.5rem;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 700;
+  margin: 0;
+  padding: 1rem 3.5rem 1rem 1.25rem;
+  text-decoration: none;
+  width: 100%;
+}
+.usa-accordion__button:hover {
+  color: #1b1b1b;
+  background-color: #dfe1e2;
+  background-image: url("/icons/usa-icons/remove.svg"), linear-gradient(transparent, transparent);
+  background-repeat: no-repeat;
+  text-decoration: none;
+}
+@media (forced-colors: active) {
+  .usa-accordion__button {
+    border: 2px solid transparent;
+    position: relative;
+  }
+  .usa-accordion__button::before {
+    background-image: url("/icons/usa-icons/remove.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 1.5rem 1.5rem;
+    display: inline-block;
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  @supports ((-webkit-mask: url("")) or (mask: url(""))) {
+    .usa-accordion__button::before {
+      background: none;
+      background-color: ButtonText;
+      -webkit-mask-image: url("/icons/usa-icons/remove.svg"), linear-gradient(transparent, transparent);
+              mask-image: url("/icons/usa-icons/remove.svg"), linear-gradient(transparent, transparent);
+      -webkit-mask-position: center center;
+              mask-position: center center;
+      -webkit-mask-repeat: no-repeat;
+              mask-repeat: no-repeat;
+      -webkit-mask-size: 1.5rem 1.5rem;
+              mask-size: 1.5rem 1.5rem;
+    }
+  }
+  .usa-accordion__button::before {
+    height: 100%;
+    position: absolute;
+    right: 1.25rem;
+    top: 0;
+    content: "";
+  }
+}
+
+.usa-accordion__button[aria-expanded=false] {
+  background-image: url("/icons/usa-icons/add.svg"), linear-gradient(transparent, transparent);
+  background-repeat: no-repeat;
+  background-size: 1.5rem;
+}
+.usa-accordion__button[aria-expanded=false]:hover {
+  background-image: url("/icons/usa-icons/add.svg"), linear-gradient(transparent, transparent);
+  background-repeat: no-repeat;
+}
+@media (forced-colors: active) {
+  .usa-accordion__button[aria-expanded=false]::before {
+    background-image: url("/icons/usa-icons/add.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 1.5rem 1.5rem;
+    display: inline-block;
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  @supports ((-webkit-mask: url("")) or (mask: url(""))) {
+    .usa-accordion__button[aria-expanded=false]::before {
+      background: none;
+      background-color: ButtonText;
+      -webkit-mask-image: url("/icons/usa-icons/add.svg"), linear-gradient(transparent, transparent);
+              mask-image: url("/icons/usa-icons/add.svg"), linear-gradient(transparent, transparent);
+      -webkit-mask-position: center center;
+              mask-position: center center;
+      -webkit-mask-repeat: no-repeat;
+              mask-repeat: no-repeat;
+      -webkit-mask-size: 1.5rem 1.5rem;
+              mask-size: 1.5rem 1.5rem;
+    }
+  }
+  .usa-accordion__button[aria-expanded=false]::before {
+    height: 100%;
+    position: absolute;
+    right: 1.25rem;
+    top: 0;
+  }
+}
+
+@keyframes slidein-left {
+  from {
+    transform: translateX(15rem);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.usa-nav {
+  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 0.9;
+}
+@media all and (max-width: 63.99em) {
+  .usa-nav {
+    position: absolute;
+    right: 0;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    position: fixed;
+    background: white;
+    border-right: 0;
+    display: none;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 1rem;
+    width: 15rem;
+    z-index: 500;
+  }
+  .usa-nav.is-visible {
+    animation: slidein-left 0.3s ease-in-out;
+    display: flex;
+  }
+}
+@media (max-width: 63.99em) and (prefers-reduced-motion) {
+  .usa-nav.is-visible {
+    animation: none;
+  }
+}
+@media all and (min-width: 64em) {
+  .usa-nav {
+    float: right;
+    position: relative;
+  }
+}
+.usa-nav .usa-search {
+  margin-top: 1rem;
+}
+@media all and (min-width: 64em) {
+  .usa-nav .usa-search {
+    margin-left: 1rem;
+    margin-top: 0;
+  }
+}
+.usa-nav .usa-accordion {
+  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 0.9;
+}
+
+@media all and (max-width: 63.99em) {
+  .usa-nav__primary {
+    margin-bottom: 0;
+    margin-top: 0;
+    list-style-type: none;
+    padding-left: 0;
+  }
+  .usa-nav__primary > li {
+    margin-bottom: 0;
+    max-width: unset;
+  }
+  .usa-nav__primary-item {
+    border-top: 1px solid #dfe1e2;
+  }
+  .usa-nav__primary a:not(.usa-button) {
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+  }
+  .usa-nav__primary a:not(.usa-button):hover {
+    background-color: #f0f0f0;
+    text-decoration: none;
+  }
+  .usa-nav__primary a:not(.usa-button):not(.usa-current) {
+    color: #565c65;
+  }
+  .usa-nav__primary a:not(.usa-button):not(.usa-current):hover {
+    color: #005ea2;
+  }
+  .usa-nav__primary a:not(.usa-button):not(.usa-current):focus {
+    outline-offset: 0;
+  }
+  .usa-nav__primary .usa-current {
+    position: relative;
+  }
+  .usa-nav__primary .usa-current::after {
+    background-color: #005ea2;
+    border-radius: 99rem;
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0.25rem;
+    top: 0.25rem;
+    width: 0.25rem;
+    left: 0.25rem;
+  }
+  .usa-nav__primary .usa-current {
+    color: #005ea2;
+    font-weight: 700;
+  }
+}
+@media all and (max-width: 63.99em) and (min-width: 40em) {
+  .usa-nav__primary .usa-current {
+    position: relative;
+  }
+  .usa-nav__primary .usa-current::after {
+    background-color: #005ea2;
+    border-radius: 99rem;
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0.25rem;
+    top: 0.25rem;
+    width: 0.25rem;
+    left: 0rem;
+  }
+}
+@media all and (max-width: 63.99em) {
+  .usa-nav__primary a {
+    padding-bottom: 0.75rem;
+    padding-top: 0.75rem;
+  }
+}
+@media all and (min-width: 64em) {
+  .usa-nav__primary {
+    display: flex;
+    align-items: stretch;
+  }
+}
+.usa-nav__primary .usa-nav__primary-item a {
+  text-decoration: none;
+}
+.usa-nav__primary > .usa-nav__primary-item {
+  line-height: 1.1;
+}
+@media all and (min-width: 64em) {
+  .usa-nav__primary > .usa-nav__primary-item {
+    font-size: 0.93rem;
+    line-height: 0.9;
+  }
+}
+@media all and (min-width: 64em) {
+  .usa-nav__primary > .usa-nav__primary-item > a {
+    line-height: 0.9;
+    padding: 1rem;
+    align-items: center;
+    color: #565c65;
+    display: flex;
+    font-weight: 700;
+  }
+  .usa-nav__primary > .usa-nav__primary-item > a:hover {
+    color: #005ea2;
+  }
+}
+@media all and (min-width: 64em) {
+  .usa-nav__primary > .usa-nav__primary-item > button,
+  .usa-nav__primary > .usa-nav__primary-item > a {
+    height: 100%;
+  }
+}
+@media all and (min-width: 64em) {
+  .usa-nav__primary a {
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+  }
+}
+.usa-nav__primary button {
+  color: #005ea2;
+  text-decoration: underline;
+}
+.usa-nav__primary button:visited {
+  color: #54278f;
+}
+.usa-nav__primary button:hover {
+  color: #1a4480;
+}
+.usa-nav__primary button:active {
+  color: #162e51;
+}
+.usa-nav__primary button:focus {
+  outline: 0.25rem solid #2491ff;
+  outline-offset: 0rem;
+}
+.usa-nav__primary button {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  font-weight: normal;
+  justify-content: normal;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+.usa-nav__primary button:hover, .usa-nav__primary button.usa-button--hover, .usa-nav__primary button:disabled:hover, .usa-nav__primary button[aria-disabled=true]:hover, .usa-nav__primary button:disabled.usa-button--hover, .usa-nav__primary button[aria-disabled=true].usa-button--hover, .usa-nav__primary button:active, .usa-nav__primary button.usa-button--active, .usa-nav__primary button:disabled:active, .usa-nav__primary button[aria-disabled=true]:active, .usa-nav__primary button:disabled.usa-button--active, .usa-nav__primary button[aria-disabled=true].usa-button--active, .usa-nav__primary button:disabled:focus, .usa-nav__primary button[aria-disabled=true]:focus, .usa-nav__primary button:disabled.usa-focus, .usa-nav__primary button[aria-disabled=true].usa-focus, .usa-nav__primary button:disabled, .usa-nav__primary button[aria-disabled=true], .usa-nav__primary button.usa-button--disabled {
+  background-color: transparent;
+  box-shadow: none;
+  text-decoration: underline;
+}
+.usa-nav__primary button.usa-button--hover {
+  color: #1a4480;
+}
+.usa-nav__primary button.usa-button--active {
+  color: #162e51;
+}
+.usa-nav__primary button:disabled, .usa-nav__primary button[aria-disabled=true], .usa-nav__primary button:disabled:hover, .usa-nav__primary button[aria-disabled=true]:hover, .usa-nav__primary button[aria-disabled=true]:focus {
+  color: #757575;
+}
+@media (forced-colors: active) {
+  .usa-nav__primary button:disabled, .usa-nav__primary button[aria-disabled=true], .usa-nav__primary button:disabled:hover, .usa-nav__primary button[aria-disabled=true]:hover, .usa-nav__primary button[aria-disabled=true]:focus {
+    color: GrayText;
+  }
+}
+.usa-nav__primary button {
+  position: relative;
+  color: #565c65;
+  font-weight: normal;
+  line-height: 1.1;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  width: 100%;
+}
+@media all and (min-width: 64em) {
+  .usa-nav__primary button {
+    line-height: 0.9;
+    padding: 1rem;
+    font-size: 0.93rem;
+    font-weight: 700;
+  }
+}
+@media (forced-colors: active) {
+  .usa-nav__primary button {
+    forced-color-adjust: auto;
+  }
+}
+.usa-nav__primary button:hover {
+  color: #005ea2;
+  background-color: #f0f0f0;
+  text-decoration: none;
+}
+@media all and (min-width: 64em) {
+  .usa-nav__primary button:hover {
+    background-color: transparent;
+  }
+}
+.usa-nav__primary button[aria-expanded], .usa-nav__primary button[aria-expanded]:hover {
+  background-image: none;
+}
+@media (forced-colors: active) {
+  .usa-nav__primary button[aria-expanded]::before, .usa-nav__primary button[aria-expanded]:hover::before {
+    content: none;
+  }
+}
+.usa-nav__primary button[aria-expanded] span::after {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+.usa-nav__primary button[aria-expanded=false] span::after {
+  background-image: url("/icons/usa-icons/add.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 1.25rem 1.25rem;
+  display: inline-block;
+  height: 1.25rem;
+  width: 1.25rem;
+}
+@supports ((-webkit-mask: url("")) or (mask: url(""))) {
+  .usa-nav__primary button[aria-expanded=false] span::after {
+    background: none;
+    background-color: ButtonText;
+    -webkit-mask-image: url("/icons/usa-icons/add.svg"), linear-gradient(transparent, transparent);
+            mask-image: url("/icons/usa-icons/add.svg"), linear-gradient(transparent, transparent);
+    -webkit-mask-position: center center;
+            mask-position: center center;
+    -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+    -webkit-mask-size: 1.25rem 1.25rem;
+            mask-size: 1.25rem 1.25rem;
+  }
+}
+.usa-nav__primary button[aria-expanded=false] span::after {
+  content: "";
+  vertical-align: middle;
+  margin-left: auto;
+}
+.usa-nav__primary button[aria-expanded=false] span::after:hover {
+  background-color: buttonText;
+}
+@media all and (min-width: 64em) {
+  .usa-nav__primary button[aria-expanded=false] span::after {
+    background-image: url("/icons/usa-icons/expand_more.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 1rem 1rem;
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+  }
+  @supports ((-webkit-mask: url("")) or (mask: url(""))) {
+    .usa-nav__primary button[aria-expanded=false] span::after {
+      background: none;
+      background-color: ButtonText;
+      -webkit-mask-image: url("/icons/usa-icons/expand_more.svg"), linear-gradient(transparent, transparent);
+              mask-image: url("/icons/usa-icons/expand_more.svg"), linear-gradient(transparent, transparent);
+      -webkit-mask-position: center center;
+              mask-position: center center;
+      -webkit-mask-repeat: no-repeat;
+              mask-repeat: no-repeat;
+      -webkit-mask-size: 1rem 1rem;
+              mask-size: 1rem 1rem;
+    }
+  }
+  .usa-nav__primary button[aria-expanded=false] span::after {
+    content: "";
+    vertical-align: middle;
+    margin-left: auto;
+  }
+  .usa-nav__primary button[aria-expanded=false] span::after {
+    right: 0.75rem;
+  }
+}
+@media all and (min-width: 64em) {
+  .usa-nav__primary button[aria-expanded=false]:hover span::after {
+    background-color: #1a4480;
+  }
+}
+@media (min-width: 64em) and (forced-colors: active) {
+  .usa-nav__primary button[aria-expanded=false]:hover span::after {
+    background-color: ButtonText;
+  }
+}
+.usa-nav__primary button[aria-expanded=true] span::after {
+  background-image: url("/icons/usa-icons/remove.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 1.25rem 1.25rem;
+  display: inline-block;
+  height: 1.25rem;
+  width: 1.25rem;
+}
+@supports ((-webkit-mask: url("")) or (mask: url(""))) {
+  .usa-nav__primary button[aria-expanded=true] span::after {
+    background: none;
+    background-color: ButtonText;
+    -webkit-mask-image: url("/icons/usa-icons/remove.svg"), linear-gradient(transparent, transparent);
+            mask-image: url("/icons/usa-icons/remove.svg"), linear-gradient(transparent, transparent);
+    -webkit-mask-position: center center;
+            mask-position: center center;
+    -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+    -webkit-mask-size: 1.25rem 1.25rem;
+            mask-size: 1.25rem 1.25rem;
+  }
+}
+.usa-nav__primary button[aria-expanded=true] span::after {
+  content: "";
+  vertical-align: middle;
+  margin-left: auto;
+}
+.usa-nav__primary button[aria-expanded=true] span::after {
+  position: absolute;
+  right: 0;
+}
+@media (forced-colors: active) {
+  .usa-nav__primary button[aria-expanded=true] span::after {
+    background-color: ButtonText;
+  }
+}
+@media all and (min-width: 64em) {
+  .usa-nav__primary button[aria-expanded=true] {
+    background-image: none;
+    background-color: #162e51;
+    color: white;
+  }
+}
+@media all and (min-width: 64em) and (min-width: 64em) {
+  .usa-nav__primary button[aria-expanded=true] span::after {
+    background-image: url("/icons/usa-icons/expand_less.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 1rem 1rem;
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+  }
+  @supports ((-webkit-mask: url("")) or (mask: url(""))) {
+    .usa-nav__primary button[aria-expanded=true] span::after {
+      background: none;
+      background-color: ButtonText;
+      -webkit-mask-image: url("/icons/usa-icons/expand_less.svg"), linear-gradient(transparent, transparent);
+              mask-image: url("/icons/usa-icons/expand_less.svg"), linear-gradient(transparent, transparent);
+      -webkit-mask-position: center center;
+              mask-position: center center;
+      -webkit-mask-repeat: no-repeat;
+              mask-repeat: no-repeat;
+      -webkit-mask-size: 1rem 1rem;
+              mask-size: 1rem 1rem;
+    }
+  }
+  .usa-nav__primary button[aria-expanded=true] span::after {
+    content: "";
+    vertical-align: middle;
+    margin-left: auto;
+  }
+  .usa-nav__primary button[aria-expanded=true] span::after {
+    right: 0.75rem;
+    background-color: white;
+  }
+}
+@media (min-width: 64em) and (min-width: 64em) and (forced-colors: active) {
+  .usa-nav__primary button[aria-expanded=true] span::after {
+    background-color: ButtonText;
+  }
+}
+@media all and (min-width: 64em) {
+  .usa-nav__primary .usa-accordion__button span {
+    display: inline-block;
+    margin-right: 0;
+    padding-right: 1rem;
+  }
+}
+
+.usa-nav__secondary {
+  margin-top: 1rem;
+}
+@media all and (min-width: 64em) {
+  .usa-nav__secondary {
+    flex-direction: column;
+    align-items: flex-end;
+    bottom: 4rem;
+    display: flex;
+    font-size: 0.93rem;
+    margin-top: 0.5rem;
+    min-width: calc(27ch + 3rem);
+    position: absolute;
+    right: 2rem;
+  }
+}
+.usa-nav__secondary .usa-search {
+  width: 100%;
+}
+@media all and (min-width: 64em) {
+  .usa-nav__secondary .usa-search {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+}
+
+.usa-nav__secondary-links {
+  margin-bottom: 0;
+  margin-top: 0;
+  list-style-type: none;
+  padding-left: 0;
+  line-height: 1.3;
+  margin-top: 1.5rem;
+}
+@media all and (min-width: 64em) {
+  .usa-nav__secondary-links {
+    -moz-column-gap: 0.5rem;
+         column-gap: 0.5rem;
+    display: flex;
+    flex-flow: row nowrap;
+    line-height: 0.9;
+    margin-bottom: 0.25rem;
+    margin-top: 0;
+  }
+}
+@media all and (min-width: 64em) {
+  .usa-nav__secondary-links .usa-nav__secondary-item {
+    padding-left: 0.25rem;
+  }
+  .usa-nav__secondary-links .usa-nav__secondary-item + .usa-nav__secondary-item {
+    border-left: 1px solid #dfe1e2;
+    padding-left: 0.5rem;
+  }
+}
+.usa-nav__secondary-links a {
+  color: #71767a;
+  display: inline-block;
+  font-size: 0.93rem;
+  text-decoration: none;
+}
+.usa-nav__secondary-links a:hover {
+  color: #005ea2;
+  text-decoration: underline;
+}
+
+@media all and (max-width: 63.99em) {
+  .usa-nav__submenu {
+    margin-bottom: 0;
+    margin-top: 0;
+    list-style-type: none;
+    padding-left: 0;
+  }
+  .usa-nav__submenu > li {
+    margin-bottom: 0;
+    max-width: unset;
+  }
+  .usa-nav__submenu {
+    margin: 0;
+  }
+  .usa-nav__submenu-item {
+    border-top: 1px solid #dfe1e2;
+    font-size: 0.93rem;
+  }
+  .usa-nav__submenu .usa-current::after {
+    display: none;
+  }
+}
+@media all and (max-width: 63.99em) and (min-width: 40em) {
+  .usa-nav__submenu .usa-current::after {
+    display: none;
+  }
+}
+@media all and (max-width: 63.99em) {
+  .usa-nav__submenu a:not(.usa-button) {
+    padding-left: 2rem;
+  }
+  .usa-nav__submenu .usa-nav__submenu a:not(.usa-button) {
+    padding-left: 3rem;
+  }
+  .usa-nav__submenu .usa-nav__submenu .usa-nav__submenu a:not(.usa-button) {
+    padding-left: 4rem;
+  }
+}
+@media all and (min-width: 64em) {
+  .usa-nav__submenu {
+    margin-bottom: 0;
+    margin-top: 0;
+    list-style-type: none;
+    padding-left: 0;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    background-color: #162e51;
+    width: 15rem;
+    position: absolute;
+    z-index: 400;
+  }
+}
+.usa-nav__submenu[aria-hidden=true] {
+  display: none;
+}
+@media all and (min-width: 64em) {
+  .usa-nav__submenu .usa-nav__submenu-item a {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: white;
+    line-height: 1.3;
+    display: block;
+  }
+  .usa-nav__submenu .usa-nav__submenu-item a:focus {
+    outline-offset: -0.25rem;
+  }
+  .usa-nav__submenu .usa-nav__submenu-item a:hover {
+    color: white;
+    text-decoration: underline;
+  }
+}
+
+.usa-nav__submenu-list {
+  margin-bottom: 0;
+  margin-top: 0;
+  list-style-type: none;
+  padding-left: 0;
+}
+.usa-nav__submenu-list > li {
+  margin-bottom: 0;
+  max-width: unset;
+}
+.usa-nav__submenu-list .usa-nav__submenu-list-item {
+  margin: 0;
+  font-size: 0.93rem;
+}
+.usa-nav__submenu-list .usa-nav__submenu-list-item a {
+  line-height: 1.3;
+}
+
+.usa-nav__close {
+  color: #005ea2;
+  text-decoration: underline;
+}
+.usa-nav__close:visited {
+  color: #54278f;
+}
+.usa-nav__close:hover {
+  color: #1a4480;
+}
+.usa-nav__close:active {
+  color: #162e51;
+}
+.usa-nav__close:focus {
+  outline: 0.25rem solid #2491ff;
+  outline-offset: 0rem;
+}
+.usa-nav__close {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  font-weight: normal;
+  justify-content: normal;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+.usa-nav__close:hover, .usa-nav__close.usa-button--hover, .usa-nav__close:disabled:hover, .usa-nav__close[aria-disabled=true]:hover, .usa-nav__close:disabled.usa-button--hover, .usa-nav__close[aria-disabled=true].usa-button--hover, .usa-nav__close:active, .usa-nav__close.usa-button--active, .usa-nav__close:disabled:active, .usa-nav__close[aria-disabled=true]:active, .usa-nav__close:disabled.usa-button--active, .usa-nav__close[aria-disabled=true].usa-button--active, .usa-nav__close:disabled:focus, .usa-nav__close[aria-disabled=true]:focus, .usa-nav__close:disabled.usa-focus, .usa-nav__close[aria-disabled=true].usa-focus, .usa-nav__close:disabled, .usa-nav__close[aria-disabled=true], .usa-nav__close.usa-button--disabled {
+  background-color: transparent;
+  box-shadow: none;
+  text-decoration: underline;
+}
+.usa-nav__close.usa-button--hover {
+  color: #1a4480;
+}
+.usa-nav__close.usa-button--active {
+  color: #162e51;
+}
+.usa-nav__close:disabled, .usa-nav__close[aria-disabled=true], .usa-nav__close:disabled:hover, .usa-nav__close[aria-disabled=true]:hover, .usa-nav__close[aria-disabled=true]:focus {
+  color: #757575;
+}
+@media (forced-colors: active) {
+  .usa-nav__close:disabled, .usa-nav__close[aria-disabled=true], .usa-nav__close:disabled:hover, .usa-nav__close[aria-disabled=true]:hover, .usa-nav__close[aria-disabled=true]:focus {
+    color: GrayText;
+  }
+}
+.usa-nav__close {
+  height: 3rem;
+  width: 3rem;
+  background-image: none;
+  color: currentColor;
+  flex: none;
+  float: right;
+  margin: -0.75rem -1rem 1rem auto;
+  text-align: center;
+}
+@media (forced-colors: active) {
+  .usa-nav__close::before {
+    background-image: url("/icons/usa-icons/close.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 1.25rem 1.25rem;
+    display: inline-block;
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+  @supports ((-webkit-mask: url("")) or (mask: url(""))) {
+    .usa-nav__close::before {
+      background: none;
+      background-color: ButtonText;
+      -webkit-mask-image: url("/icons/usa-icons/close.svg"), linear-gradient(transparent, transparent);
+              mask-image: url("/icons/usa-icons/close.svg"), linear-gradient(transparent, transparent);
+      -webkit-mask-position: center center;
+              mask-position: center center;
+      -webkit-mask-repeat: no-repeat;
+              mask-repeat: no-repeat;
+      -webkit-mask-size: 1.25rem 1.25rem;
+              mask-size: 1.25rem 1.25rem;
+    }
+  }
+  .usa-nav__close::before {
+    content: "";
+    vertical-align: middle;
+    margin-right: auto;
+  }
+  .usa-nav__close::before {
+    background-color: buttonText;
+  }
+}
+.usa-nav__close:hover {
+  color: currentColor;
+  text-decoration: none;
+}
+@media all and (min-width: 64em) {
+  .usa-nav__close {
+    display: none;
+  }
+}
+.usa-nav__close img {
+  width: 1.5rem;
+}
+@media (forced-colors: active) {
+  .usa-nav__close img {
+    display: none;
+  }
+}
+.usa-nav__close + * {
+  clear: both;
+}
+
+.usa-js-mobile-nav--active {
+  overflow: hidden;
+}
+
+@media (min-width: 63.06rem) {
+  .usa-js-mobile-nav--active.is-safari {
+    overflow-y: scroll;
+    position: fixed;
+    top: var(--scrolltop, 0);
+  }
+}
+.usa-header::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.usa-header {
+  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.5;
+}
+.usa-header a {
+  border-bottom: none;
+}
+.usa-header .usa-search {
+  margin-top: 0.5rem;
+}
+@media all and (min-width: 64em) {
+  .usa-header .usa-search {
+    float: right;
+  }
+}
+@media all and (min-width: 64em) {
+  .usa-header [role=search] {
+    float: right;
+    max-width: calc(27ch + 3rem);
+    width: 100%;
+  }
+}
+.usa-header [type=search] {
+  min-width: 0;
+}
+@media all and (min-width: 64em) {
+  .usa-header + .usa-hero {
+    border-top: 1px solid white;
+  }
+}
+@media all and (min-width: 64em) {
+  .usa-header + .usa-section,
+  .usa-header + main {
+    border-top: 1px solid #dfe1e2;
+  }
+}
+
+@media all and (max-width: 63.99em) {
+  .usa-logo {
+    flex: 1 1 0%;
+    font-size: 0.93rem;
+    line-height: 0.9;
+    margin-left: 1rem;
+  }
+}
+@media all and (min-width: 64em) {
+  .usa-logo {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.46rem;
+    line-height: 1.1;
+  }
+}
+.usa-logo a {
+  color: #1b1b1b;
+  text-decoration: none;
+}
+
+.usa-logo__text {
+  display: block;
+  font-style: normal;
+  font-weight: 700;
+  margin: 0;
+}
+
+.usa-menu-btn {
+  color: #005ea2;
+  text-decoration: underline;
+}
+.usa-menu-btn:visited {
+  color: #54278f;
+}
+.usa-menu-btn:hover {
+  color: #1a4480;
+}
+.usa-menu-btn:active {
+  color: #162e51;
+}
+.usa-menu-btn:focus {
+  outline: 0.25rem solid #2491ff;
+  outline-offset: 0rem;
+}
+.usa-menu-btn {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  font-weight: normal;
+  justify-content: normal;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+.usa-menu-btn:hover, .usa-menu-btn.usa-button--hover, .usa-menu-btn:disabled:hover, .usa-menu-btn[aria-disabled=true]:hover, .usa-menu-btn:disabled.usa-button--hover, .usa-menu-btn[aria-disabled=true].usa-button--hover, .usa-menu-btn:active, .usa-menu-btn.usa-button--active, .usa-menu-btn:disabled:active, .usa-menu-btn[aria-disabled=true]:active, .usa-menu-btn:disabled.usa-button--active, .usa-menu-btn[aria-disabled=true].usa-button--active, .usa-menu-btn:disabled:focus, .usa-menu-btn[aria-disabled=true]:focus, .usa-menu-btn:disabled.usa-focus, .usa-menu-btn[aria-disabled=true].usa-focus, .usa-menu-btn:disabled, .usa-menu-btn[aria-disabled=true], .usa-menu-btn.usa-button--disabled {
+  background-color: transparent;
+  box-shadow: none;
+  text-decoration: underline;
+}
+.usa-menu-btn.usa-button--hover {
+  color: #1a4480;
+}
+.usa-menu-btn.usa-button--active {
+  color: #162e51;
+}
+.usa-menu-btn:disabled, .usa-menu-btn[aria-disabled=true], .usa-menu-btn:disabled:hover, .usa-menu-btn[aria-disabled=true]:hover, .usa-menu-btn[aria-disabled=true]:focus {
+  color: #757575;
+}
+@media (forced-colors: active) {
+  .usa-menu-btn:disabled, .usa-menu-btn[aria-disabled=true], .usa-menu-btn:disabled:hover, .usa-menu-btn[aria-disabled=true]:hover, .usa-menu-btn[aria-disabled=true]:focus {
+    color: GrayText;
+  }
+}
+.usa-menu-btn {
+  flex: 0 1 auto;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  background-color: #005ea2;
+  color: white;
+  font-size: 0.87rem;
+  height: 3rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+@media all and (min-width: 64em) {
+  .usa-menu-btn {
+    display: none;
+  }
+}
+.usa-menu-btn:hover {
+  background-color: #1a4480;
+  color: white;
+  text-decoration: none;
+}
+.usa-menu-btn:active {
+  color: white;
+}
+.usa-menu-btn:visited {
+  color: white;
+}
+
+.usa-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition: opacity 0.15s ease-in-out;
+}
+@media (prefers-reduced-motion) {
+  .usa-overlay {
+    transition: none;
+  }
+}
+.usa-overlay {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 400;
+}
+.usa-overlay.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media all and (min-width: 64em) {
+  .usa-header--basic .usa-navbar {
+    position: relative;
+    width: 33%;
+  }
+  .usa-header--basic .usa-nav {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    display: flex;
+    padding: 0 0 0.5rem 0.5rem;
+    width: 100%;
+  }
+  .usa-header--basic .usa-nav-container {
+    align-items: flex-end;
+    justify-content: space-between;
+    display: flex;
+  }
+  .usa-header--basic .usa-nav__primary-item > .usa-current,
+  .usa-header--basic .usa-nav__link:hover {
+    position: relative;
+  }
+  .usa-header--basic .usa-nav__primary-item > .usa-current::after,
+  .usa-header--basic .usa-nav__link:hover::after {
+    background-color: #005ea2;
+    border-radius: 0;
+    content: "";
+    display: block;
+    position: absolute;
+    height: 0.25rem;
+    left: 1rem;
+    right: 1rem;
+    bottom: -0.25rem;
+  }
+}
+@media (min-width: 64em) and (forced-colors: active) {
+  .usa-header--basic .usa-nav__primary-item > .usa-current::after,
+  .usa-header--basic .usa-nav__link:hover::after {
+    background-color: ButtonText;
+  }
+}
+@media all and (min-width: 64em) {
+  .usa-header--basic .usa-nav__link[aria-expanded=true]::after,
+  .usa-header--basic .usa-nav__link[aria-expanded=true]:hover::after {
+    display: none;
+  }
+  .usa-header--basic .usa-nav__primary {
+    width: auto;
+  }
+  .usa-header--basic .usa-nav__primary-item:last-of-type {
+    position: relative;
+  }
+  .usa-header--basic .usa-nav__primary-item:last-of-type .usa-nav__submenu {
+    position: absolute;
+    right: 0;
+  }
+  .usa-header--basic .usa-search {
+    top: 0;
+  }
+}
+.usa-header--basic.usa-header--megamenu .usa-nav__inner {
+  display: flex;
+  flex-direction: column;
+}
+@media all and (min-width: 64em) {
+  .usa-header--basic.usa-header--megamenu .usa-nav__inner {
+    display: block;
+    float: right;
+    margin-top: -2.5rem;
+  }
+}
+@media all and (min-width: 64em) {
+  .usa-header--basic.usa-header--megamenu .usa-nav__primary-item:last-of-type {
+    position: static;
+  }
+}
+
+@media all and (min-width: 64em) {
+  .usa-header--extended {
+    padding-top: 0;
+  }
+  .usa-header--extended .usa-nav__primary-item > .usa-current,
+  .usa-header--extended .usa-nav__primary-item > .usa-nav__link:hover {
+    position: relative;
+  }
+  .usa-header--extended .usa-nav__primary-item > .usa-current::after,
+  .usa-header--extended .usa-nav__primary-item > .usa-nav__link:hover::after {
+    background-color: #005ea2;
+    border-radius: 0;
+    content: "";
+    display: block;
+    position: absolute;
+    height: 0.25rem;
+    left: 1rem;
+    right: 1rem;
+    bottom: 0rem;
+  }
+}
+@media (min-width: 64em) and (forced-colors: active) {
+  .usa-header--extended .usa-nav__primary-item > .usa-current::after,
+  .usa-header--extended .usa-nav__primary-item > .usa-nav__link:hover::after {
+    background-color: ButtonText;
+  }
+}
+@media all and (min-width: 64em) {
+  .usa-header--extended .usa-nav__link[aria-expanded=true]::after,
+  .usa-header--extended .usa-nav__link[aria-expanded=true]:hover::after {
+    display: none;
+  }
+}
+@media all and (min-width: 64em) {
+  .usa-header--extended .usa-logo {
+    font-size: 2.13rem;
+    margin: 2rem 0 1.5rem;
+    max-width: 33%;
+  }
+}
+@media all and (min-width: 64em) {
+  .usa-header--extended .usa-navbar {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 64rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: block;
+    height: auto;
+    overflow: auto;
+  }
+}
+@media all and (min-width: 64em) and (min-width: 64em) {
+  .usa-header--extended .usa-navbar {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media all and (min-width: 64em) {
+  .usa-header--extended .usa-nav {
+    border-top: 1px solid #dfe1e2;
+    padding: 0;
+    width: 100%;
+  }
+}
+@media all and (min-width: 64em) {
+  .usa-header--extended .usa-nav__inner {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 64rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: relative;
+  }
+}
+@media all and (min-width: 64em) and (min-width: 64em) {
+  .usa-header--extended .usa-nav__inner {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media all and (min-width: 64em) {
+  .usa-header--extended .usa-nav__primary::after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+  .usa-header--extended .usa-nav__primary {
+    margin-left: -1rem;
+  }
+}
+@media all and (min-width: 64em) {
+  .usa-header--extended .usa-nav__link {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+}
+@media all and (min-width: 64em) {
+  .usa-header--extended .usa-nav__submenu .usa-grid-full {
+    padding-left: 0.75rem;
+  }
+}
+@media all and (min-width: 64em) {
+  .usa-header--extended .usa-nav__submenu.usa-megamenu {
+    left: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+html.usa-js-loading .usa-nav__submenu,
+html.usa-js-loading .usa-nav__submenu.usa-megamenu {
+  position: absolute;
+  left: -999em;
+  right: auto;
+}
+
+.usa-megamenu .usa-col {
+  flex: 1 1 auto;
+}
+@media all and (min-width: 64em) {
+  .usa-megamenu .usa-col {
+    flex: 4 1 0%;
+  }
+  .usa-megamenu .usa-col .usa-nav__submenu-item a {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .usa-megamenu .usa-col:first-child .usa-nav__submenu-item a {
+    padding-left: 0;
+  }
+  .usa-megamenu .usa-col:last-child .usa-nav__submenu-item a {
+    padding-right: 0;
+  }
+}
+
+@media all and (min-width: 64em) {
+  .usa-megamenu.usa-nav__submenu {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    left: -33%;
+    right: 0;
+    width: auto;
+  }
+}
+@media all and (min-width: 64em) {
+  .usa-megamenu.usa-nav__submenu::before {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    background-color: #162e51;
+    content: "";
+    display: block;
+    position: absolute;
+    width: calc(50vw - 32rem + 2rem);
+    right: 100%;
+  }
+}
+@media all and (min-width: 64em) {
+  .usa-megamenu.usa-nav__submenu::after {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    background-color: #162e51;
+    content: "";
+    display: block;
+    position: absolute;
+    width: calc(50vw - 32rem + 2rem);
+    left: 100%;
+  }
+}
+
+@media all and (min-width: 64em) {
+  .usa-header--extended .usa-megamenu.usa-nav__submenu::before {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    background-color: #162e51;
+    content: "";
+    display: block;
+    position: absolute;
+    width: calc(50vw - 32rem);
+  }
+}
+@media all and (min-width: 64em) {
+  .usa-header--extended .usa-megamenu.usa-nav__submenu::after {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    background-color: #162e51;
+    content: "";
+    display: block;
+    position: absolute;
+    width: calc(50vw - 32rem);
+  }
+}
+
+@media all and (min-width: 64em) {
+  .usa-nav-container::after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+  .usa-nav-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 64rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media all and (min-width: 64em) and (min-width: 64em) {
+  .usa-nav-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.usa-navbar {
+  height: 3rem;
+}
+@media all and (max-width: 63.99em) {
+  .usa-navbar {
+    align-items: center;
+    border-bottom: 1px solid #dfe1e2;
+    display: flex;
+  }
+}
+@media all and (min-width: 64em) {
+  .usa-navbar {
+    border-bottom: none;
+    display: inline-block;
+    height: auto;
+  }
+}

@@ -1,0 +1,80 @@
+/* Sidenav Left Template: auto side nav + two-column layout */
+
+body.sidenav-left main {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  align-items: start;
+  column-gap: 2rem;
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (width >= 64em) {
+  body.sidenav-left main {
+    padding: 0 2rem;
+  }
+}
+
+/* Override base section margins — grid handles vertical rhythm */
+body.sidenav-left main > .section {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 1.5rem 0;
+}
+
+body.sidenav-left main > .section:first-of-type {
+  padding-top: 1.5rem;
+}
+
+/* Auto-generated side nav: sticky left column spanning all rows */
+body.sidenav-left main > .section:first-child {
+  grid-column: 1;
+  grid-row: 1 / 9999;
+  position: sticky;
+  top: calc(var(--header-height, 94px) + 1.5rem);
+  align-self: start;
+  max-height: calc(100vh - var(--header-height, 94px) - 3rem);
+  overflow-y: auto;
+  padding-top: 1.5rem;
+}
+
+/* Content sections: right column */
+body.sidenav-left main > .section:not(:first-child) {
+  grid-column: 2;
+}
+
+/* Remove redundant inner div constraints — main padding handles horizontal spacing */
+body.sidenav-left main > .section > div {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Mobile: single column, nav on top */
+@media (width < 640px) {
+  body.sidenav-left main {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+
+  body.sidenav-left main > .section:first-child {
+    grid-column: 1;
+    grid-row: auto;
+    position: static;
+    top: 0;
+    max-height: none;
+    overflow-y: visible;
+  }
+
+  body.sidenav-left main > .section:not(:first-child) {
+    grid-column: 1;
+  }
+}
+
+/* Tablet: allow sidenav but narrower */
+@media (width >= 640px) and (width < 1024px) {
+  body.sidenav-left main {
+    grid-template-columns: 220px 1fr;
+  }
+}

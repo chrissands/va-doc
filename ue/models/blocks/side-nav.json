@@ -1,0 +1,31 @@
+{
+  "definitions": [
+    {
+      "title": "Side Navigation",
+      "id": "side-nav",
+      "plugins": {
+        "da": {
+          "name": "side-nav",
+          "rows": 5,
+          "columns": 0
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "side-nav",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "div:nth-child(1)",
+          "label": "Navigation",
+          "valueType": "string",
+          "value": "<ul><li><a href=\"#\">Link 1</a></li><li><a href=\"#\">Link 2</a><ul><li><a href=\"#\">Sub-link 1</a></li></ul></li></ul>",
+          "description": "Nested list structure for hierarchical navigation"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

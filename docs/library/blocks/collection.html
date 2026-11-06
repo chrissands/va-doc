@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Collection</title>
+</head>
+<body>
+<p><!-- Auto-generated from blocks/collection/README.md --></p>
+
+<h1>Collection Block</h1>
+
+<p>This block implements the <a href="https://designsystem.digital.gov/components/collection/">USWDS Collection component</a>. A collection displays a compact list of multiple related items like articles or events. The list links each item to its original source.</p>
+
+<h2>Basic Usage</h2>
+
+<p>In your document authoring platform, create a block table with the name <code>Collection</code>. Each row represents one item in the collection:</p>
+
+<pre><code>
+| Collection |
+|------------|
+| ### [Article Title](https://example.com/article) |
+| This is a short description of the article content. |
+| By: John Doe |
+| Date: January 27, 2024 |
+| Tags: News, Update, Important |
+</code></pre>
+
+<h2>When to Use</h2>
+
+<p>* **Feature content with metadata** - Display content with limited metadata like tags, date/time, or source</p>
+<p>* **Group related content** - Provide links to articles, guides, or resources</p>
+<p>* **Collect from multiple sources** - Guide users to resources from different locations</p>
+<p>* **Limit to 6 or fewer items** - Collections work best with a small number of focused items</p>
+
+<h2>When to Consider Something Else</h2>
+
+<p>* **Large content archives** - Use a separate index or archive page for browsing many items</p>
+<p>* **Large images or media** - Use the <a href="../card/">Card component</a> for bigger images and media</p>
+<p>* **In-component scrolling needed** - Display all items without forcing scrolling within the component</p>
+
+<h2>Content Structure</h2>
+
+<h3>Basic Item</h3>
+
+<p>Each collection item can include:</p>
+
+<pre><code>
+| Collection |
+|------------|
+| ### [Article Title](https://example.com) |
+| Brief description of the article. |
+| By: Author Name |
+| Date: January 27, 2024 |
+| Tags: Topic1, Topic2 |
+</code></pre>
+
+<p>**Components:**</p>
+<p>1. **Heading with link** (required) - Use h3 (<code>###</code>) with a link</p>
+<p>2. **Description** (optional) - One or more paragraphs</p>
+<p>3. **Metadata** (optional) - Lines starting with "By:" or "Date:"</p>
+<p>4. **Tags** (optional) - Line starting with "Tags:" (comma-separated)</p>
+
+<h3>With Thumbnail Image</h3>
+
+<p>Add an image before the heading:</p>
+
+<pre><code>
+| Collection |
+|------------|
+| ![Article thumbnail](https://example.com/image.jpg) |
+| ### [Article Title](https://example.com) |
+| Description text here. |
+| By: Jane Smith |
+| Date: January 27, 2024 |
+</code></pre>
+
+<h3>Multiple Items</h3>
+
+<p>Add multiple rows for multiple collection items:</p>
+
+<pre><code>
+| Collection |
+|------------|
+| ### [First Article](https://example.com/1) |
+| Description of first article. |
+| By: John Doe |
+| Date: January 27, 2024 |
+| Tags: News, Update |
+|  |
+| ### [Second Article](https://example.com/2) |
+| Description of second article. |
+| By: Jane Smith |
+| Date: January 26, 2024 |
+| Tags: Research, Data |
+</code></pre>
+
+<h2>Variants</h2>
+
+<h3>Condensed</h3>
+
+<p>Add the <code>condensed</code> class for tighter spacing:</p>
+
+<pre><code>
+| Collection (condensed) |
+|------------------------|
+| ### [First Item](https://example.com/1) |
+| ### [Second Item](https://example.com/2) |
+| ### [Third Item](https://example.com/3) |
+</code></pre>
+
+<p>This variant is useful for simple lists without descriptions or metadata.</p>
+
+<h2>Examples</h2>
+
+<h3>Default Collection</h3>
+
+<pre><code>
+| Collection |
+|------------|
+| ### [Gears of Government President's Award winners](https://performance.gov/awards) |
+| Today, the Administration announces the winners of the Gears of Government President's Award. This program recognizes the contributions of individuals and teams across the federal workforce. |
+| By: Sondra Ainsworth and Constance Lu |
+| Date: September 30, 2020 |
+| Tags: New, PMA, OMB |
+|  |
+| ### [Women-owned small business dashboard](https://sba.gov/wosb) |
+| In honor of National Women's Small Business Month, we've partnered with SBA to highlight the Women-Owned Small Businesses (WOSBs) data dashboard! |
+| By: Constance Lu |
+| Date: September 30, 2020 |
+| Tags: SBA |
+</code></pre>
+
+<h3>With Media Thumbnails</h3>
+
+<pre><code>
+| Collection |
+|------------|
+| ![Government awards logo](https://example.com/award-logo.png) |
+| ### [Gears of Government President's Award winners](https://performance.gov/awards) |
+| Today, the Administration announces the winners of the Gears of Government President's Award. |
+| By: Sondra Ainsworth and Constance Lu |
+| Date: September 30, 2020 |
+| Tags: New, PMA, OMB |
+|  |
+| ![Dashboard screenshot](https://example.com/dashboard.jpg) |
+| ### [Women-owned small business dashboard](https://sba.gov/wosb) |
+| In honor of National Women's Small Business Month, we highlight the WOSB data dashboard! |
+| By: Constance Lu |
+| Date: September 30, 2020 |
+| Tags: SBA |
+</code></pre>
+
+<h3>Headings Only (Condensed)</h3>
+
+<pre><code>
+| Collection (condensed) |
+|------------------------|
+| ### [The eight principles of mobile-friendliness](https://digital.gov/mobile) |
+| ### [The USWDS maturity model](https://designsystem.digital.gov/maturity-model/) |
+| ### [A news item on our site](#news) |
+</code></pre>
+
+<h3>With External Links</h3>
+
+<pre><code>
+| Collection |
+|------------|
+| ### [External Resource](https://external-site.com) |
+| This link goes to an external website. |
+| By: External Author |
+</code></pre>
+
+<p>**Note:** Consider adding visual indicators for external links per USWDS guidance.</p>
+
+<h2>Metadata Format</h2>
+
+<h3>By Line</h3>
+
+<p>Starts with "By:" followed by author name(s):</p>
+
+<pre><code>
+By: Author Name
+By: First Author and Second Author
+</code></pre>
+
+<h3>Date</h3>
+
+<p>Starts with "Date:" followed by date in any recognizable format:</p>
+
+<pre><code>
+Date: January 27, 2024
+Date: 2024-01-27
+Date: Jan 27, 2024
+Date: September 30, 2020
+</code></pre>
+
+<p>The component will attempt to parse dates and add proper <code><time></code> elements with <code>datetime</code> attributes.</p>
+
+<h3>Tags</h3>
+
+<p>Starts with "Tags:" or "Tag:" followed by comma-separated values:</p>
+
+<pre><code>
+Tags: News, Update, Important
+Tags: Research
+Tag: Single Topic
+</code></pre>
+
+<p>Each tag becomes a styled <code>usa-tag</code> element.</p>
+
+<h2>Best Practices</h2>
+
+<h3>Content</h3>
+
+<p>* **Use clear, unique headings** - Each heading should be concise and descriptive</p>
+<p>* **Limit items** - Keep collections to 6 or fewer items for scannability</p>
+<p>* **Be consistent** - If using images, use them for all items</p>
+<p>* **Provide context** - Use descriptions and metadata to help users decide what to click</p>
+<p>* **Avoid "Read more"** - Let headings themselves be the call to action</p>
+
+<h3>Images</h3>
+
+<p>* **Use consistent widths** - All thumbnails should be the same width</p>
+<p>* **Choose meaningful images** - Icons/illustrations should add value</p>
+<p>* **Avoid placeholders** - Don't repeat generic placeholder images</p>
+
+<h3>Metadata</h3>
+
+<p>* **Use descriptive titles** - Collection title should explain the theme (e.g., "Recent posts")</p>
+<p>* **Link to archives** - If there are more items, link to a comprehensive index</p>
+<p>* **Indicate external links** - Make it clear when links leave your site</p>
+<p>* **Provide strong "scent"** - Help users understand value before clicking</p>
+
+<h2>Accessibility</h2>
+
+<p>The collection component follows USWDS accessibility standards:</p>
+
+<p>* **Uses semantic list markup** - <code><ul></code> for collection, <code><li></code> for items</p>
+<p>* **Screen reader enumeration** - Assistive tech can count and navigate items</p>
+<p>* **Unique link names** - Each link should be distinguishable</p>
+<p>* **Proper heading levels** - Update heading levels based on page outline</p>
+<p>* **Metadata labels** - <code>aria-label</code> attributes on metadata lists</p>
+
+<h3>Heading Levels</h3>
+
+<p>The component uses <code><h4></code> for collection item headings. Adjust your page structure so collection headings fit the logical outline:</p>
+
+<p>* If your page heading is <code><h1></code>, section headings are <code><h2></code>, and subsections are <code><h3></code>, then collection items at <code><h4></code> fit correctly</p>
+<p>* If collections appear at a different level, you may need to update the component or page structure</p>
+
+<h3>Link Uniqueness</h3>
+
+<p>Ensure each link in a collection has a unique, descriptive name:</p>
+<ul>
+<li>✅ Good: "Guide to mobile design", "Process for form validation"</li>
+<li>❌ Bad: "Read more", "Click here", "Learn more"</li>
+</ul>
+
+<h2>Technical Details</h2>
+
+<h3>Generated HTML Structure</h3>
+
+<p>The block transforms your content into the USWDS collection structure:</p>
+
+<pre><code>
+&lt;ul class="usa-collection"&gt;
+  &lt;li class="usa-collection__item"&gt;
+    &lt;img class="usa-collection__img" src="..." alt="..."&gt;
+    &lt;div class="usa-collection__body"&gt;
+      &lt;h4 class="usa-collection__heading"&gt;
+        &lt;a class="usa-link" href="..."&gt;Heading&lt;/a&gt;
+      &lt;/h4&gt;
+      &lt;p class="usa-collection__description"&gt;
+        Description text.
+      &lt;/p&gt;
+      &lt;ul class="usa-collection__meta" aria-label="More information"&gt;
+        &lt;li class="usa-collection__meta-item"&gt;By Author&lt;/li&gt;
+        &lt;li class="usa-collection__meta-item"&gt;
+          &lt;time datetime="..."&gt;Date&lt;/time&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;ul class="usa-collection__meta" aria-label="Topics"&gt;
+        &lt;li class="usa-collection__meta-item usa-tag"&gt;Tag1&lt;/li&gt;
+        &lt;li class="usa-collection__meta-item usa-tag"&gt;Tag2&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<h3>Development</h3>
+
+<ul>
+<li>**CSS**: Compiled from USWDS Sass (`usa-collection`)</li>
+<li>**JS**: EDS decorator transforms simple content into USWDS structure</li>
+<li>**Accessibility**: WCAG 2.1 AA compliant</li>
+</ul>
+
+<h2>Related Components</h2>
+
+<ul>
+<li>[USWDS Collection Documentation](https://designsystem.digital.gov/components/collection/)</li>
+<li>[Card](../card/) - For larger images and more prominent display</li>
+<li>[Summary Box](../summary-box/) - For highlighting key information</li>
+</ul>
+
+<p>---</p>
+
+<p>**Note**: This README contains authoring guidelines. The collection CSS and JavaScript files are protected by <code>.buildignore</code> to preserve EDS-specific enhancements.</p>
+</body>
+</html>

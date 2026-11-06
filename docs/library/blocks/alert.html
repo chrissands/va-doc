@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Alert</title>
+</head>
+<body>
+<p><!-- Auto-generated from blocks/alert/README.md --></p>
+
+<h1>Alert Block</h1>
+
+<p>This block implements the <a href="https://designsystem.digital.gov/components/alert/">USWDS Alert component</a>. An alert keeps users informed of important and sometimes time-sensitive changes.</p>
+
+<h2>Basic Usage</h2>
+
+<p>In your document authoring platform, create a block table with the name <code>Alert</code>:</p>
+
+<pre><code>
+| Alert |
+|-------|
+| Heading |
+| Body text with important information. |
+</code></pre>
+
+<p>This creates a default **informative** alert with a heading and body text.</p>
+
+<h2>Alert Types</h2>
+
+<p>Add a class to the block to specify the alert type. Choose from:</p>
+
+<ul>
+<li>**info** (default) - General informational messages</li>
+<li>**warning** - Warning messages that need attention</li>
+<li>**success** - Success confirmations</li>
+<li>**error** - Error messages requiring action</li>
+<li>**emergency** - Urgent emergency alerts</li>
+</ul>
+
+<h3>Example: Success Alert</h3>
+
+<pre><code>
+| Alert (success) |
+|-----------------|
+| Success heading |
+| Your application was submitted successfully. |
+</code></pre>
+
+<h3>Example: Error Alert</h3>
+
+<pre><code>
+| Alert (error) |
+|---------------|
+| Error heading |
+| There was a problem processing your request. |
+</code></pre>
+
+<h2>Variants</h2>
+
+<h3>Slim Alert</h3>
+
+<p>Add the <code>slim</code> class for a more compact alert without a heading:</p>
+
+<pre><code>
+| Alert (info, slim) |
+|--------------------|
+| Brief informational message. |
+</code></pre>
+
+<h3>Alert Without Icon</h3>
+
+<p>Add the <code>no-icon</code> class to remove the status icon:</p>
+
+<pre><code>
+| Alert (info, no-icon) |
+|------------------------|
+| Heading |
+| Message without an icon. |
+</code></pre>
+
+<h3>Combining Variants</h3>
+
+<pre><code>
+| Alert (warning, slim, no-icon) |
+|-------------------------------|
+| Warning message without heading or icon. |
+</code></pre>
+
+<h2>Content Structure</h2>
+
+<h3>With Heading</h3>
+
+<pre><code>
+| Alert (type) |
+|--------------|
+| Alert Heading |
+| Body text here. Can include links and formatting. |
+| Additional paragraphs if needed. |
+</code></pre>
+
+<p>The first heading in the alert becomes the <code>usa-alert__heading</code>.</p>
+
+<h3>Without Heading (Slim)</h3>
+
+<pre><code>
+| Alert (info, slim) |
+|--------------------|
+| Just body text, no heading. |
+</code></pre>
+
+<h3>With Links</h3>
+
+<p>Links are automatically styled within alerts:</p>
+
+<pre><code>
+| Alert (info) |
+|--------------|
+| Information |
+| Learn more at [our help center](https://example.com). |
+</code></pre>
+
+<h3>Multiple Paragraphs</h3>
+
+<pre><code>
+| Alert (warning) |
+|-----------------|
+| Warning |
+| This is the first paragraph of the warning. |
+| This is a second paragraph with more details. |
+</code></pre>
+
+<h2>Accessibility</h2>
+
+<p>The alert component automatically adds appropriate ARIA roles based on alert type:</p>
+
+<ul>
+<li>**Error and Emergency alerts**: `role="alert"` - Demands immediate attention from assistive technologies</li>
+<li>**Success alerts**: `role="status"` - Provides advisory information</li>
+<li>**Info and Warning alerts**: `role="region"` with `aria-labelledby` - Allows users to find important information without interrupting workflow</li>
+</ul>
+
+<h3>Best Practices</h3>
+
+<ul>
+<li>**Write clear, concise messages** - Use plain language</li>
+<li>**Be polite** - Don't blame the user for errors</li>
+<li>**Provide next steps** - Tell users what to do</li>
+<li>**Don't overdo it** - Too many alerts will be ignored</li>
+<li>**Consider context** - Only show alerts relevant to the current task</li>
+</ul>
+
+<h3>When to Use</h3>
+
+<ul>
+<li>**System status messages** - Keep users informed of system status</li>
+<li>**Validation messages** - Inform users of errors or confirmations</li>
+<li>**Important updates** - Time-sensitive or critical information</li>
+</ul>
+
+<h3>When to Consider Something Else</h3>
+
+<ul>
+<li>**Long forms** - Use inline validation in addition to alerts</li>
+<li>**Destructive actions** - Use a modal dialog for confirmation</li>
+<li>**Dismissible notifications** - USWDS is working on dismissible alerts</li>
+</ul>
+
+<h2>Examples</h2>
+
+<h3>Standard Informative Alert</h3>
+
+<pre><code>
+| Alert |
+|-------|
+| Information |
+| This is general information you should know. |
+</code></pre>
+
+<h3>Warning with Multiple Paragraphs</h3>
+
+<pre><code>
+| Alert (warning) |
+|-----------------|
+| Important Warning |
+| This action cannot be undone. |
+| Please review your information before proceeding. |
+</code></pre>
+
+<h3>Success Confirmation</h3>
+
+<pre><code>
+| Alert (success) |
+|-----------------|
+| Success! |
+| Your profile has been updated. |
+</code></pre>
+
+<h3>Error Message</h3>
+
+<pre><code>
+| Alert (error) |
+|---------------|
+| Error |
+| Your session has expired. Please [log in again](/login). |
+</code></pre>
+
+<h3>Emergency Alert</h3>
+
+<pre><code>
+| Alert (emergency) |
+|-------------------|
+| Emergency Maintenance |
+| The system will be unavailable from 2-4 PM for emergency maintenance. |
+</code></pre>
+
+<h3>Slim Info Alert</h3>
+
+<pre><code>
+| Alert (info, slim) |
+|--------------------|
+| Quick tip: Save your work frequently. |
+</code></pre>
+
+<h2>Technical Details</h2>
+
+<h3>Generated HTML Structure</h3>
+
+<p>The block transforms your content into the USWDS alert structure:</p>
+
+<pre><code>
+&lt;div class="usa-alert usa-alert--info"&gt;
+  &lt;div class="usa-alert__body"&gt;
+    &lt;h4 class="usa-alert__heading"&gt;Heading&lt;/h4&gt;
+    &lt;p class="usa-alert__text"&gt;Body text here.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h3>Development</h3>
+
+<ul>
+<li>**CSS**: Compiled from USWDS Sass (`usa-alert`)</li>
+<li>**JS**: EDS decorator transforms simple content into USWDS structure</li>
+<li>**Accessibility**: WCAG 2.1 AA compliant with proper ARIA roles</li>
+</ul>
+
+<h2>Related Components</h2>
+
+<ul>
+<li>[USWDS Alert Documentation](https://designsystem.digital.gov/components/alert/)</li>
+<li>[Banner](../banner/) - For government site identification</li>
+<li>[Hero](../hero/) - For prominent page headers</li>
+</ul>
+
+<p>---</p>
+
+<p>**Note**: This README contains authoring guidelines. The alert CSS and JavaScript files are protected by <code>.buildignore</code> to preserve EDS-specific enhancements.</p>
+</body>
+</html>

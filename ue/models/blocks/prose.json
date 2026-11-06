@@ -1,0 +1,31 @@
+{
+  "definitions": [
+    {
+      "title": "Prose",
+      "id": "prose",
+      "plugins": {
+        "da": {
+          "name": "prose",
+          "rows": 3,
+          "columns": 0
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "prose",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "div:nth-child(1)",
+          "label": "Content",
+          "valueType": "string",
+          "value": "<p>Running text content goes here. The prose component provides consistent USWDS typography styling.</p>",
+          "description": "Long-form text content with USWDS typography"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USWDS Component Test</title>
+  <link rel="stylesheet" href="/styles/uswds-core.css">
+  <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body class="appear">
+  <main>
+    <div class="section">
+      <div>
+        <h1>USWDS Component Test Page</h1>
+        <p>This page tests the USWDS components integrated with EDS.</p>
+        
+        <h2>Button Component</h2>
+        <div class="button">
+          <a href="#" class="usa-button">Default button</a>
+        </div>
+        
+        <div class="button">
+          <a href="#" class="usa-button usa-button--secondary">Secondary button</a>
+        </div>
+        
+        <div class="button">
+          <a href="#" class="usa-button usa-button--accent-cool">Accent button</a>
+        </div>
+        
+        <h2>Alert Component</h2>
+        <div class="alert">
+          <div class="usa-alert usa-alert--info">
+            <div class="usa-alert__body">
+              <h4 class="usa-alert__heading">Information status</h4>
+              <p class="usa-alert__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="alert">
+          <div class="usa-alert usa-alert--success">
+            <div class="usa-alert__body">
+              <h4 class="usa-alert__heading">Success status</h4>
+              <p class="usa-alert__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+          </div>
+        </div>
+        
+        <h2>Accordion Component</h2>
+        <div class="accordion">
+          <div class="usa-accordion">
+            <h4 class="usa-accordion__heading">
+              <button
+                type="button"
+                class="usa-accordion__button"
+                aria-expanded="false"
+                aria-controls="a1"
+              >
+                First Amendment
+              </button>
+            </h4>
+            <div id="a1" class="usa-accordion__content usa-prose" hidden="">
+              <p>
+                Congress shall make no law respecting an establishment of religion, or prohibiting the free exercise thereof; or abridging the freedom of speech, or of the press; or the right of the people peaceably to assemble, and to petition the Government for a redress of grievances.
+              </p>
+            </div>
+            
+            <h4 class="usa-accordion__heading">
+              <button
+                type="button"
+                class="usa-accordion__button"
+                aria-expanded="false"
+                aria-controls="a2"
+              >
+                Second Amendment
+              </button>
+            </h4>
+            <div id="a2" class="usa-accordion__content usa-prose" hidden="">
+              <p>
+                A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <h2>Tag Component</h2>
+        <div class="tag">
+          <span class="usa-tag">New</span>
+          <span class="usa-tag usa-tag--big">Big</span>
+        </div>
+        
+      </div>
+    </div>
+  </main>
+  
+  <script type="module">
+    // Load block JavaScript
+    import buttonDecorate from '/blocks/button/button.js';
+    import alertDecorate from '/blocks/alert/alert.js';
+    import accordionDecorate from '/blocks/accordion/accordion.js';
+    
+    // Initialize blocks
+    document.querySelectorAll('.button').forEach(block => {
+      buttonDecorate(block);
+    });
+    
+    document.querySelectorAll('.alert').forEach(block => {
+      alertDecorate(block);
+    });
+    
+    document.querySelectorAll('.accordion').forEach(block => {
+      accordionDecorate(block);
+    });
+  </script>
+</body>
+</html>

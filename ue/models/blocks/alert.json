@@ -1,0 +1,79 @@
+{
+  "definitions": [
+    {
+      "title": "Alert",
+      "id": "alert",
+      "plugins": {
+        "da": {
+          "name": "alert",
+          "rows": 3,
+          "columns": 0
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "alert",
+      "fields": [
+        {
+          "component": "select",
+          "name": "classes",
+          "label": "Alert Type",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "Info (default)",
+              "value": ""
+            },
+            {
+              "name": "Warning",
+              "value": "warning"
+            },
+            {
+              "name": "Success",
+              "value": "success"
+            },
+            {
+              "name": "Error",
+              "value": "error"
+            },
+            {
+              "name": "Emergency",
+              "value": "emergency"
+            }
+          ]
+        },
+        {
+          "component": "boolean",
+          "name": "classes",
+          "label": "Slim variant",
+          "valueType": "string",
+          "value": "slim"
+        },
+        {
+          "component": "boolean",
+          "name": "classes",
+          "label": "No icon",
+          "valueType": "string",
+          "value": "no-icon"
+        },
+        {
+          "component": "text",
+          "name": "div:nth-child(1)>h2:nth-child(1)",
+          "label": "Heading",
+          "valueType": "string",
+          "value": "Alert Heading"
+        },
+        {
+          "component": "richtext",
+          "name": "div:nth-child(1)",
+          "label": "Content",
+          "valueType": "string",
+          "value": "<p>Alert content goes here.</p>"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

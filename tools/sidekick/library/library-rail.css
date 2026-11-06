@@ -1,0 +1,66 @@
+/* Additional styling for library rail - can be imported if needed */
+
+.library-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure the rail is fixed on the left */
+body {
+  width: 320px;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Improve block button hover effect */
+.block-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.block-button::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #0066cc;
+  transform: translateX(-3px);
+  transition: transform 0.2s;
+}
+
+.block-button:hover::before {
+  transform: translateX(0);
+}
+
+/* Success animation */
+@keyframes successPulse {
+  0%, 100% { background: #f0f0f0; }
+  50% { background: #d4edda; }
+}
+
+.block-button.success {
+  animation: successPulse 0.6s ease-in-out;
+}
+
+/* Loading state */
+.block-button.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.block-button.loading::after {
+  content: '⟳';
+  margin-left: 8px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+

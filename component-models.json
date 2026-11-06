@@ -1,0 +1,987 @@
+[
+  {
+    "id": "page-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "text",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Image"
+      },
+      {
+        "component": "text",
+        "name": "robots",
+        "label": "Robots",
+        "description": "Index control via robots"
+      }
+    ]
+  },
+  {
+    "id": "image",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "hidden": true,
+        "multi": false
+      },
+      {
+        "component": "reference",
+        "name": "img:nth-child(3)[src]",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "img:nth-child(3)[alt]",
+        "label": "Alt Text"
+      }
+    ]
+  },
+  {
+    "id": "section",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "style",
+        "label": "Style",
+        "options": [
+          {
+            "name": "Highlight",
+            "value": "highlight"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "accordion-item",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "div:nth-child(1)",
+        "value": "",
+        "label": "Summary",
+        "required": true
+      },
+      {
+        "component": "richtext",
+        "name": "div:nth-child(2)",
+        "value": "",
+        "label": "Text",
+        "valueType": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "alert",
+    "fields": [
+      {
+        "component": "select",
+        "name": "classes",
+        "label": "Alert Type",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Info (default)",
+            "value": ""
+          },
+          {
+            "name": "Warning",
+            "value": "warning"
+          },
+          {
+            "name": "Success",
+            "value": "success"
+          },
+          {
+            "name": "Error",
+            "value": "error"
+          },
+          {
+            "name": "Emergency",
+            "value": "emergency"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "name": "classes",
+        "label": "Slim variant",
+        "valueType": "string",
+        "value": "slim"
+      },
+      {
+        "component": "boolean",
+        "name": "classes",
+        "label": "No icon",
+        "valueType": "string",
+        "value": "no-icon"
+      },
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>h2:nth-child(1)",
+        "label": "Heading",
+        "valueType": "string",
+        "value": "Alert Heading"
+      },
+      {
+        "component": "richtext",
+        "name": "div:nth-child(1)",
+        "label": "Content",
+        "valueType": "string",
+        "value": "<p>Alert content goes here.</p>"
+      }
+    ]
+  },
+  {
+    "id": "banner",
+    "fields": [
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>div:nth-child(1)",
+        "label": "Banner Text",
+        "valueType": "string",
+        "value": "An official website of the United States government"
+      }
+    ]
+  },
+  {
+    "id": "breadcrumb",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "div:nth-child(1)",
+        "label": "Breadcrumb Items",
+        "valueType": "string",
+        "value": "<ul><li><a href=\"/\">Home</a></li><li><a href=\"/section\">Section</a></li><li>Current Page</li></ul>",
+        "description": "Use list items with links for each breadcrumb level"
+      },
+      {
+        "component": "boolean",
+        "name": "classes",
+        "label": "Wrap breadcrumbs",
+        "valueType": "string",
+        "value": "wrap"
+      }
+    ]
+  },
+  {
+    "id": "button-group",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "div:nth-child(1)",
+        "label": "Buttons",
+        "valueType": "string",
+        "value": "<p><a href=\"#\">Button 1</a></p><p><a href=\"#\">Button 2</a></p>",
+        "description": "Add multiple links (with formatting for button variants)"
+      },
+      {
+        "component": "boolean",
+        "name": "classes",
+        "label": "Segmented",
+        "valueType": "string",
+        "value": "segmented"
+      }
+    ]
+  },
+  {
+    "id": "card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "div:nth-child(1)>picture:nth-child(1)>img:nth-child(3)[src]",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "div:nth-child(1)>picture:nth-child(1)>img:nth-child(3)[alt]",
+        "label": "Image Alt",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>h2:nth-child(2)",
+        "label": "Heading",
+        "valueType": "string",
+        "value": "Card Heading"
+      },
+      {
+        "component": "richtext",
+        "name": "div:nth-child(1)>p:nth-child(3)",
+        "label": "Description",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>p:nth-child(4)>a:nth-child(1)",
+        "label": "Button Text",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>p:nth-child(4)>a:nth-child(1)[href]",
+        "label": "Button URL",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "select",
+        "name": "classes",
+        "label": "Card Variant",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "Flag",
+            "value": "flag"
+          },
+          {
+            "name": "Media Right",
+            "value": "media-right"
+          },
+          {
+            "name": "Inset Media",
+            "value": "inset"
+          },
+          {
+            "name": "Exdent Media",
+            "value": "exdent"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "classes",
+        "label": "Grid Classes (optional)",
+        "valueType": "string",
+        "value": "",
+        "description": "Add USWDS grid classes like 'tablet-lg:grid-col-4' to override defaults"
+      }
+    ]
+  },
+  {
+    "id": "card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "div:nth-child(1)>picture:nth-child(1)>img:nth-child(3)[src]",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "div:nth-child(1)>picture:nth-child(1)>img:nth-child(3)[alt]",
+        "label": "Image Alt",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "name": "div:nth-child(2)",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "carousel-item",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "div:nth-child(1)>picture:nth-child(1)>img:nth-child(3)[src]",
+        "label": "Background Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "div:nth-child(1)>picture:nth-child(1)>img:nth-child(3)[alt]",
+        "label": "Background Image Alt"
+      },
+      {
+        "component": "richtext",
+        "name": "div:nth-child(2)",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "collection-item",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "div:nth-child(1)>picture:nth-child(1)>img:nth-child(3)[src]",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "div:nth-child(1)>picture:nth-child(1)>img:nth-child(3)[alt]",
+        "label": "Image Alt",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>h3:nth-child(2)>a:nth-child(1)",
+        "label": "Title",
+        "valueType": "string",
+        "value": "Item Title"
+      },
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>h3:nth-child(2)>a:nth-child(1)[href]",
+        "label": "Link URL",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "div:nth-child(1)>p:nth-child(3)",
+        "label": "Description",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>p:nth-child(4)",
+        "label": "By (optional)",
+        "valueType": "string",
+        "value": "By: "
+      },
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>p:nth-child(5)",
+        "label": "Date (optional)",
+        "valueType": "string",
+        "value": "Date: "
+      },
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>p:nth-child(6)",
+        "label": "Tags (comma-separated)",
+        "valueType": "string",
+        "value": "Tags: "
+      }
+    ]
+  },
+  {
+    "id": "columns",
+    "fields": [
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "columns",
+        "label": "Number of Columns",
+        "value": 2,
+        "validation": {
+          "numberMin": 1,
+          "numberMax": 6
+        }
+      }
+    ]
+  },
+  {
+    "id": "embed",
+    "fields": [
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>a:nth-child(1)[href]",
+        "label": "Embed URL",
+        "valueType": "string",
+        "value": "",
+        "description": "YouTube, Vimeo, Twitter, or other embeddable content URL"
+      }
+    ]
+  },
+  {
+    "id": "footer",
+    "fields": [
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>div:nth-child(1)",
+        "label": "Note",
+        "valueType": "string",
+        "value": "Footer content is managed via /nav/footer. Use page metadata to set footer variant: footer=big, footer=medium, or footer=slim",
+        "description": "This block loads content from /nav/footer. Edit that page to change footer content."
+      }
+    ]
+  },
+  {
+    "id": "form",
+    "fields": [
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>div:nth-child(1)",
+        "label": "Form URL or Path",
+        "valueType": "string",
+        "value": "",
+        "description": "Path to form definition JSON file"
+      }
+    ]
+  },
+  {
+    "id": "fragment",
+    "fields": [
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>div:nth-child(1)>p:nth-child(1)>a:nth-child(1)[href]",
+        "label": "Fragment URL",
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>div:nth-child(1)>p:nth-child(1)>a:nth-child(1)",
+        "label": "Fragment URL Text"
+      }
+    ]
+  },
+  {
+    "id": "header",
+    "fields": [
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>div:nth-child(1)",
+        "label": "Note",
+        "valueType": "string",
+        "value": "Header content is managed via /nav/header. Use page metadata to set header variant: header=extended or header=basic",
+        "description": "This block loads content from /nav/header. Edit that page to change header content."
+      }
+    ]
+  },
+  {
+    "id": "hero",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "div:nth-child(1)>div:nth-child(1)>picture:nth-child(1)>img:nth-child(3)[src]",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "div:nth-child(1)>div:nth-child(1)>picture:nth-child(1)>img:nth-child(3)[alt]",
+        "label": "Alt",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>div:nth-child(1)>h1:nth-child(2)",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "icon-list",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "div:nth-child(1)",
+        "label": "List Content",
+        "valueType": "string",
+        "value": "<ul><li>Item 1</li><li>Item 2</li><li>Item 3</li></ul>",
+        "description": "First column: Icon names or images. Second column: List item content."
+      },
+      {
+        "component": "select",
+        "name": "classes",
+        "label": "Size",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "Small",
+            "value": "size-sm"
+          },
+          {
+            "name": "Medium",
+            "value": "size-md"
+          },
+          {
+            "name": "Large",
+            "value": "size-lg"
+          },
+          {
+            "name": "Extra Large",
+            "value": "size-xl"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "icon",
+    "fields": [
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>div:nth-child(1)",
+        "label": "Icon Name",
+        "valueType": "string",
+        "value": "check",
+        "description": "USWDS icon name (e.g., check, close, menu)"
+      },
+      {
+        "component": "select",
+        "name": "classes",
+        "label": "Size",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Default (3)",
+            "value": ""
+          },
+          {
+            "name": "Size 3",
+            "value": "size-3"
+          },
+          {
+            "name": "Size 4",
+            "value": "size-4"
+          },
+          {
+            "name": "Size 5",
+            "value": "size-5"
+          },
+          {
+            "name": "Size 6",
+            "value": "size-6"
+          },
+          {
+            "name": "Size 7",
+            "value": "size-7"
+          },
+          {
+            "name": "Size 8",
+            "value": "size-8"
+          },
+          {
+            "name": "Size 9",
+            "value": "size-9"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "identifier",
+    "fields": [
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>div:nth-child(1)",
+        "label": "Parent Agency",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>div:nth-child(2)",
+        "label": "Agency Name",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "div:nth-child(1)",
+        "label": "Links and Content",
+        "valueType": "string",
+        "value": "",
+        "description": "Add required links and legal information"
+      }
+    ]
+  },
+  {
+    "id": "in-page-nav",
+    "fields": [
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>div:nth-child(1)",
+        "label": "Navigation Title",
+        "valueType": "string",
+        "value": "On this page"
+      },
+      {
+        "component": "richtext",
+        "name": "div:nth-child(1)",
+        "label": "Navigation Links",
+        "valueType": "string",
+        "value": "<ul><li><a href=\"#section-1\">Section 1</a></li><li><a href=\"#section-2\">Section 2</a></li></ul>",
+        "description": "List of anchor links to page sections"
+      }
+    ]
+  },
+  {
+    "id": "link",
+    "fields": [
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>a:nth-child(1)",
+        "label": "Link Text",
+        "valueType": "string",
+        "value": "Link"
+      },
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>a:nth-child(1)[href]",
+        "label": "URL",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "boolean",
+        "name": "classes",
+        "label": "External",
+        "valueType": "string",
+        "value": "external"
+      }
+    ]
+  },
+  {
+    "id": "list",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "div:nth-child(1)",
+        "label": "List Items",
+        "valueType": "string",
+        "value": "<ul><li>Item 1</li><li>Item 2</li><li>Item 3</li></ul>"
+      },
+      {
+        "component": "boolean",
+        "name": "classes",
+        "label": "Unstyled",
+        "valueType": "string",
+        "value": "unstyled"
+      }
+    ]
+  },
+  {
+    "id": "modal",
+    "fields": [
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>h2:nth-child(1)",
+        "label": "Modal Heading",
+        "valueType": "string",
+        "value": "Modal Title"
+      },
+      {
+        "component": "richtext",
+        "name": "div:nth-child(1)",
+        "label": "Modal Content",
+        "valueType": "string",
+        "value": "<p>Modal content goes here.</p>"
+      },
+      {
+        "component": "boolean",
+        "name": "classes",
+        "label": "Large",
+        "valueType": "string",
+        "value": "large"
+      },
+      {
+        "component": "boolean",
+        "name": "classes",
+        "label": "Force Action",
+        "valueType": "string",
+        "value": "force-action"
+      }
+    ]
+  },
+  {
+    "id": "pagination",
+    "fields": [
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>div:nth-child(1)",
+        "label": "Total Pages",
+        "valueType": "string",
+        "value": "10",
+        "description": "Total number of pages"
+      },
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>div:nth-child(2)",
+        "label": "Current Page",
+        "valueType": "string",
+        "value": "1",
+        "description": "Current page number"
+      },
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>div:nth-child(3)",
+        "label": "Base URL",
+        "valueType": "string",
+        "value": "",
+        "description": "Base URL for pagination links"
+      },
+      {
+        "component": "boolean",
+        "name": "classes",
+        "label": "Unbounded (no page count)",
+        "valueType": "string",
+        "value": "unbounded"
+      }
+    ]
+  },
+  {
+    "id": "process-list",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "div:nth-child(1)",
+        "label": "Process Steps",
+        "valueType": "string",
+        "value": "<ol><li><h3>First Step</h3><p>Description of first step.</p></li><li><h3>Second Step</h3><p>Description of second step.</p></li></ol>",
+        "description": "Use ordered list with heading and content for each step"
+      }
+    ]
+  },
+  {
+    "id": "prose",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "div:nth-child(1)",
+        "label": "Content",
+        "valueType": "string",
+        "value": "<p>Running text content goes here. The prose component provides consistent USWDS typography styling.</p>",
+        "description": "Long-form text content with USWDS typography"
+      }
+    ]
+  },
+  {
+    "id": "quote",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "div:nth-child(1)>div:nth-child(1)",
+        "label": "Quote",
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "div:nth-child(2)>div:nth-child(1)>p:nth-child(1)",
+        "label": "Author",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "search",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "div:nth-child(1)>div:nth-child(1)>p:nth-child(1)>a:nth-child(1)[href]",
+        "label": "Search URL",
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>div:nth-child(1)>p:nth-child(1)>a:nth-child(1)",
+        "label": "Search URL Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "side-nav",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "div:nth-child(1)",
+        "label": "Navigation",
+        "valueType": "string",
+        "value": "<ul><li><a href=\"#\">Link 1</a></li><li><a href=\"#\">Link 2</a><ul><li><a href=\"#\">Sub-link 1</a></li></ul></li></ul>",
+        "description": "Nested list structure for hierarchical navigation"
+      }
+    ]
+  },
+  {
+    "id": "step-indicator",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "div:nth-child(1)",
+        "label": "Steps",
+        "valueType": "string",
+        "value": "<ol><li>Step 1</li><li>Step 2</li><li>Step 3</li></ol>",
+        "description": "Column 1: Status (complete, current, incomplete). Column 2: Step label."
+      },
+      {
+        "component": "boolean",
+        "name": "classes",
+        "label": "Counters (show numbers)",
+        "valueType": "string",
+        "value": "counters"
+      },
+      {
+        "component": "boolean",
+        "name": "classes",
+        "label": "Small counters",
+        "valueType": "string",
+        "value": "counters-sm"
+      },
+      {
+        "component": "boolean",
+        "name": "classes",
+        "label": "Center aligned",
+        "valueType": "string",
+        "value": "center"
+      }
+    ]
+  },
+  {
+    "id": "summary-box",
+    "fields": [
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>h2:nth-child(1)",
+        "label": "Heading",
+        "valueType": "string",
+        "value": "Key information"
+      },
+      {
+        "component": "richtext",
+        "name": "div:nth-child(1)",
+        "label": "Content",
+        "valueType": "string",
+        "value": "<ul><li>Item 1</li><li>Item 2</li><li>Item 3</li></ul>"
+      }
+    ]
+  },
+  {
+    "id": "table",
+    "fields": [
+      {
+        "component": "boolean",
+        "name": "classes",
+        "label": "Borderless",
+        "valueType": "string",
+        "value": "borderless"
+      },
+      {
+        "component": "boolean",
+        "name": "classes",
+        "label": "Striped",
+        "valueType": "string",
+        "value": "striped"
+      },
+      {
+        "component": "boolean",
+        "name": "classes",
+        "label": "Scrollable",
+        "valueType": "string",
+        "value": "scrollable"
+      },
+      {
+        "component": "boolean",
+        "name": "classes",
+        "label": "Compact",
+        "valueType": "string",
+        "value": "compact"
+      }
+    ]
+  },
+  {
+    "id": "tabs-item",
+    "fields": [
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>p:nth-child(1)",
+        "valueType": "string",
+        "label": "Tab Name"
+      },
+      {
+        "component": "richtext",
+        "name": "div:nth-child(2)",
+        "label": "Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "tag",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "div:nth-child(1)",
+        "label": "Tags",
+        "valueType": "string",
+        "value": "<p>Tag 1</p><p>Tag 2</p><p>Tag 3</p>",
+        "description": "Each paragraph becomes a tag"
+      },
+      {
+        "component": "boolean",
+        "name": "classes",
+        "label": "Big tags",
+        "valueType": "string",
+        "value": "big"
+      }
+    ]
+  },
+  {
+    "id": "video",
+    "fields": [
+      {
+        "component": "boolean",
+        "name": "classes_autoplay",
+        "label": "Autoplay Video",
+        "valueType": "boolean"
+      },
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>div:nth-child(1)>p:nth-child(1)>a:nth-child(1)[href]",
+        "label": "Video URL",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "div:nth-child(1)>div:nth-child(1)>p:nth-child(1)>a:nth-child(1)",
+        "label": "Video URL Text",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "name": "div:nth-child(1)>div:nth-child(1)>picture:nth-child(2)>img:nth-child(3)[src]",
+        "label": "Poster Image",
+        "valueType": "string"
+      }
+    ]
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "definitions": [
+    {
+      "title": "Footer",
+      "id": "footer",
+      "plugins": {
+        "da": {
+          "unsafeHTML": "<div class=\"footer\"><div><div>Footer content is managed via /nav/footer</div></div></div>"
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "footer",
+      "fields": [
+        {
+          "component": "text",
+          "name": "div:nth-child(1)>div:nth-child(1)",
+          "label": "Note",
+          "valueType": "string",
+          "value": "Footer content is managed via /nav/footer. Use page metadata to set footer variant: footer=big, footer=medium, or footer=slim",
+          "description": "This block loads content from /nav/footer. Edit that page to change footer content."
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

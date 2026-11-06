@@ -1,0 +1,51 @@
+{
+  "definitions": [
+    {
+      "title": "Table",
+      "id": "table",
+      "plugins": {
+        "da": {
+          "name": "table",
+          "rows": 3,
+          "columns": 3
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "table",
+      "fields": [
+        {
+          "component": "boolean",
+          "name": "classes",
+          "label": "Borderless",
+          "valueType": "string",
+          "value": "borderless"
+        },
+        {
+          "component": "boolean",
+          "name": "classes",
+          "label": "Striped",
+          "valueType": "string",
+          "value": "striped"
+        },
+        {
+          "component": "boolean",
+          "name": "classes",
+          "label": "Scrollable",
+          "valueType": "string",
+          "value": "scrollable"
+        },
+        {
+          "component": "boolean",
+          "name": "classes",
+          "label": "Compact",
+          "valueType": "string",
+          "value": "compact"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

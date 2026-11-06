@@ -1,0 +1,51 @@
+{
+  "definitions": [
+    {
+      "title": "Modal",
+      "id": "modal",
+      "plugins": {
+        "da": {
+          "name": "modal",
+          "rows": 3,
+          "columns": 0
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "modal",
+      "fields": [
+        {
+          "component": "text",
+          "name": "div:nth-child(1)>h2:nth-child(1)",
+          "label": "Modal Heading",
+          "valueType": "string",
+          "value": "Modal Title"
+        },
+        {
+          "component": "richtext",
+          "name": "div:nth-child(1)",
+          "label": "Modal Content",
+          "valueType": "string",
+          "value": "<p>Modal content goes here.</p>"
+        },
+        {
+          "component": "boolean",
+          "name": "classes",
+          "label": "Large",
+          "valueType": "string",
+          "value": "large"
+        },
+        {
+          "component": "boolean",
+          "name": "classes",
+          "label": "Force Action",
+          "valueType": "string",
+          "value": "force-action"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

@@ -1,0 +1,52 @@
+{
+  "definitions": [
+    {
+      "title": "Step Indicator",
+      "id": "step-indicator",
+      "plugins": {
+        "da": {
+          "name": "step-indicator",
+          "rows": 5,
+          "columns": 2
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "step-indicator",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "div:nth-child(1)",
+          "label": "Steps",
+          "valueType": "string",
+          "value": "<ol><li>Step 1</li><li>Step 2</li><li>Step 3</li></ol>",
+          "description": "Column 1: Status (complete, current, incomplete). Column 2: Step label."
+        },
+        {
+          "component": "boolean",
+          "name": "classes",
+          "label": "Counters (show numbers)",
+          "valueType": "string",
+          "value": "counters"
+        },
+        {
+          "component": "boolean",
+          "name": "classes",
+          "label": "Small counters",
+          "valueType": "string",
+          "value": "counters-sm"
+        },
+        {
+          "component": "boolean",
+          "name": "classes",
+          "label": "Center aligned",
+          "valueType": "string",
+          "value": "center"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

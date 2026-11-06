@@ -1,0 +1,38 @@
+{
+  "definitions": [
+    {
+      "title": "Breadcrumb",
+      "id": "breadcrumb",
+      "plugins": {
+        "da": {
+          "name": "breadcrumb",
+          "rows": 1,
+          "columns": 0
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "breadcrumb",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "div:nth-child(1)",
+          "label": "Breadcrumb Items",
+          "valueType": "string",
+          "value": "<ul><li><a href=\"/\">Home</a></li><li><a href=\"/section\">Section</a></li><li>Current Page</li></ul>",
+          "description": "Use list items with links for each breadcrumb level"
+        },
+        {
+          "component": "boolean",
+          "name": "classes",
+          "label": "Wrap breadcrumbs",
+          "valueType": "string",
+          "value": "wrap"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

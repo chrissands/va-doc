@@ -1,0 +1,31 @@
+{
+  "definitions": [
+    {
+      "title": "Embed",
+      "id": "embed",
+      "plugins": {
+        "da": {
+          "name": "embed",
+          "rows": 1,
+          "columns": 0
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "embed",
+      "fields": [
+        {
+          "component": "text",
+          "name": "div:nth-child(1)>a:nth-child(1)[href]",
+          "label": "Embed URL",
+          "valueType": "string",
+          "value": "",
+          "description": "YouTube, Vimeo, Twitter, or other embeddable content URL"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

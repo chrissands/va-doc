@@ -1,0 +1,31 @@
+{
+  "definitions": [
+    {
+      "title": "Process List",
+      "id": "process-list",
+      "plugins": {
+        "da": {
+          "name": "process-list",
+          "rows": 3,
+          "columns": 0
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "process-list",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "div:nth-child(1)",
+          "label": "Process Steps",
+          "valueType": "string",
+          "value": "<ol><li><h3>First Step</h3><p>Description of first step.</p></li><li><h3>Second Step</h3><p>Description of second step.</p></li></ol>",
+          "description": "Use ordered list with heading and content for each step"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

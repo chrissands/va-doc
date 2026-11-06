@@ -1,0 +1,38 @@
+{
+  "definitions": [
+    {
+      "title": "Tag",
+      "id": "tag",
+      "plugins": {
+        "da": {
+          "name": "tag",
+          "rows": 1,
+          "columns": 0
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "tag",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "div:nth-child(1)",
+          "label": "Tags",
+          "valueType": "string",
+          "value": "<p>Tag 1</p><p>Tag 2</p><p>Tag 3</p>",
+          "description": "Each paragraph becomes a tag"
+        },
+        {
+          "component": "boolean",
+          "name": "classes",
+          "label": "Big tags",
+          "valueType": "string",
+          "value": "big"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

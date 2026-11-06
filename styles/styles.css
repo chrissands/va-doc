@@ -1,0 +1,305 @@
+/*
+ * Copyright 2020 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
+
+:root {
+  /* colors */
+  --background-color: white;
+  --light-color: #f8f8f8;
+  --dark-color: #505050;
+  --text-color: #131313;
+  --link-color: #3b63fb;
+  --link-hover-color: #1d3ecf;
+
+  /* fonts - USWDS Typography with size-adjusted fallbacks */
+  --body-font-family: "Source Sans Pro Web", "Source Sans Pro Fallback", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  --heading-font-family: "Merriweather Web", "Merriweather Fallback", Georgia, Cambria, "Times New Roman", Times, serif;
+
+  /* body sizes */
+  --body-font-size-m: 22px;
+  --body-font-size-s: 19px;
+  --body-font-size-xs: 17px;
+
+  /* heading sizes */
+  --heading-font-size-xxl: 55px;
+  --heading-font-size-xl: 44px;
+  --heading-font-size-l: 34px;
+  --heading-font-size-m: 27px;
+  --heading-font-size-s: 24px;
+  --heading-font-size-xs: 22px;
+
+  /* nav heights - measured values for banner + header combined */
+  --banner-height: 46px; /* Mobile banner height */
+  --nav-height: 48px; /* Mobile header height */
+  --breadcrumbs-height: 34px;
+  --header-height: calc(var(--banner-height) + var(--nav-height)); /* 94px total */
+}
+
+/**
+ * Size-adjusted fallback fonts to prevent Cumulative Layout Shift (CLS)
+ * 
+ * These fallback fonts are adjusted to match the metrics of USWDS web fonts,
+ * minimizing layout shift when the actual web fonts load.
+ * 
+ * Values computed using Chrome font fallback extension for precise metric matching.
+ * 
+ * Uses the CSS size-adjust descriptor to scale system fonts to match web font dimensions.
+ * @see https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/size-adjust
+ */
+
+/* Fallback for Source Sans Pro Web (normal - 400) */
+@font-face {
+  font-family: 'Source Sans Pro Fallback';
+  src: local('Arial');
+  size-adjust: 92.889%;
+}
+
+/* Fallback for Merriweather Web (normal - 400) */
+@font-face {
+  font-family: 'Merriweather Fallback';
+  src: local('Arial');
+  size-adjust: 91.34%;
+}
+
+/* Tablet: banner collapses to single line */
+@media (width >= 640px) {
+  :root {
+    --banner-height: 18px; /* Tablet: single line banner */
+    --nav-height: 48px; /* Header stays same */
+    --header-height: calc(var(--banner-height) + var(--nav-height)); /* 66px total */
+  }
+}
+
+@media (width >= 900px) {
+  :root {
+    /* body sizes */
+    --body-font-size-m: 18px;
+    --body-font-size-s: 16px;
+    --body-font-size-xs: 14px;
+
+    /* heading sizes */
+    --heading-font-size-xxl: 45px;
+    --heading-font-size-xl: 36px;
+    --heading-font-size-l: 28px;
+    --heading-font-size-m: 22px;
+    --heading-font-size-s: 20px;
+    --heading-font-size-xs: 18px;
+  }
+}
+
+/* Desktop: full header with nav items */
+@media (width >= 1025px) {
+  :root {
+    --banner-height: 42px; /* Desktop banner */
+    --nav-height: 120px; /* Extended header nav height */
+    --header-height: calc(var(--banner-height) + var(--nav-height)); /* 162px total */
+  }
+
+  /* Basic header variant is shorter */
+  body[data-header-variant="basic"] {
+    --nav-height: 98px; /* Basic header is shorter */
+    --header-height: calc(var(--banner-height) + var(--nav-height)); /* 140px total */
+  }
+}
+
+body {
+  display: none;
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: 1.6;
+}
+
+body.appear {
+  display: block;
+}
+
+/* Reserve total space for banner + header combined */
+header {
+  /* Height is just for the nav portion, not including banner */
+  height: var(--nav-height);
+}
+
+/* Banner sits above header as sibling, reserve its space */
+.banner.block {
+  min-height: var(--banner-height);
+  /* Use min-height instead of height to allow banner to expand when opened */
+}
+
+header .header,
+footer .footer {
+  visibility: hidden;
+}
+
+header .header[data-block-status="loaded"],
+footer .footer[data-block-status="loaded"] {
+  visibility: visible;
+}
+
+@media (width >= 900px) {
+  body[data-breadcrumbs] {
+    --header-height: calc(var(--banner-height) + var(--nav-height) + var(--breadcrumbs-height));
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0.8em;
+  margin-bottom: 0.25em;
+  font-family: var(--heading-font-family);
+  font-weight: 600;
+  line-height: 1.25;
+  scroll-margin: 40px;
+}
+
+h1 { font-size: var(--heading-font-size-xxl); }
+h2 { font-size: var(--heading-font-size-xl); }
+h3 { font-size: var(--heading-font-size-l); }
+h4 { font-size: var(--heading-font-size-m); }
+h5 { font-size: var(--heading-font-size-s); }
+h6 { font-size: var(--heading-font-size-xs); }
+
+p,
+dl,
+ol,
+ul,
+pre,
+blockquote {
+  margin-top: 0.8em;
+  margin-bottom: 0.25em;
+}
+
+code,
+pre {
+  font-size: var(--body-font-size-s);
+}
+
+pre {
+  padding: 16px;
+  border-radius: 8px;
+  background-color: var(--light-color);
+  overflow-x: auto;
+  white-space: pre;
+}
+
+main > div {
+  margin: 40px 0; /* Remove side margins, let sections control their own padding */
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+/* links */
+a:any-link {
+  color: var(--link-color);
+  text-decoration: none;
+  word-break: break-word;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+/* buttons */
+/* Button styling is handled by USWDS (usa-button classes) */
+/* Override default link styles for buttons to ensure USWDS button colors work */
+/* Using !important to override any link color rules */
+a.usa-button:any-link,
+a.usa-button:visited,
+a.usa-button:hover,
+a.usa-button:focus,
+a.usa-button:active {
+  color: inherit !important; /* Let USWDS button classes control color */
+  text-decoration: none !important;
+}
+
+/* Ensure outline buttons also inherit their colors properly */
+a.usa-button--outline:any-link,
+a.usa-button--outline:visited,
+a.usa-button--outline:hover,
+a.usa-button--outline:focus,
+a.usa-button--outline:active {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+/* Button containers provide proper spacing */
+.button-container {
+  margin: 1rem 0;
+  text-align: left;
+}
+
+.button-container:first-child {
+  margin-top: 0;
+}
+
+.button-container:last-child {
+  margin-bottom: 0;
+}
+
+main img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+.icon {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+}
+
+.icon img {
+  height: 100%;
+  width: 100%;
+}
+
+/* sections */
+main > .section {
+  margin: 40px 0;
+}
+
+/* Default content container - constrained to USWDS grid max-width 
+   Exclude full-width blocks (hero, alert, banner) that need edge-to-edge layout */
+main > .section > div:not(.hero):not(.alert):not(.banner) {
+  max-width: 64rem; /* Match USWDS grid-container max-width */
+  margin: auto;
+  padding: 0 1rem; /* Match USWDS grid-container padding (16px) */
+}
+
+main > .section:first-of-type {
+  margin-top: 0;
+}
+
+@media (width >= 64em) {
+  main > .section > div:not(.hero):not(.alert):not(.banner) {
+    padding: 0 2rem; /* Match USWDS grid-container padding (32px) */
+  }
+}
+
+/* section metadata */
+main .section.light,
+main .section.highlight {
+  background-color: var(--light-color);
+  margin: 0;
+  padding: 40px 0;
+}

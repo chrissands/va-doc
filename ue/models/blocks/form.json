@@ -1,0 +1,31 @@
+{
+  "definitions": [
+    {
+      "title": "Form",
+      "id": "form",
+      "plugins": {
+        "da": {
+          "name": "form",
+          "rows": 1,
+          "columns": 0
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "form",
+      "fields": [
+        {
+          "component": "text",
+          "name": "div:nth-child(1)>div:nth-child(1)",
+          "label": "Form URL or Path",
+          "valueType": "string",
+          "value": "",
+          "description": "Path to form definition JSON file"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

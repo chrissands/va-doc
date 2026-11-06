@@ -1,0 +1,101 @@
+{
+  "definitions": [
+    {
+      "title": "Card",
+      "id": "card",
+      "plugins": {
+        "da": {
+          "name": "card",
+          "rows": 4,
+          "columns": 0
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "card",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "div:nth-child(1)>picture:nth-child(1)>img:nth-child(3)[src]",
+          "label": "Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "div:nth-child(1)>picture:nth-child(1)>img:nth-child(3)[alt]",
+          "label": "Image Alt",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "name": "div:nth-child(1)>h2:nth-child(2)",
+          "label": "Heading",
+          "valueType": "string",
+          "value": "Card Heading"
+        },
+        {
+          "component": "richtext",
+          "name": "div:nth-child(1)>p:nth-child(3)",
+          "label": "Description",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "name": "div:nth-child(1)>p:nth-child(4)>a:nth-child(1)",
+          "label": "Button Text",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "name": "div:nth-child(1)>p:nth-child(4)>a:nth-child(1)[href]",
+          "label": "Button URL",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "component": "select",
+          "name": "classes",
+          "label": "Card Variant",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "Flag",
+              "value": "flag"
+            },
+            {
+              "name": "Media Right",
+              "value": "media-right"
+            },
+            {
+              "name": "Inset Media",
+              "value": "inset"
+            },
+            {
+              "name": "Exdent Media",
+              "value": "exdent"
+            }
+          ]
+        },
+        {
+          "component": "text",
+          "name": "classes",
+          "label": "Grid Classes (optional)",
+          "valueType": "string",
+          "value": "",
+          "description": "Add USWDS grid classes like 'tablet-lg:grid-col-4' to override defaults"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

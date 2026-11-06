@@ -1,0 +1,45 @@
+{
+  "definitions": [
+    {
+      "title": "Identifier",
+      "id": "identifier",
+      "plugins": {
+        "da": {
+          "name": "identifier",
+          "rows": 3,
+          "columns": 0
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "identifier",
+      "fields": [
+        {
+          "component": "text",
+          "name": "div:nth-child(1)>div:nth-child(1)",
+          "label": "Parent Agency",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "name": "div:nth-child(1)>div:nth-child(2)",
+          "label": "Agency Name",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "component": "richtext",
+          "name": "div:nth-child(1)",
+          "label": "Links and Content",
+          "valueType": "string",
+          "value": "",
+          "description": "Add required links and legal information"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

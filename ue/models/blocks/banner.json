@@ -1,0 +1,28 @@
+{
+  "definitions": [
+    {
+      "title": "Banner",
+      "id": "banner",
+      "plugins": {
+        "da": {
+          "unsafeHTML": "<div class=\"banner\"><div><div>An official website of the United States government</div></div></div>"
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "banner",
+      "fields": [
+        {
+          "component": "text",
+          "name": "div:nth-child(1)>div:nth-child(1)",
+          "label": "Banner Text",
+          "valueType": "string",
+          "value": "An official website of the United States government"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

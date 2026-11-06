@@ -1,0 +1,37 @@
+{
+  "definitions": [
+    {
+      "title": "List",
+      "id": "list",
+      "plugins": {
+        "da": {
+          "name": "list",
+          "rows": 1,
+          "columns": 0
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "list",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "div:nth-child(1)",
+          "label": "List Items",
+          "valueType": "string",
+          "value": "<ul><li>Item 1</li><li>Item 2</li><li>Item 3</li></ul>"
+        },
+        {
+          "component": "boolean",
+          "name": "classes",
+          "label": "Unstyled",
+          "valueType": "string",
+          "value": "unstyled"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

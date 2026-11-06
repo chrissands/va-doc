@@ -1,0 +1,18 @@
+/**
+ * USWDS Fonts
+ * 
+ * USWDS font-face declarations are loaded via styles/uswds-core.css
+ * which includes:
+ *   - Source Sans Pro Web (body text)
+ *   - Merriweather Web (headings)
+ *   - Public Sans Web (alternative body font)
+ *   - Roboto Mono Web (monospace/code)
+ * 
+ * Font files are located in /fonts/ and loaded automatically by USWDS.
+ * 
+ * This file is lazy-loaded by scripts/scripts.js for performance.
+ * Since USWDS fonts are already declared in uswds-core.css (loaded in head),
+ * no additional @font-face declarations are needed here.
+ */
+
+/* Empty file - USWDS fonts loaded via uswds-core.css */

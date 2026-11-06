@@ -1,0 +1,98 @@
+{
+  "definitions": [
+    {
+      "title": "Collection",
+      "id": "collection",
+      "plugins": {
+        "da": {
+          "name": "collection",
+          "rows": 3,
+          "columns": 1
+        }
+      },
+      "model": "collection",
+      "filter": "collection"
+    },
+    {
+      "title": "Collection Item",
+      "id": "collection-item",
+      "plugins": {
+        "da": {
+          "unsafeHTML": "<div><div><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/jpeg\" srcset=\"\"><img loading=\"lazy\"></picture><h3><a href=\"\">Item Title</a></h3><p>Description</p><p>By: Author Name</p><p>Date: January 27, 2024</p><p>Tags: Tag1, Tag2</p></div></div>"
+        }
+      },
+      "model": "collection-item"
+    }
+  ],
+  "models": [
+    {
+      "id": "collection-item",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "div:nth-child(1)>picture:nth-child(1)>img:nth-child(3)[src]",
+          "label": "Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "div:nth-child(1)>picture:nth-child(1)>img:nth-child(3)[alt]",
+          "label": "Image Alt",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "name": "div:nth-child(1)>h3:nth-child(2)>a:nth-child(1)",
+          "label": "Title",
+          "valueType": "string",
+          "value": "Item Title"
+        },
+        {
+          "component": "text",
+          "name": "div:nth-child(1)>h3:nth-child(2)>a:nth-child(1)[href]",
+          "label": "Link URL",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "component": "richtext",
+          "name": "div:nth-child(1)>p:nth-child(3)",
+          "label": "Description",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "name": "div:nth-child(1)>p:nth-child(4)",
+          "label": "By (optional)",
+          "valueType": "string",
+          "value": "By: "
+        },
+        {
+          "component": "text",
+          "name": "div:nth-child(1)>p:nth-child(5)",
+          "label": "Date (optional)",
+          "valueType": "string",
+          "value": "Date: "
+        },
+        {
+          "component": "text",
+          "name": "div:nth-child(1)>p:nth-child(6)",
+          "label": "Tags (comma-separated)",
+          "valueType": "string",
+          "value": "Tags: "
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "collection",
+      "components": [
+        "collection-item"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "definitions": [
+    {
+      "title": "Summary Box",
+      "id": "summary-box",
+      "plugins": {
+        "da": {
+          "name": "summary-box",
+          "rows": 3,
+          "columns": 0
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "summary-box",
+      "fields": [
+        {
+          "component": "text",
+          "name": "div:nth-child(1)>h2:nth-child(1)",
+          "label": "Heading",
+          "valueType": "string",
+          "value": "Key information"
+        },
+        {
+          "component": "richtext",
+          "name": "div:nth-child(1)",
+          "label": "Content",
+          "valueType": "string",
+          "value": "<ul><li>Item 1</li><li>Item 2</li><li>Item 3</li></ul>"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

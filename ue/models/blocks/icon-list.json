@@ -1,0 +1,59 @@
+{
+  "definitions": [
+    {
+      "title": "Icon List",
+      "id": "icon-list",
+      "plugins": {
+        "da": {
+          "name": "icon-list",
+          "rows": 3,
+          "columns": 2
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "icon-list",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "div:nth-child(1)",
+          "label": "List Content",
+          "valueType": "string",
+          "value": "<ul><li>Item 1</li><li>Item 2</li><li>Item 3</li></ul>",
+          "description": "First column: Icon names or images. Second column: List item content."
+        },
+        {
+          "component": "select",
+          "name": "classes",
+          "label": "Size",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "Small",
+              "value": "size-sm"
+            },
+            {
+              "name": "Medium",
+              "value": "size-md"
+            },
+            {
+              "name": "Large",
+              "value": "size-lg"
+            },
+            {
+              "name": "Extra Large",
+              "value": "size-xl"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

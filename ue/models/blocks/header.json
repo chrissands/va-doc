@@ -1,0 +1,29 @@
+{
+  "definitions": [
+    {
+      "title": "Header",
+      "id": "header",
+      "plugins": {
+        "da": {
+          "unsafeHTML": "<div class=\"header\"><div><div>Header content is managed via /nav/header</div></div></div>"
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "header",
+      "fields": [
+        {
+          "component": "text",
+          "name": "div:nth-child(1)>div:nth-child(1)",
+          "label": "Note",
+          "valueType": "string",
+          "value": "Header content is managed via /nav/header. Use page metadata to set header variant: header=extended or header=basic",
+          "description": "This block loads content from /nav/header. Edit that page to change header content."
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

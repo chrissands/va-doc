@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="Description" content="AEM Sidekick Library" />
+    <meta name="robots" content="noindex" />
+    <base href="/" />
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background-color: #ededed;
+        height: 100%;
+        width: 320px;
+        overflow: hidden;
+      }
+      
+      helix-sidekick { 
+        display: none;
+      }
+
+      /* Make sidekick-library take full height and be compact */
+      sidekick-library {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      /* Hide the preview iframes to make it compact */
+      sidekick-library::part(preview-container),
+      sidekick-library::part(preview),
+      sidekick-library iframe {
+        display: none !important;
+      }
+
+      /* Make the library list take full width */
+      sidekick-library::part(list-container) {
+        width: 100% !important;
+        max-width: none !important;
+        border-right: none !important;
+      }
+
+      /* Adjust padding for compact view */
+      sidekick-library::part(search-container) {
+        padding: 12px;
+      }
+
+      sidekick-library::part(section) {
+        padding: 8px 12px;
+      }
+
+      /* Make list items more compact */
+      sidekick-library::part(list-item) {
+        padding: 10px 12px;
+        font-size: 14px;
+      }
+
+      /* Reposition confirmation banner to be visible */
+      sidekick-library::part(toast),
+      sidekick-library .toast,
+      sidekick-library [role="status"],
+      sidekick-library .confirmation-banner,
+      sidekick-library .notification {
+        bottom: 120px !important; /* Move up from bottom */
+        position: fixed !important;
+      }
+
+      /* If banner uses transform, adjust it */
+      sidekick-library::part(toast) {
+        transform: translateY(-60px) !important;
+      }
+    </style>
+    <title>Sidekick Library</title>
+  </head>
+
+  <body>
+    <script
+      type="module"
+      src="https://www.aem.live/tools/sidekick/library/index.js"
+    ></script>
+    <script>
+      const library = document.createElement('sidekick-library')
+      library.config = {
+        base: '/docs/library.json'
+      }
+      document.body.prepend(library)
+    </script>
+  </body>
+</html>

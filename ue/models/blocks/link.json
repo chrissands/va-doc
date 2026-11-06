@@ -1,0 +1,44 @@
+{
+  "definitions": [
+    {
+      "title": "Link",
+      "id": "link",
+      "plugins": {
+        "da": {
+          "name": "link",
+          "rows": 1,
+          "columns": 0
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "link",
+      "fields": [
+        {
+          "component": "text",
+          "name": "div:nth-child(1)>a:nth-child(1)",
+          "label": "Link Text",
+          "valueType": "string",
+          "value": "Link"
+        },
+        {
+          "component": "text",
+          "name": "div:nth-child(1)>a:nth-child(1)[href]",
+          "label": "URL",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "component": "boolean",
+          "name": "classes",
+          "label": "External",
+          "valueType": "string",
+          "value": "external"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Card</title>
+</head>
+<body>
+<p><!-- Auto-generated from blocks/card/README.md --></p>
+
+<h1>Card Block</h1>
+
+<p>This block implements the <a href="https://designsystem.digital.gov/components/card/">USWDS Card component</a>.</p>
+
+<h2>Usage</h2>
+
+<p>Cards display related information in a flexible, scannable format. Multiple adjacent cards in a section are automatically grouped into a <code>usa-card-group</code>.</p>
+
+<h3>Basic Card Structure</h3>
+
+<p>In your document, create a card block with:</p>
+<ul>
+<li>**Heading** (h2, h3, h4, etc.) - becomes `usa-card__header`</li>
+<li>**Image** (optional) - becomes `usa-card__media`</li>
+<li>**Text content** - becomes `usa-card__body`</li>
+<li>**Call to action link** - becomes `usa-card__footer` with button styling</li>
+</ul>
+
+<pre><code>
+Card
+---
+Card Title
+Lorem ipsum dolor sit amet...
+Visit Page (link)
+</code></pre>
+
+<h3>Card with Media</h3>
+
+<p>Add an image anywhere in the card content:</p>
+
+<pre><code>
+Card
+---
+Card with Image
+[image]
+Lorem ipsum dolor sit amet...
+Visit Page (link)
+</code></pre>
+
+<h3>Content Order</h3>
+
+<p>The decorator automatically detects element order:</p>
+
+<p>**Default (media then header):**</p>
+<ul>
+<li>Image</li>
+<li>Heading</li>
+<li>Text</li>
+<li>Link</li>
+</ul>
+
+<p>**Header-first (automatically adds <code>usa-card--header-first</code>):**</p>
+<ul>
+<li>Heading</li>
+<li>Image</li>
+<li>Text</li>
+<li>Link</li>
+</ul>
+
+<h2>Variants</h2>
+
+<p>Add variant classes to the block for different card styles.</p>
+
+<h3>Media Variants</h3>
+
+<p>**Inset media** - Image sits inside card padding:</p>
+<pre><code>
+Card (inset)
+---
+[image]
+Inset Media
+Text content...
+</code></pre>
+
+<p>**Exdent media** - Image extends to card edges:</p>
+<pre><code>
+Card (exdent)
+---
+[image]
+Exdent Media
+Text content...
+</code></pre>
+
+<h3>Layout Variants</h3>
+
+<p>**Flag layout** - Horizontal card with media on left or right:</p>
+<pre><code>
+Card (flag)
+---
+[image]
+Default Flag
+Text content...
+</code></pre>
+
+<p>**Media right** - Combine with flag for media on right:</p>
+<pre><code>
+Card (flag, media-right)
+---
+[image]
+Flag with Media Right
+Text content...
+</code></pre>
+
+<h2>Grid Layout</h2>
+
+<h3>Default Grid Behavior</h3>
+
+<p>Cards automatically get responsive grid classes:</p>
+<ul>
+<li>**Mobile**: Full width (100%)</li>
+<li>**Tablet-lg (1024px+)**: 2 columns (50% width each)</li>
+<li>**Widescreen (1400px+)**: 3 columns (33.333% width each)</li>
+</ul>
+
+<h3>Custom Grid Classes</h3>
+
+<p>Override the default by adding your own grid utility classes:</p>
+
+<pre><code>
+Card (tablet-lg:grid-col-4, widescreen:grid-col-3)
+---
+Card with Custom Grid
+This card is 4 columns on tablet-lg, 3 columns on widescreen
+</code></pre>
+
+<p>Available grid classes:</p>
+<ul>
+<li>`tablet-lg:grid-col-6` - 2 columns (50%)</li>
+<li>`tablet-lg:grid-col-4` - 3 columns (33.333%)</li>
+<li>`tablet-lg:grid-col-3` - 4 columns (25%)</li>
+<li>`widescreen:grid-col-6` - 2 columns (50%)</li>
+<li>`widescreen:grid-col-4` - 3 columns (33.333%)</li>
+<li>`widescreen:grid-col-3` - 4 columns (25%)</li>
+</ul>
+
+<p>**Note:** Flag cards don't use grid classes (they use flexbox layout).</p>
+
+<h2>Multiple Cards</h2>
+
+<p>Place multiple card blocks in the same section to automatically group them:</p>
+
+<pre><code>
+Card
+---
+First Card
+Content...
+
+Card
+---
+Second Card
+Content...
+
+Card
+---
+Third Card
+Content...
+</code></pre>
+
+<p>This creates a <code>ul.usa-card-group</code> containing all cards as <code>li.usa-card</code> elements.</p>
+
+<h2>Examples</h2>
+
+<h3>Simple Card</h3>
+<pre><code>
+Card
+---
+Card Title
+Brief description of the card content.
+Learn More (link to /page)
+</code></pre>
+
+<h3>Card with Header First</h3>
+<pre><code>
+Card
+---
+Header First Card
+[image of mountains]
+The heading appears above the image automatically.
+Explore (link)
+</code></pre>
+
+<h3>Inset Media Card</h3>
+<pre><code>
+Card (inset)
+---
+[image]
+Inset Media Card
+The image has padding around it.
+View Details (link)
+</code></pre>
+
+<h3>Flag Card with Media Right</h3>
+<pre><code>
+Card (flag, media-right)
+---
+[image]
+Flag Layout
+This displays as a horizontal card with the image on the right.
+Read More (link)
+</code></pre>
+
+<h2>Accessibility</h2>
+
+<ul>
+<li>Use semantic heading levels (h2, h3, h4) appropriate to your page structure</li>
+<li>Provide meaningful alt text for images</li>
+<li>Ensure link text clearly describes the destination</li>
+<li>Maintain adequate color contrast for text</li>
+</ul>
+
+<h2>Technical Details</h2>
+
+<ul>
+<li>**CSS**: `/blocks/card/card.css` (USWDS styles + custom grid utilities)</li>
+<li>**JS**: `/blocks/card/card.js` (Custom EDS decorator)</li>
+<li>**USWDS Component**: `usa-card`</li>
+</ul>
+
+<h2>Related</h2>
+
+<ul>
+<li>[USWDS Card Component](https://designsystem.digital.gov/components/card/)</li>
+<li>[USWDS Grid Utilities](https://designsystem.digital.gov/utilities/layout-grid/)</li>
+</ul>
+</body>
+</html>

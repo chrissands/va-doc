@@ -1,0 +1,38 @@
+{
+  "definitions": [
+    {
+      "title": "In-Page Navigation",
+      "id": "in-page-nav",
+      "plugins": {
+        "da": {
+          "name": "in-page-nav",
+          "rows": 1,
+          "columns": 0
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "in-page-nav",
+      "fields": [
+        {
+          "component": "text",
+          "name": "div:nth-child(1)>div:nth-child(1)",
+          "label": "Navigation Title",
+          "valueType": "string",
+          "value": "On this page"
+        },
+        {
+          "component": "richtext",
+          "name": "div:nth-child(1)",
+          "label": "Navigation Links",
+          "valueType": "string",
+          "value": "<ul><li><a href=\"#section-1\">Section 1</a></li><li><a href=\"#section-2\">Section 2</a></li></ul>",
+          "description": "List of anchor links to page sections"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}
