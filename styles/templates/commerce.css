@@ -1,0 +1,2 @@
+/* commerce pages (PLP / PDP): page-level tweaks only, blocks carry their own styles */
+body.commerce main > .section:first-of-type { margin-bottom: 0; }

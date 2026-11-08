@@ -1,0 +1,708 @@
+{
+  "source": "Stitch design exports (served locally from the attached code.html files) + live-site navigation",
+  "templates": [
+    {
+      "name": "vadoc-home",
+      "description": "VADOC flagship homepage",
+      "urls": [
+        "http://127.0.0.1:8001/vadoc.html"
+      ],
+      "path": "/index",
+      "metadata": {
+        "Title": "Virginia Department of Corrections",
+        "Description": "The Virginia Department of Corrections operates 42 facilities with evidence-based programs, structured reentry, healthcare and workforce credentialing.",
+        "Theme": "vadoc"
+      },
+      "hints": [
+        {
+          "selector": "main > div > section:nth-of-type(2)",
+          "data": {
+            "variant": "audience"
+          }
+        },
+        {
+          "selector": "#visitation-hub",
+          "data": {
+            "variant": "icon-links"
+          }
+        },
+        {
+          "selector": "main > div > section:nth-of-type(4)",
+          "data": {
+            "variant": "news"
+          }
+        },
+        {
+          "selector": "main > div > section:nth-of-type(7)",
+          "data": {
+            "variant": "danger"
+          }
+        }
+      ],
+      "sections": [
+        {
+          "selector": "#visitation-alert"
+        },
+        {
+          "selector": "main > div > section:nth-of-type(1)"
+        },
+        {
+          "selector": "main > div > section:nth-of-type(2)",
+          "style": "overlap"
+        },
+        {
+          "selector": "#visitation-hub",
+          "style": "gray"
+        },
+        {
+          "selector": "main > div > section:nth-of-type(4)"
+        },
+        {
+          "selector": "main > div > section:nth-of-type(5)",
+          "style": "gray"
+        },
+        {
+          "selector": "main > div > section:nth-of-type(6)"
+        },
+        {
+          "selector": "main > div > section:nth-of-type(7)"
+        }
+      ],
+      "blocks": [
+        {
+          "name": "alert",
+          "instances": [
+            "#visitation-alert"
+          ]
+        },
+        {
+          "name": "locator-search",
+          "instances": [
+            "main > div > section:nth-of-type(1) .lg\\:col-span-5"
+          ]
+        },
+        {
+          "name": "hero",
+          "instances": [
+            "main > div > section:nth-of-type(1)"
+          ]
+        },
+        {
+          "name": "cards",
+          "instances": [
+            "main > div > section:nth-of-type(2)",
+            "#visitation-hub",
+            "main > div > section:nth-of-type(4)"
+          ]
+        },
+        {
+          "name": "table-documents",
+          "instances": [
+            "main > div > section:nth-of-type(5) table"
+          ]
+        },
+        {
+          "name": "carousel",
+          "instances": [
+            "main > div > section:nth-of-type(6)"
+          ]
+        },
+        {
+          "name": "callout",
+          "instances": [
+            "main > div > section:nth-of-type(7)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "bolrj-home",
+      "description": "Board of Local & Regional Jails homepage",
+      "urls": [
+        "http://127.0.0.1:8001/bolrj.html"
+      ],
+      "path": "/bolrj/index",
+      "metadata": {
+        "Title": "Board of Local & Regional Jails",
+        "Description": "Independent civilian oversight, statutory certification and in-custody mortality reviews for Virginia's local and regional jails.",
+        "Theme": "bolrj"
+      },
+      "hints": [
+        {
+          "selector": "main > div > div.bg-tertiary-container",
+          "data": {
+            "variant": "info"
+          }
+        },
+        {
+          "selector": "main > div > div.bg-primary-container",
+          "data": {
+            "variant": "dark"
+          }
+        },
+        {
+          "selector": "main > div > section:nth-of-type(1)",
+          "data": {
+            "variant": "icon"
+          }
+        },
+        {
+          "selector": "main > div > section:nth-of-type(3)",
+          "data": {
+            "variant": "member"
+          }
+        },
+        {
+          "selector": "#directory-cta > div",
+          "data": {
+            "variant": "dark"
+          }
+        },
+        {
+          "selector": "main > div > section:nth-of-type(6)",
+          "data": {
+            "form": "/bolrj/forms/contact.json"
+          }
+        }
+      ],
+      "sections": [
+        {
+          "selector": "main > div > div.bg-tertiary-container"
+        },
+        {
+          "selector": "main > div > div.bg-primary-container"
+        },
+        {
+          "selector": "main > div > section:nth-of-type(1)"
+        },
+        {
+          "selector": "#meetings-section",
+          "style": "gray"
+        },
+        {
+          "selector": "main > div > section:nth-of-type(3)"
+        },
+        {
+          "selector": "#document-library",
+          "style": "gray"
+        },
+        {
+          "selector": "#directory-cta"
+        },
+        {
+          "selector": "main > div > section:nth-of-type(6)",
+          "style": "gray, split"
+        }
+      ],
+      "blocks": [
+        {
+          "name": "alert",
+          "instances": [
+            "main > div > div.bg-tertiary-container"
+          ]
+        },
+        {
+          "name": "hero",
+          "instances": [
+            "main > div > div.bg-primary-container"
+          ]
+        },
+        {
+          "name": "cards",
+          "instances": [
+            "main > div > section:nth-of-type(1)",
+            "main > div > section:nth-of-type(3)"
+          ]
+        },
+        {
+          "name": "accordion",
+          "instances": [
+            "#meetings-section"
+          ]
+        },
+        {
+          "name": "document-list",
+          "instances": [
+            "#document-library"
+          ]
+        },
+        {
+          "name": "callout",
+          "instances": [
+            "#directory-cta > div"
+          ]
+        },
+        {
+          "name": "form",
+          "instances": [
+            "main > div > section:nth-of-type(6)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vpb-home",
+      "description": "Virginia Parole Board homepage",
+      "urls": [
+        "http://127.0.0.1:8001/vpb.html"
+      ],
+      "path": "/vpb/index",
+      "metadata": {
+        "Title": "Virginia Parole Board",
+        "Description": "An independent quasi-judicial executive agency deciding parole and conditional release under Title 53.1 of the Code of Virginia.",
+        "Theme": "vpb"
+      },
+      "remove": [
+        "main > div > section.px-space-lg.py-space-sm",
+        "main > div > header"
+      ],
+      "hints": [
+        {
+          "selector": "main > div > section:nth-of-type(1)",
+          "data": {
+            "variant": "split",
+            "content": ".lg\\:col-span-7",
+            "title": "Virginia Parole Board"
+          }
+        },
+        {
+          "selector": "main > div > section:nth-of-type(2)",
+          "data": {
+            "variant": "news"
+          }
+        },
+        {
+          "selector": "#decisions-archive",
+          "data": {
+            "variant": "tiles"
+          }
+        },
+        {
+          "selector": "#forms",
+          "data": {
+            "variant": "document"
+          }
+        },
+        {
+          "selector": "#victim-services",
+          "data": {
+            "variant": "tint",
+            "aside": ".lg\\:col-span-4"
+          }
+        },
+        {
+          "selector": "#public-comment",
+          "data": {
+            "variant": "light"
+          }
+        }
+      ],
+      "sections": [
+        {
+          "selector": "main > div > section:nth-of-type(1)"
+        },
+        {
+          "selector": "main > div > section:nth-of-type(2)"
+        },
+        {
+          "selector": "#decisions-archive",
+          "style": "gray"
+        },
+        {
+          "selector": "#forms"
+        },
+        {
+          "selector": "#victim-services"
+        },
+        {
+          "selector": "#public-comment"
+        }
+      ],
+      "blocks": [
+        {
+          "name": "hero",
+          "instances": [
+            "main > div > section:nth-of-type(1)"
+          ]
+        },
+        {
+          "name": "cards",
+          "instances": [
+            "main > div > section:nth-of-type(2)",
+            "#forms"
+          ]
+        },
+        {
+          "name": "document-list",
+          "instances": [
+            "#decisions-archive"
+          ]
+        },
+        {
+          "name": "callout",
+          "instances": [
+            "#victim-services",
+            "#public-comment"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vce-plp",
+      "description": "VCE product listing page (modular office systems)",
+      "urls": [
+        "http://127.0.0.1:8001/vce-plp.html"
+      ],
+      "path": "/vce/modular-office-systems",
+      "metadata": {
+        "Title": "Modular Office Systems & Workstations | Virginia Correctional Enterprises",
+        "Description": "BIFMA-compliant modular workstations, acoustic panels and benching systems for Commonwealth agencies, with 10-day Quickship and eVA punchout.",
+        "Theme": "vce",
+        "Template": "commerce"
+      },
+      "remove": [
+        "main > div > div.bg-primary-container"
+      ],
+      "hints": [
+        {
+          "selector": "main > div > div.bg-surface-container-low",
+          "data": {
+            "href0": "/vce/modular-office-systems",
+            "href1": "/vce/modular-office-systems",
+            "href2": "/vce/modular-office-systems"
+          }
+        },
+        {
+          "selector": "main > div > section:nth-of-type(1)",
+          "data": {
+            "variant": "split"
+          }
+        },
+        {
+          "selector": "main > div > section:nth-of-type(2) > div > div.grid > div:nth-child(1)",
+          "data": {
+            "variant": "light"
+          }
+        },
+        {
+          "selector": "main > div > section:nth-of-type(2) > div > div.grid > div:nth-child(2)",
+          "data": {
+            "variant": "dark"
+          }
+        },
+        {
+          "selector": "main > div > section:nth-of-type(2) > div > div:nth-child(2)",
+          "data": {
+            "variant": "stats",
+            "cardHeading": ".font-headline-sm"
+          }
+        }
+      ],
+      "sections": [
+        {
+          "selector": "main > div > div.bg-surface-container-low"
+        },
+        {
+          "selector": "main > div > section:nth-of-type(1)",
+          "style": "gray"
+        },
+        {
+          "selector": "main > div > main"
+        },
+        {
+          "selector": "main > div > section:nth-of-type(2)",
+          "style": "gray, two-up"
+        }
+      ],
+      "blocks": [
+        {
+          "name": "breadcrumb",
+          "instances": [
+            "main > div > div.bg-surface-container-low"
+          ]
+        },
+        {
+          "name": "hero",
+          "instances": [
+            "main > div > section:nth-of-type(1)"
+          ]
+        },
+        {
+          "name": "product-grid",
+          "instances": [
+            "main > div > main"
+          ]
+        },
+        {
+          "name": "callout",
+          "instances": [
+            "main > div > section:nth-of-type(2) > div > div.grid > div"
+          ]
+        },
+        {
+          "name": "cards",
+          "instances": [
+            "main > div > section:nth-of-type(2) > div > div:nth-child(2)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vce-pdp",
+      "description": "VCE product detail pages (thin shells, one per catalog SKU)",
+      "urls": [
+        "http://127.0.0.1:8001/vce-pdp.html?sku=VCE-HZ-6060",
+        "http://127.0.0.1:8001/vce-pdp.html?sku=VCE-CP-7272",
+        "http://127.0.0.1:8001/vce-pdp.html?sku=VCE-PD-1200",
+        "http://127.0.0.1:8001/vce-pdp.html?sku=VCE-SH-8484",
+        "http://127.0.0.1:8001/vce-pdp.html?sku=VCE-AP-4848",
+        "http://127.0.0.1:8001/vce-pdp.html?sku=VCE-CH-6030",
+        "http://127.0.0.1:8001/vce-pdp.html?sku=VCE-RN-6072",
+        "http://127.0.0.1:8001/vce-pdp.html?sku=VCE-BR-7260",
+        "http://127.0.0.1:8001/vce-pdp.html?sku=VCE-JM-6666",
+        "http://127.0.0.1:8001/vce-pdp.html?sku=VCE-PT-7236",
+        "http://127.0.0.1:8001/vce-pdp.html?sku=VCE-CO-9696",
+        "http://127.0.0.1:8001/vce-pdp.html?sku=VCE-TW-6024",
+        "http://127.0.0.1:8001/vce-pdp.html?sku=VCE-CH-8800",
+        "http://127.0.0.1:8001/vce-pdp.html?sku=VCE-FL-3602",
+        "http://127.0.0.1:8001/vce-pdp.html?sku=VCE-PWR-CLMP",
+        "http://127.0.0.1:8001/vce-pdp.html?sku=VCE-DS-2460"
+      ],
+      "pathPattern": "/vce/product/{sku}",
+      "metadata": {
+        "Title": "{sku} | Virginia Correctional Enterprises",
+        "Description": "VCE product details, finishes, pricing and lead time for state agency procurement.",
+        "Theme": "vce",
+        "Template": "commerce",
+        "SKU": "{sku}"
+      },
+      "remove": [
+        "main > div > section.bg-surface-container-high",
+        "main > div > nav"
+      ],
+      "hints": [
+        {
+          "selector": "main > div > section.pt-space-lg",
+          "data": {
+            "href0": "/vce/modular-office-systems",
+            "href1": "/vce/modular-office-systems",
+            "href2": "/vce/modular-office-systems",
+            "names": "{\"VCE-HZ-6060\": \"Horizon Series Modular Workstation (6ft × 6ft)\", \"VCE-CP-7272\": \"Capital Series Acoustic Cubicle System\", \"VCE-PD-1200\": \"Piedmont Dual-Pod Benching Workstation\", \"VCE-SH-8484\": \"Shenandoah Ergonomic Managerial Station\", \"VCE-AP-4848\": \"Appalachian Privacy Screen Cluster\", \"VCE-CH-6030\": \"Chesapeake Height-Adjustable System\", \"VCE-RN-6072\": \"Rappahannock Open-Plan Workstation\", \"VCE-BR-7260\": \"Blue Ridge Collaborative Pod (4-Person)\", \"VCE-JM-6666\": \"James River Acoustic Panel Kit\", \"VCE-PT-7236\": \"Potomac L-Desk Workstation\", \"VCE-CO-9696\": \"Commonwealth Executive Suite\", \"VCE-TW-6024\": \"Tidewater Touchdown Bench\", \"VCE-CH-8800\": \"Horizon Task Chair\", \"VCE-FL-3602\": \"Lockable Lateral File Cabinet\", \"VCE-PWR-CLMP\": \"Under-Desk Power Module\", \"VCE-DS-2460\": \"Acoustic Desk Screen\"}"
+          }
+        },
+        {
+          "selector": "main > div > section.my-space-lg > div",
+          "data": {
+            "variant": "warning"
+          }
+        },
+        {
+          "selector": "main > div > section.py-space-md",
+          "data": {
+            "variant": "specs"
+          }
+        },
+        {
+          "selector": "main > div > section.py-space-xl",
+          "data": {
+            "variant": "related"
+          }
+        }
+      ],
+      "sections": [
+        {
+          "selector": "main > div > section.pt-space-lg"
+        },
+        {
+          "selector": "main > div > main"
+        },
+        {
+          "selector": "main > div > section.my-space-lg"
+        },
+        {
+          "selector": "main > div > section.py-space-md"
+        },
+        {
+          "selector": "main > div > section.py-space-xl"
+        }
+      ],
+      "blocks": [
+        {
+          "name": "breadcrumb",
+          "instances": [
+            "main > div > section.pt-space-lg"
+          ]
+        },
+        {
+          "name": "product-detail",
+          "instances": [
+            "main > div > main",
+            "main > div > section.py-space-md"
+          ]
+        },
+        {
+          "name": "callout",
+          "instances": [
+            "main > div > section.my-space-lg > div"
+          ]
+        },
+        {
+          "name": "product-grid",
+          "instances": [
+            "main > div > section.py-space-xl"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "site-fragments",
+      "description": "Per-site nav and footer fragments (one per site folder)",
+      "fragment": true,
+      "urls": [
+        "http://127.0.0.1:8001/vadoc.html?fragment=nav&site=vadoc",
+        "http://127.0.0.1:8001/vadoc.html?fragment=footer&site=vadoc",
+        "http://127.0.0.1:8001/bolrj.html?fragment=nav&site=bolrj",
+        "http://127.0.0.1:8001/bolrj.html?fragment=footer&site=bolrj",
+        "http://127.0.0.1:8001/vpb.html?fragment=nav&site=vpb",
+        "http://127.0.0.1:8001/vpb.html?fragment=footer&site=vpb",
+        "http://127.0.0.1:8001/vce-plp.html?fragment=nav&site=vce",
+        "http://127.0.0.1:8001/vce-plp.html?fragment=footer&site=vce"
+      ],
+      "paths": {
+        "?fragment=nav&site=vadoc": "/nav",
+        "?fragment=footer&site=vadoc": "/footer",
+        "?fragment=nav&site=bolrj": "/bolrj/nav",
+        "?fragment=footer&site=bolrj": "/bolrj/footer",
+        "?fragment=nav&site=vpb": "/vpb/nav",
+        "?fragment=footer&site=vpb": "/vpb/footer",
+        "?fragment=nav&site=vce": "/vce/nav",
+        "?fragment=footer&site=vce": "/vce/footer"
+      },
+      "hints": [
+        {
+          "selector": "body",
+          "data": {
+            "sites": "{\"vadoc\": {\"source\": \"body > header\", \"home\": \"/\", \"utility\": \":scope > div:first-child\", \"utilityLinks\": [{\"label\": \"Language Assistance\", \"href\": \"#\"}, {\"label\": \"Accessibility\", \"href\": \"#\"}, {\"label\": \"Virginia.gov Directory\", \"href\": \"https://www.virginia.gov/agencies/\"}], \"brandName\": \".font-headline-sm\", \"brandTag\": \".font-headline-sm + span\", \"navLinks\": \"nav a\", \"searchHref\": \"/search\", \"tools\": [{\"label\": \"Emergency Info\", \"href\": \"#\", \"strong\": true}, {\"label\": \"My Account\", \"href\": \"#\"}], \"nav\": [\"Facilities & Offices\", \"Offender Locator\", \"Family & Visitation\", \"Enterprises & Services\", \"Victim Services\", \"Careers\", \"News\", \"About\"], \"menus\": {\"Family & Visitation\": [{\"label\": \"Support Someone Inside\", \"children\": [{\"label\": \"Sending Money\", \"href\": \"https://vadoc.virginia.gov/family-and-friends/sending-money/\"}, {\"label\": \"Sending Mail\", \"href\": \"https://vadoc.virginia.gov/family-and-friends/sending-mail/\"}, {\"label\": \"Sending Publications\", \"href\": \"https://vadoc.virginia.gov/family-and-friends/sending-publications/\"}, {\"label\": \"Phone Correspondence\", \"href\": \"https://vadoc.virginia.gov/family-and-friends/phone-correspondence/\"}]}, {\"label\": \"Visitation\", \"children\": [{\"label\": \"Visiting an Inmate\", \"href\": \"https://vadoc.virginia.gov/family-and-friends/visiting-an-inmate/\"}, {\"label\": \"Video Visitation\", \"href\": \"https://vadoc.virginia.gov/family-and-friends/visiting-an-inmate/video-visitation/\"}, {\"label\": \"Visitation Application\", \"href\": \"https://vadoc.virginia.gov/family-and-friends/visiting-an-inmate/visitation-application/\"}, {\"label\": \"Visitation Schedule\", \"href\": \"/#in-person--video-visitation\"}]}, {\"label\": \"Programs\", \"children\": [{\"label\": \"The Virginia Model\", \"href\": \"https://vadoc.virginia.gov/family-and-friends/the-virginia-model/\"}, {\"label\": \"Out of State Supervision Requests\", \"href\": \"https://vadoc.virginia.gov/family-and-friends/out-of-state-incarceration-supervision-requests/\"}]}], \"Enterprises & Services\": [{\"label\": \"Virginia Correctional Enterprises\", \"href\": \"/vce/modular-office-systems\"}, {\"label\": \"Modular Office Systems\", \"href\": \"/vce/modular-office-systems\"}, {\"label\": \"VCE Release Request\", \"href\": \"/vce/release-request\"}, {\"label\": \"Reentry Resources\", \"href\": \"https://vadoc.virginia.gov/inmates-and-supervisees/reentry-resources/\"}], \"Victim Services\": [{\"label\": \"Community Resources\", \"href\": \"https://vadoc.virginia.gov/victim-services/community-resources/\"}, {\"label\": \"Notifications\", \"href\": \"https://vadoc.virginia.gov/victim-services/notifications/\"}, {\"label\": \"Safety Planning\", \"href\": \"https://vadoc.virginia.gov/victim-services/safety-planning/\"}, {\"label\": \"Victim Compensation\", \"href\": \"https://vadoc.virginia.gov/victim-services/victim-compensation/\"}, {\"label\": \"Victim Restitution\", \"href\": \"https://vadoc.virginia.gov/victim-services/victim-restitution/\"}], \"About\": [{\"label\": \"About VADOC\", \"href\": \"https://vadoc.virginia.gov/about/\"}, {\"label\": \"Operating Procedures\", \"href\": \"https://vadoc.virginia.gov/general-public/operating-procedures/\"}, {\"label\": \"Reports and Publications\", \"href\": \"https://vadoc.virginia.gov/general-public/reports-and-publications/\"}, {\"label\": \"Board of Local & Regional Jails\", \"href\": \"/bolrj/\"}, {\"label\": \"Virginia Parole Board\", \"href\": \"/vpb/\"}]}, \"hrefs\": {\"Facilities & Offices\": \"https://vadoc.virginia.gov/facilities-and-offices/\", \"Offender Locator\": \"/#offender-locator\", \"Careers\": \"https://vadoc.virginia.gov/career-opportunities/\", \"News\": \"/#department-headlines--press-releases\"}}, \"bolrj\": {\"source\": \"body > header\", \"home\": \"/bolrj/\", \"utilityLinks\": [{\"label\": \"Language Assistance\", \"href\": \"#\"}, {\"label\": \"Accessibility\", \"href\": \"#\"}, {\"label\": \"Virginia.gov Directory\", \"href\": \"https://www.virginia.gov/agencies/\"}], \"brand\": \"BLRJ\", \"tagline\": \"Board of Local & Regional Jails • Virginia\", \"search\": \"Search meetings, reports and standards…\", \"searchHref\": \"/bolrj/search\", \"tools\": [{\"label\": \"Jails Directory\", \"href\": \"/bolrj/#official-virginia-local--regional-jails-directory\", \"strong\": true}], \"nav\": [\"Responsibilities\", \"Meetings\", \"Members\", \"Document Library\", \"Standards & Code\", \"Contact Us\"], \"menus\": {\"Standards & Code\": [{\"label\": \"Code of Virginia § 53.1-68\", \"href\": \"https://law.lis.virginia.gov/vacode/title53.1/chapter1/section53.1-68/\"}, {\"label\": \"Code of Virginia § 53.1-69.1\", \"href\": \"https://law.lis.virginia.gov/vacode/title53.1/chapter1/section53.1-69.1/\"}, {\"label\": \"Minimum Standards (6 VAC 15-40)\", \"href\": \"https://law.lis.virginia.gov/admincode/title6/agency15/chapter40/\"}, {\"label\": \"Regulatory Town Hall\", \"href\": \"https://www.townhall.virginia.gov/\"}]}, \"hrefs\": {\"Responsibilities\": \"/bolrj/#core-regulatory-responsibilities\", \"Meetings\": \"/bolrj/#board-meetings-agendas--minutes\", \"Members\": \"/bolrj/#board-members--executive-leadership\", \"Document Library\": \"/bolrj/#document-library--formal-publications\", \"Contact Us\": \"/bolrj/#official-board-inquiries--communications\"}}, \"vpb\": {\"source\": \"main > div > header\", \"home\": \"/vpb/\", \"brand\": \"VPB\", \"utilityLinks\": [{\"label\": \"Español & Languages\", \"href\": \"#\"}, {\"label\": \"Adjust Contrast / Size\", \"href\": \"#\"}, {\"label\": \"Victim Hotline: (800) 560-4292\", \"href\": \"tel:8005604292\"}], \"brandTag\": \"h1 + p, h1 + span, h1 ~ *\", \"tagline\": \"Virginia Parole Board • Independent Quasi-Judicial Agency\", \"navLinks\": \"nav a\", \"searchHref\": \"/vpb/search\", \"tools\": [{\"label\": \"Contact Board\", \"href\": \"#\", \"strong\": true}], \"nav\": [\"Agency Overview\", \"Parole Decisions & Dockets\", \"Hearing Procedures\", \"Victims' Input Rights\", \"Forms & Resources\", \"Administrative FAQ\"], \"hrefs\": {\"Agency Overview\": \"/vpb/\", \"Parole Decisions & Dockets\": \"/vpb/#monthly-parole-decision-releases\", \"Victims' Input Rights\": \"/vpb/#victim-input--confidential-statements\", \"Forms & Resources\": \"/vpb/#most-requested-forms--petitions\"}}, \"vce\": {\"source\": \"main > div > div.bg-primary-container\", \"home\": \"/vce/modular-office-systems\", \"brand\": \"VCE\", \"statement\": \"Official Commonwealth Enterprise Partner • Procurement Helpline: 1-800-823-2823 (M–F 8am–5pm EST)\", \"utility\": \":scope > div > div:first-child > div:last-child\", \"brandTag\": \"p.font-caption\", \"navLinks\": \"nav a\", \"tagline\": \"Virginia Correctional Enterprises • Work Programs, Changing Lives\", \"searchHref\": \"/vce/search\", \"tools\": [{\"label\": \"Procurement Cart\", \"href\": \"/vce/cart\", \"strong\": true}], \"nav\": [\"About VCE\", \"Products\", \"Services & Space Planning\", \"Clearance Inventory\", \"Quickship 10-Day\", \"Re-Entry Mission & Impact\", \"Contact Sales Consultant\"], \"menus\": {\"Products\": [{\"label\": \"Office Furniture\", \"children\": [{\"label\": \"Modular Office Systems\", \"href\": \"/vce/modular-office-systems\"}, {\"label\": \"Horizon Series Workstation\", \"href\": \"/vce/product/vce-hz-6060\"}, {\"label\": \"Height-Adjustable Desks\", \"href\": \"/vce/product/vce-ch-6030\"}]}, {\"label\": \"Accessories & Seating\", \"children\": [{\"label\": \"Task Seating\", \"href\": \"/vce/product/vce-ch-8800\"}, {\"label\": \"Storage & Filing\", \"href\": \"/vce/product/vce-fl-3602\"}, {\"label\": \"Power & Data\", \"href\": \"/vce/product/vce-pwr-clmp\"}]}, {\"label\": \"Procurement\", \"children\": [{\"label\": \"Release Request (§ 53.1-47)\", \"href\": \"/vce/release-request\"}, {\"label\": \"eVA Punchout Guide\", \"href\": \"#\"}]}]}, \"hrefs\": {\"Quickship 10-Day\": \"/vce/modular-office-systems\", \"Contact Sales Consultant\": \"#\"}}}"
+          }
+        },
+        {
+          "selector": "html",
+          "data": {
+            "sites": "{\"family\": {\"title\": \"Family of Public Safety Sites\", \"sites\": [[\"VADOC\", \"Dept of Corrections\", \"/\"], [\"BLRJ\", \"Local & Regional Jails\", \"/bolrj/\"], [\"VPB\", \"Parole Board\", \"/vpb/\"], [\"VCE\", \"Enterprises & Store\", \"/vce/modular-office-systems\"], [\"VCE Release\", \"Release Request Form\", \"/vce/release-request\"]]}, \"vadoc\": {\"source\": \"body > footer\"}, \"bolrj\": {\"source\": \"body > footer\", \"columns\": [{\"title\": \"Board of Local & Regional Jails\", \"lines\": [\"6900 Atmore Drive, Suite 100\", \"Richmond, Virginia 23225\", \"General Line: (804) 887-8000\", \"FOIA Liaison: FOIA@blrj.virginia.gov\"]}, {\"title\": \"Board Business\", \"links\": [[\"Core Responsibilities\", \"/bolrj/#core-regulatory-responsibilities\"], [\"Meetings & Minutes\", \"/bolrj/#board-meetings-agendas--minutes\"], [\"Board Members\", \"/bolrj/#board-members--executive-leadership\"], [\"Document Library\", \"/bolrj/#document-library--formal-publications\"], [\"Jails Directory\", \"/bolrj/#official-virginia-local--regional-jails-directory\"]]}, {\"title\": \"Legal & Accountability\", \"links\": [[\"FOIA Freedom of Information Rights\", \"#\"], [\"Section 508 / WCAG 2.2 Statement\", \"#\"], [\"Office of the State Inspector General\", \"https://www.osig.virginia.gov/\"], [\"Privacy & Security Policy\", \"#\"]]}, {\"title\": \"Public Safety Partners\", \"links\": [[\"Virginia State Police (VSP)\", \"https://vsp.virginia.gov/\"], [\"Victim Notification (SAVIN)\", \"#\"], [\"Virginia Judicial System\", \"https://www.vacourts.gov/\"], [\"Department of Juvenile Justice\", \"https://www.djj.virginia.gov/\"]]}], \"copyright\": \"© 2025 Commonwealth of Virginia. Board of Local & Regional Jails. All rights reserved.\"}, \"vpb\": {\"source\": \"main footer\", \"prea\": false}, \"vce\": {\"source\": \"body > footer\", \"columns\": [{\"title\": \"VCE Statutory Network\", \"lines\": [\"Virginia Correctional Enterprises is an operational arm of the Virginia Department of Corrections, fostering professional workforce transformation and institutional manufacturing excellence.\", \"Procurement Helpline: 1-800-823-2823\"]}, {\"title\": \"Shop VCE\", \"links\": [[\"Modular Office Systems\", \"/vce/modular-office-systems\"], [\"Quickship 10-Day\", \"/vce/modular-office-systems\"], [\"Accessories & Seating\", \"/vce/product/vce-ch-8800\"], [\"Procurement Cart\", \"/vce/cart\"]]}, {\"title\": \"Legal & Exemption Directives\", \"links\": [[\"Code of Virginia § 53.1-47 Guidelines\", \"https://law.lis.virginia.gov/vacode/title53.1/chapter2/section53.1-47/\"], [\"Release Request Form\", \"/vce/release-request\"], [\"Annual Exemption Audits & Data\", \"#\"], [\"WCAG 2.2 AA Accessibility Attestation\", \"#\"]]}, {\"title\": \"Public Safety Partners\", \"links\": [[\"Virginia State Police (VSP)\", \"https://vsp.virginia.gov/\"], [\"Victim Notification (SAVIN)\", \"#\"], [\"Virginia Judicial System\", \"https://www.vacourts.gov/\"], [\"Department of Juvenile Justice\", \"https://www.djj.virginia.gov/\"]]}], \"copyright\": \"© 2025 Commonwealth of Virginia. Virginia Correctional Enterprises. All rights reserved.\", \"legal\": [[\"Privacy Policy\", \"#\"], [\"Terms of Use\", \"#\"], [\"Accessibility\", \"#\"]]}}"
+          }
+        }
+      ],
+      "blocks": [
+        {
+          "name": "nav-fragment",
+          "instances": [
+            "body"
+          ]
+        },
+        {
+          "name": "footer-fragment",
+          "instances": [
+            "html"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vce-release-request",
+      "description": "VCE Mandatory Source Release Request form",
+      "urls": [
+        "http://127.0.0.1:8001/vce-release.html"
+      ],
+      "path": "/vce/release-request",
+      "metadata": {
+        "Title": "Mandatory Source Release Request | Virginia Correctional Enterprises",
+        "Description": "Request a VCE Release Waiver (Code of Virginia § 53.1-47) before purchasing commercially equivalent goods from non-VCE vendors.",
+        "Theme": "vce",
+        "Template": "form"
+      },
+      "remove": [
+        "main > div > div.bg-primary",
+        "main > div > div.grid > div:nth-child(1) > section:nth-of-type(3)",
+        "main > div > div.grid > div:nth-child(2) > div:nth-child(1)",
+        "main > div > header span.bg-surface-container-high",
+        "main > div > div.grid > div:nth-child(1) > section:nth-of-type(2) > div:first-child"
+      ],
+      "hints": [
+        {
+          "selector": "main > div > nav",
+          "data": {
+            "href0": "/vce/modular-office-systems",
+            "href1": "/vce/modular-office-systems",
+            "href2": "/vce/release-request"
+          }
+        },
+        {
+          "selector": "main > div > aside",
+          "data": {
+            "variant": "notice"
+          }
+        },
+        {
+          "selector": "main > div > div.grid > div:nth-child(1) > section:nth-of-type(1)",
+          "data": {
+            "form": "release-request"
+          }
+        },
+        {
+          "selector": "main > div > div.grid > div:nth-child(1) > section:nth-of-type(2)",
+          "data": {
+            "form": "/vce/forms/release-request.json"
+          }
+        },
+        {
+          "selector": "main > div > div.grid > div:nth-child(2) > div:nth-child(1)",
+          "data": {
+            "variant": "dark"
+          }
+        }
+      ],
+      "sections": [
+        {
+          "selector": "main > div > nav"
+        },
+        {
+          "selector": "main > div > header"
+        },
+        {
+          "selector": "main > div > aside"
+        },
+        {
+          "selector": "main > div > div.grid",
+          "style": "form-layout"
+        }
+      ],
+      "blocks": [
+        {
+          "name": "breadcrumb",
+          "instances": [
+            "main > div > nav"
+          ]
+        },
+        {
+          "name": "callout",
+          "instances": [
+            "main > div > aside",
+            "main > div > div.grid > div:nth-child(2) > div:nth-child(1)"
+          ]
+        },
+        {
+          "name": "line-items",
+          "instances": [
+            "main > div > div.grid > div:nth-child(1) > section:nth-of-type(1)"
+          ]
+        },
+        {
+          "name": "form",
+          "instances": [
+            "main > div > div.grid > div:nth-child(1) > section:nth-of-type(2)"
+          ]
+        }
+      ]
+    }
+  ]
+}
