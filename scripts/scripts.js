@@ -478,7 +478,7 @@ function decorateSite(doc) {
     doc.head.append(preload);
   }
   const main = doc.querySelector('main');
-  if (main) {
+  if (main && !doc.querySelector('body > .skip-link')) {
     main.id = main.id || 'main';
     main.tabIndex = -1;
     const skip = doc.createElement('a');
@@ -541,8 +541,12 @@ async function loadLazy(doc) {
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
   if (hash && element) element.scrollIntoView();
 
-  loadHeader(doc.querySelector('header'));
-  loadFooter(doc.querySelector('footer'));
+  // idempotent: DA live preview swaps the body and calls loadPage() again while an
+  // earlier run may still be in flight, so never add a second header/footer block
+  const header = doc.querySelector('header');
+  if (header && !header.querySelector(':scope > .header')) loadHeader(header);
+  const footer = doc.querySelector('footer');
+  if (footer && !footer.querySelector(':scope > .footer')) loadFooter(footer);
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
