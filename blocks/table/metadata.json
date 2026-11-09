@@ -1,0 +1,11 @@
+{
+  "variantName": "table",
+  "baseBlock": "table",
+  "version": "1.0.0",
+  "created": "2026-11-09T15:44:36.000Z",
+  "description": "Data table; the first row is the header. The documents variant adds classification tags, download buttons and stacked mobile rows.",
+  "visualCharacteristics": { "colorScheme": "light", "density": "compact", "purpose": "tabular data / document register", "imagePattern": "noimg" },
+  "contentPattern": { "structure": "header row + data rows, multiple columns", "buttonCount": 0, "imageCount": 0 },
+  "options": [{ "class": "documents", "label": "Documents" }],
+  "usage": { "pagesUsing": ["index"], "reuseCount": 1, "lastUsed": "2026-11-09T15:44:36.000Z" }
+}

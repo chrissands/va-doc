@@ -1,0 +1,11 @@
+{
+  "variantName": "accordion",
+  "baseBlock": "accordion",
+  "version": "1.0.0",
+  "created": "2026-11-09T15:44:36.000Z",
+  "description": "Expandable panels: each row is a label plus content. The meetings variant shows date badges, actions and committee agenda cards.",
+  "visualCharacteristics": { "colorScheme": "light", "density": "standard", "purpose": "expandable groups (meetings by year)", "imagePattern": "noimg" },
+  "contentPattern": { "structure": "title-body-expandable", "buttonCount": 2, "imageCount": 0 },
+  "options": [{ "class": "meetings", "label": "Meetings" }],
+  "usage": { "pagesUsing": ["bolrj/index"], "reuseCount": 1, "lastUsed": "2026-11-09T15:44:36.000Z" }
+}

@@ -1,0 +1,11 @@
+{
+  "variantName": "document-list",
+  "baseBlock": "document-list",
+  "version": "1.0.0",
+  "created": "2026-11-09T15:44:36.000Z",
+  "description": "Document library: rows of group | title | description | details | link | badge. Groups become tabs; the tiles variant shows a card grid.",
+  "visualCharacteristics": { "colorScheme": "light", "density": "standard", "purpose": "tabbed document library / decision tiles", "imagePattern": "noimg" },
+  "contentPattern": { "structure": "repeating rows of six cells, grouped by the first cell", "buttonCount": 1, "imageCount": 0 },
+  "options": [{ "class": "tiles", "label": "Tiles" }],
+  "usage": { "pagesUsing": ["bolrj/index", "vpb/index"], "reuseCount": 2, "lastUsed": "2026-11-09T15:44:36.000Z" }
+}

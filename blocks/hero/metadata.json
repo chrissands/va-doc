@@ -1,0 +1,11 @@
+{
+  "variantName": "hero",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-11-09T15:44:36.000Z",
+  "description": "Page hero: optional image row, then eyebrow, H1, text, stats list and CTA buttons. A Locator Search block in the same section becomes its right column.",
+  "visualCharacteristics": { "colorScheme": "dark", "density": "spacious", "purpose": "page hero", "imagePattern": "background-or-side-image" },
+  "contentPattern": { "structure": "image row + content row (eyebrow, h1, text, stats list, buttons)", "buttonCount": 2, "imageCount": 1 },
+  "options": [{ "class": "dark", "label": "Dark" }, { "class": "split", "label": "Split" }],
+  "usage": { "pagesUsing": ["index", "bolrj/index", "vpb/index", "vce/modular-office-systems"], "reuseCount": 4, "lastUsed": "2026-11-09T15:44:36.000Z" }
+}

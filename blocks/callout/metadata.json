@@ -1,0 +1,18 @@
+{
+  "variantName": "callout",
+  "baseBlock": "callout",
+  "version": "1.0.0",
+  "created": "2026-11-09T15:44:36.000Z",
+  "description": "Highlighted panel: optional icon cell, content cell, optional aside cell and actions cell. Used for PREA, directory CTAs, notices and promos.",
+  "visualCharacteristics": { "colorScheme": "varies by variant", "density": "standard", "purpose": "call to action / notice", "imagePattern": "icon" },
+  "contentPattern": { "structure": "one row: [icon] | content | [aside] | [actions]", "buttonCount": 2, "imageCount": 0 },
+  "options": [
+    { "class": "danger", "label": "Danger" },
+    { "class": "dark", "label": "Dark" },
+    { "class": "light", "label": "Light" },
+    { "class": "tint", "label": "Tint" },
+    { "class": "warning", "label": "Warning" },
+    { "class": "notice", "label": "Notice" }
+  ],
+  "usage": { "pagesUsing": ["index", "bolrj/index", "vpb/index", "vce/modular-office-systems", "vce/product/vce-hz-6060", "vce/release-request"], "reuseCount": 21, "lastUsed": "2026-11-09T15:44:36.000Z" }
+}

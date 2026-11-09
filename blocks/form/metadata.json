@@ -1,0 +1,10 @@
+{
+  "variantName": "form",
+  "baseBlock": "form",
+  "version": "1.0.0",
+  "created": "2026-11-09T15:44:36.000Z",
+  "description": "Form driven by a spreadsheet/JSON definition: a link to the definition, plus an optional Submit To row. Without that row it runs in demo mode.",
+  "visualCharacteristics": { "colorScheme": "light", "density": "standard", "purpose": "data entry form", "imagePattern": "noimg" },
+  "contentPattern": { "structure": "single cell: link to the form definition JSON", "buttonCount": 1, "imageCount": 0 },
+  "usage": { "pagesUsing": ["bolrj/index", "vce/release-request"], "reuseCount": 2, "lastUsed": "2026-11-09T15:44:36.000Z" }
+}

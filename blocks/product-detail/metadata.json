@@ -1,0 +1,11 @@
+{
+  "variantName": "product-detail",
+  "baseBlock": "product-detail",
+  "version": "1.0.0",
+  "created": "2026-11-09T15:44:36.000Z",
+  "description": "Product detail for one SKU from the catalog: gallery, options, price, quantity and cart actions. The specs variant shows the specification, warranty and downloads tabs.",
+  "visualCharacteristics": { "colorScheme": "light", "density": "standard", "purpose": "commerce product detail", "imagePattern": "product-gallery-from-catalog" },
+  "contentPattern": { "structure": "key | value row: SKU", "buttonCount": 0, "imageCount": 0 },
+  "options": [{ "class": "specs", "label": "Specs" }],
+  "usage": { "pagesUsing": ["vce/product/vce-hz-6060"], "reuseCount": 16, "lastUsed": "2026-11-09T15:44:36.000Z" }
+}
