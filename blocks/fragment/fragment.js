@@ -6,6 +6,7 @@
 
 import {
   decorateMain,
+  resolvePlaceholders,
 } from '../../scripts/scripts.js';
 
 import {
@@ -33,6 +34,7 @@ export async function loadFragment(path) {
       resetAttributeBase('img', 'src');
       resetAttributeBase('source', 'srcset');
 
+      await resolvePlaceholders(main);
       decorateMain(main);
       await loadSections(main);
       return main;
