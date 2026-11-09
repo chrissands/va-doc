@@ -1,5 +1,5 @@
 /* ---------- form block card (e.g. BLRJ contact, inside a gray split section) ---------- */
-.form {
+.form.block {
   padding: var(--space-l);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-m);
@@ -7,12 +7,12 @@
   box-shadow: var(--shadow-s);
 }
 
-.form .form-title { margin-top: 0; }
+.form.block .form-title { margin-top: 0; }
 
-.form .form-unavailable { margin: 0; }
+.form.block .form-unavailable { margin: 0; }
 
 @media (width >= 600px) {
-  .form { padding: var(--space-xl); }
+  .form.block { padding: var(--space-xl); }
 }
 
 /* ---------- form body (shared with locator-search via createForm) ---------- */
