@@ -14,7 +14,34 @@ import {
   toClassName,
   toCamelCase,
 } from './aem.js';
-import { getSite, localizeLinks } from './sites.js';
+import { getSite, localizeLinks, contentPath } from './sites.js';
+
+let placeholdersPromise;
+
+/**
+ * Replaces {{key}} tokens (inserted from the DA Library "Placeholders" tool) in text and link
+ * targets with the values from the shared /placeholders sheet. The sheet is only fetched when
+ * the content actually contains a token; unknown keys are left as written.
+ * @param {Element} element container element
+ */
+export async function resolvePlaceholders(element) {
+  const TOKEN = /\{\{([\w-]+)\}\}/g;
+  if (!element?.innerHTML.includes('{{')) return;
+  placeholdersPromise ??= fetch(contentPath('/placeholders.json'))
+    .then((resp) => (resp.ok ? resp.json() : { data: [] }))
+    .then((json) => Object.fromEntries((json.data || []).map((row) => [row.key, row.value])))
+    .catch(() => ({}));
+  const values = await placeholdersPromise;
+  const swap = (str) => str.replace(TOKEN, (token, key) => values[key] ?? token);
+  const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+  while (walker.nextNode()) {
+    const node = walker.currentNode;
+    if (node.textContent.includes('{{')) node.textContent = swap(node.textContent);
+  }
+  element.querySelectorAll('a[href*="%7B%7B"], a[href*="{{"]').forEach((a) => {
+    a.setAttribute('href', swap(decodeURIComponent(a.getAttribute('href'))));
+  });
+}
 
 /**
  * Buttons follow the standard EDS authoring convention:
@@ -507,6 +534,7 @@ async function loadEager(doc) {
   }
   const main = doc.querySelector('main');
   if (main) {
+    await resolvePlaceholders(main);
     decorateMain(main);
     doc.body.classList.add('appear');
     // the LCP image may sit in the second section when the page opens with an alert bar
