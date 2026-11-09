@@ -1,0 +1,10 @@
+{
+  "variantName": "locator-search",
+  "baseBlock": "form",
+  "version": "1.0.0",
+  "created": "2026-11-09T15:44:36.000Z",
+  "description": "Offender locator card: intro, a form-definition link and a footnote. Demo results only, no live lookup.",
+  "visualCharacteristics": { "colorScheme": "light", "density": "standard", "purpose": "search / lookup card", "imagePattern": "noimg" },
+  "contentPattern": { "structure": "three single-cell rows: intro, form definition link, footnote", "buttonCount": 1, "imageCount": 0 },
+  "usage": { "pagesUsing": ["index"], "reuseCount": 1, "lastUsed": "2026-11-09T15:44:36.000Z" }
+}

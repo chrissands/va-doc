@@ -1,0 +1,10 @@
+{
+  "variantName": "breadcrumb",
+  "baseBlock": "breadcrumb",
+  "version": "1.0.0",
+  "created": "2026-11-09T15:44:36.000Z",
+  "description": "Breadcrumb trail: an ordered list of links, with the last item as text, plus an optional note row.",
+  "visualCharacteristics": { "colorScheme": "light", "density": "compact", "purpose": "navigation trail", "imagePattern": "noimg" },
+  "contentPattern": { "structure": "single cell with an ordered list; optional note row", "buttonCount": 0, "imageCount": 0 },
+  "usage": { "pagesUsing": ["vce/modular-office-systems", "vce/release-request"], "reuseCount": 18, "lastUsed": "2026-11-09T15:44:36.000Z" }
+}

@@ -1,0 +1,11 @@
+{
+  "variantName": "carousel",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-11-09T15:44:36.000Z",
+  "description": "Slide carousel: each row is an image plus content. The testimonials variant shows a quote, attribution and stats.",
+  "visualCharacteristics": { "colorScheme": "light", "density": "spacious", "purpose": "testimonials", "imagePattern": "portrait-left" },
+  "contentPattern": { "structure": "repeating rows: image | blockquote, name, role, stats list", "buttonCount": 0, "imageCount": 1 },
+  "options": [{ "class": "testimonials", "label": "Testimonials" }],
+  "usage": { "pagesUsing": ["index"], "reuseCount": 1, "lastUsed": "2026-11-09T15:44:36.000Z" }
+}

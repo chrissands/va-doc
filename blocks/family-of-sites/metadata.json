@@ -1,0 +1,10 @@
+{
+  "variantName": "family-of-sites",
+  "baseBlock": "family-of-sites",
+  "version": "1.0.0",
+  "created": "2026-11-09T15:44:36.000Z",
+  "description": "Site switcher: a title row, then one row per sibling site (link | description). The current site is highlighted.",
+  "visualCharacteristics": { "colorScheme": "dark in footer, light elsewhere", "density": "compact", "purpose": "cross-site navigation", "imagePattern": "noimg" },
+  "contentPattern": { "structure": "title row + repeating rows: site link | description", "buttonCount": 0, "imageCount": 0 },
+  "usage": { "pagesUsing": ["footer", "bolrj/footer", "vpb/footer", "vce/footer"], "reuseCount": 4, "lastUsed": "2026-11-09T15:44:36.000Z" }
+}

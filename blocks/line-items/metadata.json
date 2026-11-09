@@ -1,0 +1,10 @@
+{
+  "variantName": "line-items",
+  "baseBlock": "line-items",
+  "version": "1.0.0",
+  "created": "2026-11-09T15:44:36.000Z",
+  "description": "Repeatable item table with running totals, submitted with a form block via the form id.",
+  "visualCharacteristics": { "colorScheme": "light", "density": "compact", "purpose": "repeatable line items", "imagePattern": "noimg" },
+  "contentPattern": { "structure": "key | value rows: Title, Form, Columns, Item Types, Reasons, Item (sample lines)", "buttonCount": 1, "imageCount": 0 },
+  "usage": { "pagesUsing": ["vce/release-request"], "reuseCount": 1, "lastUsed": "2026-11-09T15:44:36.000Z" }
+}

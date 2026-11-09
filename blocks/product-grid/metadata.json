@@ -1,0 +1,11 @@
+{
+  "variantName": "product-grid",
+  "baseBlock": "product-grid",
+  "version": "1.0.0",
+  "created": "2026-11-09T15:44:36.000Z",
+  "description": "Product listing from the catalog data source: filters, sort, grid and pagination. The related variant shows a short row of products by SKU.",
+  "visualCharacteristics": { "colorScheme": "light", "density": "standard", "purpose": "commerce product listing", "imagePattern": "product-images-from-catalog" },
+  "contentPattern": { "structure": "key | value rows: Category, Page Size, Filters, Sort, Note (related: SKUs)", "buttonCount": 0, "imageCount": 0 },
+  "options": [{ "class": "related", "label": "Related" }],
+  "usage": { "pagesUsing": ["vce/modular-office-systems", "vce/product/vce-hz-6060"], "reuseCount": 17, "lastUsed": "2026-11-09T15:44:36.000Z" }
+}

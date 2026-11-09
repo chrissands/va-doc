@@ -1,0 +1,20 @@
+{
+  "variantName": "cards",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-11-09T15:44:36.000Z",
+  "description": "Card grid: each row is an image or icon plus content (eyebrow, heading, text, link). Variants cover audience tiles, icon links, news, mandates, members, documents and stats.",
+  "visualCharacteristics": { "colorScheme": "light", "density": "standard", "purpose": "card grid", "imagePattern": "image-or-icon" },
+  "contentPattern": { "structure": "repeating rows: media cell + content cell (one cell for no-images)", "buttonCount": 1, "imageCount": 1 },
+  "options": [
+    { "class": "audience", "label": "Audience" },
+    { "class": "icon-links", "label": "Icon Links" },
+    { "class": "news", "label": "News" },
+    { "class": "news no-images", "label": "News, No Images" },
+    { "class": "icon", "label": "Icon" },
+    { "class": "member", "label": "Member" },
+    { "class": "document no-images", "label": "Document" },
+    { "class": "stats no-images", "label": "Stats" }
+  ],
+  "usage": { "pagesUsing": ["index", "bolrj/index", "vpb/index", "vce/modular-office-systems"], "reuseCount": 4, "lastUsed": "2026-11-09T15:44:36.000Z" }
+}

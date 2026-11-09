@@ -1,0 +1,11 @@
+{
+  "variantName": "alert",
+  "baseBlock": "alert",
+  "version": "1.0.0",
+  "created": "2026-11-09T15:44:36.000Z",
+  "description": "Full-width notice bar: bold lead-in, optional detail lines and one link. Warning is dismissible.",
+  "visualCharacteristics": { "colorScheme": "accent", "density": "compact", "purpose": "site notice / statute bar", "imagePattern": "noimg" },
+  "contentPattern": { "structure": "single-cell: lead paragraph + detail lines + link", "buttonCount": 1, "imageCount": 0 },
+  "options": [{ "class": "warning", "label": "Warning" }, { "class": "info", "label": "Info" }],
+  "usage": { "pagesUsing": ["index", "bolrj/index"], "reuseCount": 2, "lastUsed": "2026-11-09T15:44:36.000Z" }
+}
